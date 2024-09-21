@@ -5,6 +5,17 @@ import java.util.Scanner;
 
 public class Polymorphia {
 
+    // TODO
+    /**
+     *     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
+     *     private int turnCount;
+     *     private Creature[] creatures; ??
+     *     private Adventurer[] adventurers; ??
+     *     private Room [] rooms;
+     *     private Maze maze; ??
+     *     private Dice dice;
+     *     private Character winner; delete ??
+     */
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
     private Creature creature;
@@ -68,6 +79,10 @@ public class Polymorphia {
         System.out.print("Enter adventurer's name: ");
         String adventurerName = scanner.nextLine();
 
+        // TODO
+        /**
+         * randomlyDistributeCharacters(adventurers[], creatures[], maze(??) )
+         */
         randomlyDistributeCharacters(adventurerName);
 
         // Print the initial state of the game
@@ -79,11 +94,29 @@ public class Polymorphia {
         System.out.println("\nGame is ready. Adventurer and creature are placed in rooms.");
         System.out.println("Starting turns.");
 
+        // TODO
+        /**
+         * while (atLeastOneAdventurer && atLeastOneCreature) {
+         *      takeTurn(adventurers[], creatures[]) // need to update method signature of takeTurn
+         * }
+         */
         // call takeTurn while both creatures are alive
         while (creature.getHealth() > 0 && adventurer.getHealth() > 0) {
             takeTurn(adventurer, creature);
         }
 
+        // TODO
+        /**
+         * // getting here means either all adventurers or all creatures are dead
+         * // both dead:
+         * if (!atLeastOneAdventurer && !atLeastOneAdventurer) {}
+         * // creature(s) wins:
+         * else if (!atLeastOneAdventurer) {}
+         * // adventurer(s) wins:
+         * else if (!atLeastOneCreature) {}
+         *
+         * need to update how winner is stored (can't be a Creature)
+         */
         // getting here means one (or both) of the characters has died --> end game
         // nobody wins if both creature and adventurer's health is <= 0
         if (creature.getHealth() <= 0 && adventurer.getHealth() <= 0) {
@@ -103,6 +136,12 @@ public class Polymorphia {
         System.out.println("Exited beginGame method.\n");
 
     }
+
+    // TODO
+    /**
+     * adjust to take in args for each character, random room
+     * no println
+     */
 
     public void randomlyDistributeCharacters (String adventurerName) {
         System.out.println("Adventurer's name is: " + adventurerName);
@@ -141,6 +180,45 @@ public class Polymorphia {
         turnCount++; // increment turn count
         printMaze();  // Print current state of the maze
 
+
+        // TODO
+        /**
+         * for room in Rooms {
+         *      roomStatus = getRoomStatus()
+         *      adventurersPresent = roomStatus.get(0)
+         *      creaturesPresent = roomStatus.get(1)
+         *      foodPresent = roomStatus.get(2)
+         *      // check if there is at least one adventurer and creature in the room
+         *      if (adventurersPresent.length() > 0 && creaturesPresent.length() > 0) {
+         *          healthiestAdventurer = adventurersPresent[0]
+         *          healthiestCreature = creaturesPresent[0]
+         *          fight(healthiestAdventurer, healthiestCreature)
+         *          // if there is a second adventurer, move it
+         *          if (adventurersPresent.length() = 2) {
+         *              weakerAdventurer = adventurersPresent[1]
+         *              moveAdventurer(weakerAdventurer);
+         *          }
+         *       }
+         *       // if the room contains only adventurers and food
+         *       else if (adventurersPresent.length() > 0 && foodPresent.length() > 0) {
+         *              healthiestAdventurer = adventurersPresent[0]
+         *              // if there are two adventurers and >= 2 food, both eat
+         *              // if there are two adventurers and 1 food, healthiest eats
+         *              // if there is 1 adventurer and 1 food, healthiest eats
+         *       }
+         *       // if the room contains only adventurers and no food or creatures, move adventurers
+         *       else if (adventurersPresent.length() > 0 && creaturesPresent.length() == 0 && foodPresent.length() == 0) {
+         *          if (adventurersPresent.length() == 2) {
+         *              healthiestAdventurer = adventurersPresent[0]
+         *              moveAdventurer(healthiestAdventurer)
+         *              weakerAdventurer = adventurersPresent[1]
+         *              moveAdventurer(weakerAdventurer);
+         *       }
+         *     }
+         *
+         */
+
+
         // if both players are in the same room, call fight method
         if (areBothInSameRoom(adventurer, creature)) {
             fight(adventurer, creature); // players fight
@@ -157,6 +235,37 @@ public class Polymorphia {
             moveAdventurer(adventurer);  // Move adventurer to a neighboring room
         }
     }
+
+    // TODO
+    /**
+     * public boolean atLeastOneAdventurer() {
+     *     return adventurers.length() > 0;
+     * }
+     *
+     * parameters? need to pass adventurers[]?
+     */
+
+    // TODO
+    /**
+     * public boolean atLeastOneCreature() {
+     *     return creatures.length() > 0;
+     * }
+     *
+     * parameters? need to pass adventurers[]?
+     */
+
+
+
+    // TODO
+    /**
+     * public getRoomStatus nestedArrayList[[Adventurers][Creatures][Food]]{
+     *     for room in maze.getRooms() {
+     *          room.getOccupants(); // includes food ?
+     *          add to return array list
+     *     }
+     * }
+     */
+
 
     /**
      * areBothInSameRoom: method to check if both adventurer and creature are in the same room
