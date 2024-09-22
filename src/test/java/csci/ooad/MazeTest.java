@@ -26,8 +26,9 @@ public class MazeTest {
         assertNotEquals(0, maze.numberOfRooms);
         assertNotEquals(false, maze.isSquareMatrix);
         assertEquals(3, maze.grid.length, "Matrix should have 3 rows");
+
+        //TODO: Remove this later...leaving it in for testing
         System.out.println(Arrays.deepToString(maze.grid));
-        // Need to assert that the maze is the correct dimesions
     }
 
     @Test
