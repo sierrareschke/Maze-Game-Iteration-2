@@ -8,6 +8,9 @@ public class Room {
     private String name;
     private List<Character> occupants;
     private int index = 0;
+    // TODO: Need to implement these for easy maze state searchinng.
+    // private List<Food> = null;
+    // private List<Character> = null;
 
 
     /**
