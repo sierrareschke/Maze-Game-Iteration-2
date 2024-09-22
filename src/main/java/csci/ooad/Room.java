@@ -7,7 +7,7 @@ public class Room {
 
     private String name;
     private List<Character> occupants;
-    private int index;
+    private int index = 0;
 
 
     /**
@@ -36,7 +36,7 @@ public class Room {
      * @param name - name of Room
      * @param index - index of Room
      */
-    public Room(String name,int index) {
+    public Room(String name, int index) {
         this.name = name;
         this.occupants = new ArrayList<>(); // Initialize with an empty array
         this.index = index;
