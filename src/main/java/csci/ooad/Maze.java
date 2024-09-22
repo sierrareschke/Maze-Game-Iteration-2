@@ -1,9 +1,41 @@
 package csci.ooad;
 
-public class Maze extends Polymorphia{
-    int numberOfRooms = null;
+import java.util.List;
 
-    public void createMaze(numberOfRooms){
+public class Maze {
+    int numberOfRooms = 0;
+    boolean isSquareMatrix = false;
+    Room[][] grid = null;
 
+    // Constructor for the maze
+    Maze(int numberOfRooms, List<Room> listOfRooms) {
+        this.isSquareMatrix = canFormSquareMatrix(numberOfRooms);
+        this.numberOfRooms = numberOfRooms;
+        this.grid = initializeRooms(listOfRooms);
+
+    }
+
+    private Room[][] initializeRooms(List<Room> listOfRooms){
+        if (isSquareMatrix){
+            // Find the square root to determine matrix size
+            int mazeDimensions = (int) Math.sqrt(this.numberOfRooms);
+            // initialize the 2D array
+            Room[][] matrix = new Room[mazeDimensions][mazeDimensions];
+            for (int i = 0; i < listOfRooms.size(); i++) {
+                // writes the rooms to the grid in order
+                matrix[i/mazeDimensions][i%mazeDimensions] = listOfRooms.get(i);
+            }
+            return matrix;
+        } else return null;
+
+    }
+
+    // Helper methods
+    private static boolean canFormSquareMatrix(int value) {
+        // Calculate the square root of the value
+        double sqrt = Math.sqrt(value);
+
+        // Check if the square root is an integer (i.e., sqrt == floor(sqrt))
+        return sqrt == Math.floor(sqrt);
     }
 }

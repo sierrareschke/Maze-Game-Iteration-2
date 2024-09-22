@@ -7,7 +7,7 @@ public class Room {
 
     private String name;
     private List<Character> occupants;
-    private int index;
+    private int index = 0;
 
 
     /**

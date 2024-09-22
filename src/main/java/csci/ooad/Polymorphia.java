@@ -310,15 +310,7 @@ public class Polymorphia {
 
         String mazeType = ""; // Initialize an empty string for the maze type
 
-        if (this instanceof Maze) {
-            mazeType = "MAZE";
-        } else if (this instanceof Cave) {
-            mazeType = "CAVE";
-        } else if (this instanceof Polymorphia) {
-            mazeType = ""; // Do not print anything for Polymorphia
-        }
-
-        System.out.println("Polymorphia " + mazeType + ": turn " + turnCount);
+        System.out.println("Polymorphia Maze: turn " + turnCount);
 
 
         for (Room room : rooms) {
