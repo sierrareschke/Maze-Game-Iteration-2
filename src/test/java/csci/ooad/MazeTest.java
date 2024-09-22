@@ -8,6 +8,7 @@ public class MazeTest {
     @Test
     public void testMazeCreation() {
         Maze maze = new Maze();
+
         assertNotNull(maze, "Maze instance should be created.");
     }
 }
