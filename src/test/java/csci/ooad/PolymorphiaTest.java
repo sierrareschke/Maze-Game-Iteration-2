@@ -6,13 +6,16 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PolymorphiaTest {
 
     private InputStream originalIn;
     private Polymorphia testPolymorphia;
+    List<Room> listOfRooms = new ArrayList<>();
 
     /*
     * Before each test, store original System.in and initialize testPolymorphia
@@ -41,6 +44,17 @@ public class PolymorphiaTest {
         String simulatedInput = "Test Adventurer\n";
         ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(inputStream);
+
+        // Create the maze
+        String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
+
+        int roomIndex = 0;
+        for (String name: roomNames){
+            listOfRooms.add(new Room(name,roomIndex));
+            roomIndex++;
+        }
+
+        Maze maze = new Maze(listOfRooms.size(), listOfRooms);
 
         try{
             testPolymorphia.playGame();
@@ -258,6 +272,7 @@ public class PolymorphiaTest {
         Room adventurerNewRoom = testPolymorphia.getRoomOfCharacter(adventurer);
         assertNotEquals(room, adventurerNewRoom, "Adventurer should have moved to a neighboring room.");
     }
+
 
 
 
