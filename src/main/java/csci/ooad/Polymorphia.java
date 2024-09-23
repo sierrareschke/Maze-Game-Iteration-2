@@ -1,5 +1,6 @@
 package csci.ooad;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,20 +8,20 @@ public class Polymorphia {
 
     // TODO
     /**
-     *     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
-     *     private int turnCount;
-     *     private Creature[] creatures; ??
-     *     private Adventurer[] adventurers; ??
-     *     private Room [] rooms;
-     *     private Maze maze; ??
-     *     private Dice dice;
-     *     private Character winner; delete ??
+     * private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
+     * private int turnCount;
+     * private Creature[] creatures; ??
+     * private Adventurer[] adventurers; ??
+     * private Room [] rooms;
+     * private Maze maze; ??
+     * private Dice dice;
+     * private Character winner; delete ??
      */
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
     private Creature creature;
     private Adventurer adventurer;
-    private Room [] rooms;
+    private Room[] rooms;
     private Dice dice;
     private Character winner;
 
@@ -37,6 +38,7 @@ public class Polymorphia {
 
     /**
      * Accessor method to get the list of rooms in the maze
+     *
      * @return Room[] - array of rooms
      */
     public Room[] getRooms() {
@@ -47,9 +49,13 @@ public class Polymorphia {
         return winner;
     }
 
-    public Creature getCreature() {return creature;}
+    public Creature getCreature() {
+        return creature;
+    }
 
-    public Adventurer getAdventurer() {return adventurer;}
+    public Adventurer getAdventurer() {
+        return adventurer;
+    }
 
     /**
      * createRooms: creates 4 rooms (NW, NE, SE, SW)
@@ -59,10 +65,10 @@ public class Polymorphia {
         rooms = new Room[4];
 
         // Create and assign rooms to the respective positions
-        rooms[0] = new Room("Northwest",0);  // Empty occupants for now
-        rooms[1] = new Room("Northeast",1);
-        rooms[2] = new Room("Southeast",2);
-        rooms[3] = new Room("Southwest",3);
+        rooms[0] = new Room("Northwest", 0);  // Empty occupants for now
+        rooms[1] = new Room("Northeast", 1);
+        rooms[2] = new Room("Southeast", 2);
+        rooms[3] = new Room("Southwest", 3);
     }
 
     /**
@@ -138,12 +144,13 @@ public class Polymorphia {
     }
 
     // TODO
+
     /**
      * adjust to take in args for each character, random room
      * no println
      */
 
-    public void randomlyDistributeCharacters (String adventurerName) {
+    public void randomlyDistributeCharacters(String adventurerName) {
         System.out.println("Adventurer's name is: " + adventurerName);
 
         // randomly select a creature type
@@ -171,8 +178,10 @@ public class Polymorphia {
     }
 
     /**
-     * takeTurn: Prints maze and turn number. Analyzes the room locations of the creature and adventurer
-     * and calls the fight method if they are in the same room. Otherwise, moves the adventurer to a random neighboring room
+     * takeTurn: Prints maze and turn number. Analyzes the room locations of the creatures and adventurers
+     * and calls the fight method if they creature and adventurer are in the same room.
+     * If only adventurer(s) and food (no creature), adventurers eat food while available.
+     * Otherwise, moves the adventurer to a random neighboring room
      * Increments turnCount
      */
     public void takeTurn(Adventurer adventurer, Creature creature) {
@@ -182,117 +191,61 @@ public class Polymorphia {
 
 
         // TODO
-        /**
-         * for room in Rooms {
-         *      roomStatus = getRoomStatus()
-         *      adventurersPresent = roomStatus.get(0)
-         *      creaturesPresent = roomStatus.get(1)
-         *      foodPresent = roomStatus.get(2)
-         *      // check if there is at least one adventurer and creature in the room
-         *      if (adventurersPresent.length() > 0 && creaturesPresent.length() > 0) {
-         *          healthiestAdventurer = adventurersPresent[0]
-         *          healthiestCreature = creaturesPresent[0]
-         *          fight(healthiestAdventurer, healthiestCreature)
-         *          // if there is a second adventurer, move it
-         *          if (adventurersPresent.length() = 2) {
-         *              weakerAdventurer = adventurersPresent[1]
-         *              moveAdventurer(weakerAdventurer);
-         *          }
-         *       }
-         *       // if the room contains only adventurers and food
-         *       else if (adventurersPresent.length() > 0 && foodPresent.length() > 0) {
-         *              healthiestAdventurer = adventurersPresent[0]
-         *              // if there are two adventurers and >= 2 food, both eat
-         *              // if there are two adventurers and 1 food, healthiest eats
-         *              // if there is 1 adventurer and 1 food, healthiest eats
-         *       }
-         *       // if the room contains only adventurers and no food or creatures, move adventurers
-         *       else if (adventurersPresent.length() > 0 && creaturesPresent.length() == 0 && foodPresent.length() == 0) {
-         *          if (adventurersPresent.length() == 2) {
-         *              healthiestAdventurer = adventurersPresent[0]
-         *              moveAdventurer(healthiestAdventurer)
-         *              weakerAdventurer = adventurersPresent[1]
-         *              moveAdventurer(weakerAdventurer);
-         *       }
-         *     }
-         *
-         */
-
-
-        // if both players are in the same room, call fight method
-        if (areBothInSameRoom(adventurer, creature)) {
-            fight(adventurer, creature); // players fight
-            // both characters lose 0.5 points, regardless of fight outcome
-            System.out.println("Both players lose 0.5 health after fight.");
-            adventurer.subtractFromHealth(-0.5);
-            creature.subtractFromHealth(-0.5);
-            System.out.println("Health status after fight: ");
-            System.out.println("Adventurer: " + adventurer.getHealth());
-            System.out.println("Creature: " + creature.getHealth());
-
-        } else { // if both players are not in the same room, move adventurer to a random neighboring room
-            System.out.println("Adventurer and creature are not in same room. Adventurer moves rooms and loses 0.25 health.\n");
-            moveAdventurer(adventurer);  // Move adventurer to a neighboring room
-        }
-    }
-
-    // TODO
-    /**
-     * public boolean atLeastOneAdventurer() {
-     *     return adventurers.length() > 0;
-     * }
-     *
-     * parameters? need to pass adventurers[]?
-     */
-
-    // TODO
-    /**
-     * public boolean atLeastOneCreature() {
-     *     return creatures.length() > 0;
-     * }
-     *
-     * parameters? need to pass adventurers[]?
-     */
-
-
-
-    // TODO
-    /**
-     * public getRoomStatus nestedArrayList[[Adventurers][Creatures][Food]]{
-     *     for room in maze.getRooms() {
-     *          room.getOccupants(); // includes food ?
-     *          add to return array list
-     *     }
-     * }
-     */
-
-
-    /**
-     * areBothInSameRoom: method to check if both adventurer and creature are in the same room
-     * @return true if adventurer and creature are in same room
-     */
-    public boolean areBothInSameRoom(Adventurer adventurer, Creature creature) {
-        Room adventurerRoom = null;
-        Room creatureRoom = null;
-
-        // Loop through each room to find where the adventurer and creature are
         for (Room room : rooms) {
-            // Check if the adventurer is in this room
-            for (Character occupant : room.getOccupants()) {
-                if (occupant.equals(adventurer)) {
-                    adventurerRoom = room;
+            List<Adventurer> adventurersPresent = room.getAdventurers();
+            List<Creature> creaturesPresent = room.getCreatures();
+            List<Food> foodPresent = room.getFood();
+
+            int numAdventurersPresent = adventurersPresent.size();
+            int numCreaturesPresent = creaturesPresent.size();
+            int numFoodPresent = foodPresent.size();
+
+            if (numAdventurersPresent == 0) {
+                continue;
+            }
+
+            // check if there is at least creature in the room
+            if (numCreaturesPresent > 0) {
+                Adventurer healthiestAdventurer = adventurersPresent.get(0);
+                Creature healthiestCreature = creaturesPresent.get(0);
+
+                fight(healthiestAdventurer, healthiestCreature);
+                System.out.println("Adventurer " + healthiestAdventurer.getName() + "(health: " + healthiestAdventurer.getHealth() + ") " +
+                        "fought Creature" + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")");
+
+                // if there is a second adventurer, move it
+                if (numAdventurersPresent == 2) {
+                    Adventurer weakerAdventurer = adventurersPresent.get(0);
+                    moveAdventurer(weakerAdventurer);
+                    System.out.println("Adventurer " + weakerAdventurer.getName() + "(health: " + weakerAdventurer.getHealth() + ") moves rooms.");
                 }
-                // Check if the creature is in this room
-                if (occupant.equals(creature)) {
-                    creatureRoom = room;
+            }
+            // if the room contains only adventurers and food
+            else if (numFoodPresent > 0) {
+                int currentAdventurerIndex = 0;
+                while (numFoodPresent > 0 && currentAdventurerIndex < numAdventurersPresent) {
+                    adventurersPresent.get(currentAdventurerIndex).eatFood();
+                    foodPresent.remove(0);
+                    numFoodPresent--;
+                    currentAdventurerIndex++;
+                }
+            }
+            // if the room contains only adventurers and no food or creatures, move adventurers
+            else {
+                int currentAdventurerIndex = 0;
+                // move adventurers while there are still adventurers to move
+                System.out.println("Adventurer and creature are not in same room.\n");
+                while (currentAdventurerIndex < numAdventurersPresent) {
+                    // TODO previousRoom = currentAdventurer.getRoom(); moveAdventurer()
+                    // TODO newRoom = currentAdventurer.getRoom();
+                    Adventurer currentAdventurer = adventurersPresent.get(currentAdventurerIndex);
+                    System.out.println("Adventurer " + currentAdventurer.getName() + "(health: " + currentAdventurer.getHealth() + ") moves rooms.");
+                    moveAdventurer(currentAdventurer);
+                    currentAdventurerIndex++;
                 }
             }
         }
-
-        // Return true if both the adventurer and the creature are in the same room
-        return adventurerRoom != null && adventurerRoom.equals(creatureRoom);
     }
-
 
 
     /**
@@ -318,6 +271,8 @@ public class Polymorphia {
         }
     }
 
+
+    // TODO
 
     /**
      * moveAdventurer: moves the adventurer to a random neighboring room
@@ -376,9 +331,9 @@ public class Polymorphia {
     }
 
 
-
     /**
      * Method to find which room a character is in
+     *
      * @param character to find which room in
      * @return Room that the character is in
      */
