@@ -23,12 +23,12 @@ public class MazeTest {
 
         Maze maze = new Maze(listOfRooms.size(), listOfRooms);
 
-        assertNotEquals(0, maze.numberOfRooms);
-        assertNotEquals(false, maze.isSquareMatrix);
-        assertEquals(3, maze.grid.length, "Matrix should have 3 rows");
+        assertNotEquals(0, maze.getNumberOfRooms());
+        assertNotEquals(false, maze.isSquareMatrix());
+        assertEquals(3, maze.getGrid().length, "Matrix should have 3 rows");
 
         //TODO: Remove this later...leaving it in for testing
-        System.out.println(Arrays.deepToString(maze.grid));
+        System.out.println(Arrays.deepToString(maze.getGrid()));
     }
 
     @Test
