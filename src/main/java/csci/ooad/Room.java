@@ -2,6 +2,7 @@ package csci.ooad;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Room {
 
@@ -9,8 +10,7 @@ public class Room {
     private List<Character> occupants;
     private int index = 0;
     // TODO: Need to implement these for easy maze state searchinng.
-    // private List<Food> = null;
-    // private List<Character> = null;
+    private List<Food> foods;
 
 
     /**
@@ -54,8 +54,42 @@ public class Room {
 
     public int getIndex() {return index;}
 
-    public List<Character> getOccupants() {
-        return occupants;
+    public Boolean isAdventurerPresent () {
+        boolean isPresent = false;
+        for (Character occupant : occupants) {
+            if(occupant instanceof Adventurer) {
+                isPresent = true;
+                break;
+            }
+        }
+        return isPresent;
+    }
+
+    public List<Adventurer> getAdventurers() {
+        return occupants.stream()
+                .filter(character -> character instanceof Adventurer) // Filter for Adventurer instances
+                .map(character -> (Adventurer) character)             // Cast to Adventurer
+                .sorted((a1, a2) -> Double.compare(a1.getHealth(), a2.getHealth())) // Sort by health
+                .collect(Collectors.toList()); // Collect the results into a List
+    }
+
+    public Boolean isCreaturePresent () {
+        boolean isPresent = false;
+        for (Character occupant : occupants) {
+            if(occupant instanceof Creature) {
+                isPresent = true;
+                break;
+            }
+        }
+        return isPresent;
+    }
+
+    public List<Creature> getCreatures() {
+        return occupants.stream()
+                .filter(character -> character instanceof Creature) // Filter for Adventurer instances
+                .map(character -> (Creature) character)             // Cast to Adventurer
+                .sorted((a1, a2) -> Double.compare(a1.getHealth(), a2.getHealth())) // Sort by health
+                .collect(Collectors.toList()); // Collect the results into a List
     }
 
 
@@ -100,7 +134,21 @@ public class Room {
         occupants.clear();
     }
 
+    publi Boolean isFoodPresent () {
 
+    }
+
+    public List<Food> getFood() {
+        return foods;
+    }
+
+    public void addFood(Food food) {
+        foods.add(food);
+    }
+
+    public void removeFood(Food food) {
+        foods.remove(food);
+    }
 
     /**
      * toString method of the Room to print out its occupants

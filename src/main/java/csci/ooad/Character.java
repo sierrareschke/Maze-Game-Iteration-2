@@ -6,7 +6,6 @@ public class Character {
     private String name;
     private double health;
 
-
     /**
      * Constructor for Character objects. Sets name and initial health (5.0)
      * @param name - name of Character
