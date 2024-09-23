@@ -49,4 +49,8 @@ public class Maze {
     public Room[][] getGrid() {
         return grid;
     }
+    
+    public Room getRoomInGrid(int x, int y){
+        return grid[x][y];
+    }
 }
