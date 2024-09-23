@@ -3,9 +3,9 @@ package csci.ooad;
 import java.util.List;
 
 public class Maze {
-    int numberOfRooms = 0;
-    boolean isSquareMatrix = false;
-    Room[][] grid = null;
+    private int numberOfRooms = 0;
+    private boolean isSquareMatrix = false;
+    private Room[][] grid = null;
 
     // Constructor for the maze
     Maze(int numberOfRooms, List<Room> listOfRooms) {
@@ -37,5 +37,16 @@ public class Maze {
 
         // Check if the square root is an integer (i.e., sqrt == floor(sqrt))
         return sqrt == Math.floor(sqrt);
+    }
+
+    // Getters
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+    public boolean isSquareMatrix() {
+        return isSquareMatrix;
+    }
+    public Room[][] getGrid() {
+        return grid;
     }
 }
