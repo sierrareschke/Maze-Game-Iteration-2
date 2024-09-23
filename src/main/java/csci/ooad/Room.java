@@ -86,8 +86,8 @@ public class Room {
 
     public List<Creature> getCreatures() {
         return occupants.stream()
-                .filter(character -> character instanceof Creature) // Filter for Adventurer instances
-                .map(character -> (Creature) character)             // Cast to Adventurer
+                .filter(character -> character instanceof Creature) // Filter for Creature instances
+                .map(character -> (Creature) character)             // Cast to Creature
                 .sorted((a1, a2) -> Double.compare(a1.getHealth(), a2.getHealth())) // Sort by health
                 .collect(Collectors.toList()); // Collect the results into a List
     }
@@ -134,8 +134,12 @@ public class Room {
         occupants.clear();
     }
 
-    publi Boolean isFoodPresent () {
-
+    public Boolean isFoodPresent () {
+        if(foods == null) {
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public List<Food> getFood() {
