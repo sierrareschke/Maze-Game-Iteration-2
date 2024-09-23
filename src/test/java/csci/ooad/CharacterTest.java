@@ -3,6 +3,10 @@ package csci.ooad;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CharacterTest {
@@ -53,6 +57,30 @@ public class CharacterTest {
     public void testHealthDoesNotGoBelowZero() {
         character.subtractFromHealth(-10.0); // Subtracting more than current health
         assertTrue(character.getHealth() < 0, "Health can go negative as per current implementation, but we can change this if needed.");
+    }
+
+    @Test
+    public void testCharacterMove(){
+        List<Room> listOfRooms = new ArrayList<>();
+        // TODO: Probably could move this maze creation code to the BeforeEach statement
+        Character testCharacter = new Character("TestCharacter");
+        // Create the maze
+        String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
+        int roomIndex = 0;
+        for (String name: roomNames){
+            listOfRooms.add(new Room(name, roomIndex));
+            roomIndex++;
+        }
+        Maze maze = new Maze(listOfRooms.size(), listOfRooms);
+
+        // Assign the character to room
+        testCharacter.spawn(maze);
+
+        // Move the character
+        
+
+
+
     }
 
 }

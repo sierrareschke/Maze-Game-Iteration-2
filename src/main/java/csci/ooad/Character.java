@@ -1,6 +1,8 @@
 package csci.ooad;
 
 
+import java.util.Random;
+
 public class Character {
 
     private String name;
@@ -47,6 +49,21 @@ public class Character {
         }
     }
 
+    public void move(Character character){
+
+    }
+
+    public void spawn(Maze maze){
+        Random random = new Random();
+        Room[][] grid = maze.getGrid();
+
+        // Generate a random number between 0 and 2 (inclusive)
+        int randomX = random.nextInt(3);
+        int randomY = random.nextInt(3);
+
+        Room room  = maze.getRoomInGrid(randomX,randomY);
+        room.addOccupant(this);
+    }
 
     /**
      * toString method to return Character's name(health: health)
