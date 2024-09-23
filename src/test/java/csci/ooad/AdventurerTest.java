@@ -26,4 +26,15 @@ public class AdventurerTest {
     public void testGetName() {
         assertEquals("TestAdventurer", adventurer.getName(), "Adventurer name should be TestAdventurer");
     }
+
+    @Test
+    public void testCharacterHeal(){
+        // Tests that a character that eats food heals
+        Adventurer adventurer = new Adventurer("John");
+        double adventurerHealth = adventurer.getHealth();
+        Food food = new Food();
+        adventurer.eat(food);
+        double adventurerNewHealth = adventurer.getHealth();
+        assertEquals(adventurerNewHealth, adventurerHealth + 1);
+    }
 }

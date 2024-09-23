@@ -29,6 +29,11 @@ public class Character {
         return this.health;
     }
 
+    // Setters
+    public void setHealth(double health){
+        this.health = health;
+    }
+
     /**
      * Decrements the Character's health by adding a negative number
      * @param numToSubtract - a negative value passed to decrease the character's health by
@@ -41,6 +46,7 @@ public class Character {
             System.out.println("Value must be negative to subtract from health.");
         }
     }
+
 
     /**
      * toString method to return Character's name(health: health)

@@ -102,6 +102,11 @@ public class Room {
         occupants.add(occupant);
     }
 
+    // Get all occupants
+    public List<Character>getOccupants(){
+        return this.occupants;
+    }
+
 
     /**
      * Method to remove an Adventurer occupant from a Room
