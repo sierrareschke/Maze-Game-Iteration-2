@@ -64,8 +64,8 @@ public class Character {
         int moveY = (int) (Math.random() * 3) - 1;
 
         // Adjust the coordinates to move to a neighboring room
-        int newX = Math.max(0, Math.min(3, x + moveX));
-        int newY = Math.max(0, Math.min(3, y + moveY));
+        int newX = Math.max(0, Math.min(2, x + moveX));
+        int newY = Math.max(0, Math.min(2, y + moveY));
         Room newRoom = maze.getRoomInGrid(newX, newY);
 
         // Move the character to the new room
@@ -76,7 +76,6 @@ public class Character {
 
     public void spawn(Maze maze){
         Random random = new Random();
-        Room[][] grid = maze.getGrid();
 
         // Generate a random number between 0 and 2 (inclusive)
         int randomX = random.nextInt(3);
@@ -84,6 +83,8 @@ public class Character {
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
         room.addOccupant(this);
+        maze.updateGrid(maze, room);
+        System.out.println(room);
     }
 
     public HashMap<String, Integer> currentRoomCoordinates(Maze maze) {

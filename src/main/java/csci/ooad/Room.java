@@ -2,6 +2,7 @@ package csci.ooad;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Room {
@@ -135,7 +136,14 @@ public class Room {
     }
 
     public boolean hasCharacter(Character character) {
-        return occupants.contains(character);
+        boolean characterFound = false;
+        for (Character occupant : occupants) {
+            if (Objects.equals(occupant.getName(), character.getName())) {
+                characterFound = true;
+                break;
+            }
+        }
+        return characterFound;
     }
 
 

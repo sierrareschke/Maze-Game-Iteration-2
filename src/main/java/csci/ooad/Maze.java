@@ -53,4 +53,18 @@ public class Maze {
     public Room getRoomInGrid(int x, int y){
         return grid[x][y];
     }
+
+
+    public void updateGrid(Maze maze, Room room ){
+        Room[][] grid = maze.getGrid();
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                if (currentRoom.equals(room)) {
+                    grid[i][j] = room;
+                }
+            }
+        }
+    }
 }

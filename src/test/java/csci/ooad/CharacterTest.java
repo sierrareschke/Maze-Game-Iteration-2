@@ -62,28 +62,38 @@ public class CharacterTest {
     }
 
     @Test
-    public void testCharacterMove(){
-        Random random = new Random();
-        List<Room> listOfRooms = new ArrayList<>();
-        // TODO: Probably could move this maze creation code to the BeforeEach statement
-        Character testCharacter = new Character("TestCharacter");
-        // Create the maze
-        String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
-        int roomIndex = 0;
-        for (String name: roomNames){
-            listOfRooms.add(new Room(name, roomIndex));
-            roomIndex++;
-        }
-        Maze maze = new Maze(listOfRooms.size(), listOfRooms);
+    public void testCharacterSpawn() {
+        boolean characterFound = false;
 
         // Assign the character to room
-        testCharacter.spawn(maze);
+        character.spawn(this.maze);
+
+        Room[][] grid = maze.getGrid();
+        System.out.println(Arrays.deepToString(grid));
+        // Use 'this' to search for the current character instance in the grid
+        for (int i = 0; i < grid.length; i++) {
+            Room currentRoom = null;
+            for (int j = 0; j < grid[i].length; j++) {
+                currentRoom = grid[i][j];
+                if (currentRoom.hasCharacter(character)) {
+                    characterFound = true;
+                }
+            }
+
+            assertTrue(characterFound, "Character should be in the Maze");
+        }
+    }
+
+    @Test
+    public void testCharacterMove(){
+        // Assign the character to room
+        character.spawn(this.maze);
 
         // Find Characters current room
-        HashMap<String, Integer> currentRoomCoordinates  = testCharacter.currentRoomCoordinates(maze);
+        HashMap<String, Integer> currentRoomCoordinates  = character.currentRoomCoordinates(this.maze);
 
         // Move the character
-        testCharacter.move(maze, currentRoomCoordinates);
+        character.move(maze, currentRoomCoordinates);
 
         // Make sure the move was correct here
         // TODO: assert that initial position is correct
