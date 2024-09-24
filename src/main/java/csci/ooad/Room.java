@@ -113,7 +113,7 @@ public class Room {
      * @param occupant - Adventurer to remove from Room
      * @return the Adventurer that was removed
      */
-    public Adventurer removeAdventurer(Adventurer occupant) {
+    public Character removeCharacter(Character occupant) {
         // Check if the occupant is in the room
         boolean found = false;
         for (Character character : occupants) {
@@ -132,6 +132,10 @@ public class Room {
 
         // Return the removed adventurer
         return occupant;
+    }
+
+    public boolean hasCharacter(Character character) {
+        return occupants.contains(character);
     }
 
 
