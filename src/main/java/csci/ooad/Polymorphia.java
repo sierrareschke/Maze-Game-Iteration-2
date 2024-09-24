@@ -224,8 +224,8 @@ public class Polymorphia {
             else if (numFoodPresent > 0) {
                 int currentAdventurerIndex = 0;
                 while (numFoodPresent > 0 && currentAdventurerIndex < numAdventurersPresent) {
-                    adventurersPresent.get(currentAdventurerIndex).eatFood();
-                    foodPresent.remove(0);
+//                    adventurersPresent.get(currentAdventurerIndex).eat();
+                    foodPresent.removeFirst();
                     numFoodPresent--;
                     currentAdventurerIndex++;
                 }
@@ -292,7 +292,7 @@ public class Polymorphia {
         int newRoomIndex = (currentRoomIndex + direction + rooms.length) % rooms.length;
 
         // remove the adventurer from the current room, update index, add to new room
-        roomOfAdventurer.removeAdventurer(adventurer);
+        roomOfAdventurer.removeCharacter(adventurer);
         rooms[newRoomIndex].addOccupant(adventurer);
 
         // decrement adventurer's health by 0.25
