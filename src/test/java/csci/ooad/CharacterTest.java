@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -61,6 +63,7 @@ public class CharacterTest {
 
     @Test
     public void testCharacterMove(){
+        Random random = new Random();
         List<Room> listOfRooms = new ArrayList<>();
         // TODO: Probably could move this maze creation code to the BeforeEach statement
         Character testCharacter = new Character("TestCharacter");
@@ -76,10 +79,15 @@ public class CharacterTest {
         // Assign the character to room
         testCharacter.spawn(maze);
 
+        // Find Characters current room
+        HashMap<String, Integer> currentRoomCoordinates  = testCharacter.currentRoomCoordinates(maze);
+
         // Move the character
-        
+        testCharacter.move(maze, currentRoomCoordinates);
 
-
+        // Make sure the move was correct here
+        // TODO: assert that initial position is correct
+        // TODO: assert that the move was carried out correctly
 
     }
 
