@@ -239,37 +239,46 @@ public class PolymorphiaTest {
 
 
 
+    // TODO - testTakeTurn method partially updated for hw3 implementation
     // testTakeTurn : Tests that if characters in same room, fight. If not, move adventurer called
     @Test
     public void testTakeTurn() {
         // Initialize adventurer and creature
-        Adventurer adventurer = new Adventurer("Test Adventurer");
+        Adventurer adventurer1 = new Adventurer("Test Adventurer 1");
+        Adventurer adventurer2 = new Adventurer("Test Adventurer 2");
+        Adventurer[] adventurers = new Adventurer[0];
+        adventurers[0] = adventurer1;
+        adventurers[1] = adventurer2;
+
+
         Creature creature = new Creature("Test Zombie");
+        Creature[] creatures = new Creature[0];
+        creatures[0] = creature;
 
-        // Test scenario where adventurer and creature are in the same room (should trigger a fight)
-        Room room = testPolymorphia.getRooms()[0];  // Place both in the same room
-        room.addOccupant(adventurer);
-        room.addOccupant(creature);
+        // Test scenario where an adventurer and creature are in the same room (should trigger a fight)
+        Room room = testPolymorphia.getRooms()[0];  // Place a creature and adventurer in the same room
+        room.addOccupant(adventurers[0]);
+        room.addOccupant(creatures[0]);
 
-        // Call takeTurn (this should trigger a fight)
-        testPolymorphia.takeTurn(adventurer, creature);
+        // Call takeTurn (this should trigger a fight between adventurer1 and creature)
+        testPolymorphia.takeTurn(adventurers, creatures);
 
         // Both should lose at least 0.5 health due to the fight
-        assertTrue(adventurer.getHealth() < 5.0, "Adventurer should lose at least 0.5 health.");
-        assertTrue(creature.getHealth() < 5.0, "Creature should lose at least 0.5 health.");
+        assertTrue(adventurers[0].getHealth() < 5.0, "Adventurer should lose at least 0.5 health.");
+        assertTrue(creatures[0].getHealth() < 5.0, "Creature should lose at least 0.5 health.");
 
         // Test scenario where adventurer and creature are in different rooms (should move the adventurer)
         room.emptyRoom();
         Room adventurerRoom = testPolymorphia.getRooms()[0];
         Room createureRoom = testPolymorphia.getRooms()[1];
-        adventurerRoom.addOccupant(adventurer);
-        createureRoom.addOccupant(creature);
+        adventurerRoom.addOccupant(adventurers[0]);
+        createureRoom.addOccupant(creatures[0]);
 
         // Call takeTurn (this should trigger the adventurer to move)
-        testPolymorphia.takeTurn(adventurer, creature);
+        testPolymorphia.takeTurn(adventurers, creatures);
 
         // Verify that the adventurer has moved from the original room
-        Room adventurerNewRoom = testPolymorphia.getRoomOfCharacter(adventurer);
+        Room adventurerNewRoom = testPolymorphia.getRoomOfCharacter(adventurers[0]);
         assertNotEquals(room, adventurerNewRoom, "Adventurer should have moved to a neighboring room.");
     }
 

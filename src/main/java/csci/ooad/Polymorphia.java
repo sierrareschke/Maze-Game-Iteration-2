@@ -6,29 +6,21 @@ import java.util.Scanner;
 
 public class Polymorphia {
 
-    // TODO
-    /**
-     * private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
-     * private int turnCount;
-     * private Creature[] creatures; ??
-     * private Adventurer[] adventurers; ??
-     * private Room [] rooms;
-     * private Maze maze; ??
-     * private Dice dice;
-     * private Character winner; delete ??
-     */
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
-    private Creature creature;
-    private Adventurer adventurer;
+    private Creature[] creatures;
+    private Adventurer[] adventurers;
     private Room[] rooms;
     private Dice dice;
-    private Character winner;
+    private Maze maze; // TOOD
+    private Character winner; // TODO - delete ??
+    // TODO
+    private boolean atLeastOneAdventurer; // there is at least one adventurer alive
+    private boolean atLeastOneCreature; // there is at least one creature alive
 
 
-    /**
-     * Constructor to create the maze with 4 rooms and set turn count to 0
-     */
+
+     // Constructor to create the maze with 4 rooms and set turn count to 0
     public Polymorphia() {
         this.turnCount = 0;
         createRooms();
@@ -38,7 +30,6 @@ public class Polymorphia {
 
     /**
      * Accessor method to get the list of rooms in the maze
-     *
      * @return Room[] - array of rooms
      */
     public Room[] getRooms() {
@@ -49,17 +40,17 @@ public class Polymorphia {
         return winner;
     }
 
-    public Creature getCreature() {
-        return creature;
+    public Creature[] getCreatures() {
+        return creatures;
     }
 
-    public Adventurer getAdventurer() {
-        return adventurer;
+    public Adventurer[] getAdventurers() {
+        return adventurers;
     }
 
-    /**
-     * createRooms: creates 4 rooms (NW, NE, SE, SW)
-     */
+
+    // TODO
+    // createRooms: creates 4 rooms (NW, NE, SE, SW)
     private void createRooms() {
         // Initialize the rooms array with 4 rooms (Northwest, Northeast, Southeast, Southwest)
         rooms = new Room[4];
@@ -91,6 +82,10 @@ public class Polymorphia {
          */
         randomlyDistributeCharacters(adventurerName);
 
+        // set boolean values for adventurer and creature present initially to true
+        atLeastOneAdventurer = true;
+        atLeastOneCreature = true;
+
         // Print the initial state of the game
         System.out.println("\nInitial game state:");
         printMaze();
@@ -101,14 +96,9 @@ public class Polymorphia {
         System.out.println("Starting turns.");
 
         // TODO
-        /**
-         * while (atLeastOneAdventurer && atLeastOneCreature) {
-         *      takeTurn(adventurers[], creatures[]) // need to update method signature of takeTurn
-         * }
-         */
         // call takeTurn while both creatures are alive
-        while (creature.getHealth() > 0 && adventurer.getHealth() > 0) {
-            takeTurn(adventurer, creature);
+        while (atLeastOneAdventurer && atLeastOneAdventurer) {
+            takeTurn(adventurers, creatures); //TODO
         }
 
         // TODO
@@ -184,7 +174,7 @@ public class Polymorphia {
      * Otherwise, moves the adventurer to a random neighboring room
      * Increments turnCount
      */
-    public void takeTurn(Adventurer adventurer, Creature creature) {
+    public void takeTurn(Adventurer[] adventurers, Creature[] creatures) {
 
         turnCount++; // increment turn count
         printMaze();  // Print current state of the maze
