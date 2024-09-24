@@ -115,19 +115,19 @@ public class Polymorphia {
          */
         // getting here means one (or both) of the characters has died --> end game
         // nobody wins if both creature and adventurer's health is <= 0
-        if (creature.getHealth() <= 0 && adventurer.getHealth() <= 0) {
-            System.out.println("Both players die. Nobody wins. Game over.\n");
-        }
-        // otherwise, the creature wins if the adventurer's health is <= 0
-        else if (adventurer.getHealth() <= 0) {
-            winner = creature;
-            System.out.println("Boo, the creature won. Game over.\n");
-        }
-        // if the creature's health is <= 0, the adventurer wins
-        else {
-            winner = adventurer;
-            System.out.println("Adventurer " + adventurer.getName() + " has defeated the creature! Game over");
-        }
+//        if (creature.getHealth() <= 0 && adventurer.getHealth() <= 0) {
+//            System.out.println("Both players die. Nobody wins. Game over.\n");
+//        }
+//        // otherwise, the creature wins if the adventurer's health is <= 0
+//        else if (adventurer.getHealth() <= 0) {
+//            winner = creature;
+//            System.out.println("Boo, the creature won. Game over.\n");
+//        }
+//        // if the creature's health is <= 0, the adventurer wins
+//        else {
+//            winner = adventurer;
+//            System.out.println("Adventurer " + adventurer.getName() + " has defeated the creature! Game over");
+//        }
 
         System.out.println("Exited beginGame method.\n");
 
@@ -149,18 +149,18 @@ public class Polymorphia {
         System.out.println("Randomly selected creature: " + randomCreatureType);
 
         // create Creature and Adventurer objects
-        creature = new Creature(randomCreatureType);
-        adventurer = new Adventurer(adventurerName);
-        System.out.println("Created adventurer: " + adventurer);
-        System.out.println("Created creature: " + creature);
+//        creature = new Creature(randomCreatureType);
+//        adventurer = new Adventurer(adventurerName);
+//        System.out.println("Created adventurer: " + adventurer);
+//        System.out.println("Created creature: " + creature);
 
         // Randomly place each character in one of the rooms (they can be placed in the same room)
         int randomRoomIndexForAdventurer = random.nextInt(rooms.length); // Random room for adventurer
         int randomRoomIndexForCreature = random.nextInt(rooms.length);   // Random room for creature
 
         // Add adventure and creature to respective random rooms
-        rooms[randomRoomIndexForAdventurer].addOccupant(adventurer);
-        rooms[randomRoomIndexForCreature].addOccupant(creature);
+//        rooms[randomRoomIndexForAdventurer].addOccupant(adventurer);
+//        rooms[randomRoomIndexForCreature].addOccupant(creature);
 
         // Report placement of adventurer and creature
         System.out.println("Adventurer placed in: " + rooms[randomRoomIndexForAdventurer].getName());
@@ -214,7 +214,7 @@ public class Polymorphia {
             else if (numFoodPresent > 0) {
                 int currentAdventurerIndex = 0;
                 while (numFoodPresent > 0 && currentAdventurerIndex < numAdventurersPresent) {
-                    adventurersPresent.get(currentAdventurerIndex).eatFood();
+//                    adventurersPresent.get(currentAdventurerIndex).eatFood();
                     foodPresent.remove(0);
                     numFoodPresent--;
                     currentAdventurerIndex++;

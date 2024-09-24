@@ -1,12 +1,15 @@
 package csci.ooad;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 public class Main {
 
-    public static void main(String[] args) {
-        // Create an instance of the Maze
-        Polymorphia game = new Polymorphia();
+    private static final Logger logger = LoggerFactory.getLogger(Adventurer.class);
 
-        // Start the game by calling playGame()
-        game.playGame();
+
+    public static void main(String[] args) {
+
     }
 }

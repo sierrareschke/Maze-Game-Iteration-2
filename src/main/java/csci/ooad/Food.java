@@ -1,14 +1,17 @@
 package csci.ooad;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 
 public class Food {
     private String name;
     private int healthGranted;
 
+
     public Food() {
-        // Generate random food name
+        // Generate random food nameddfdfdd
         List<String> foodNameOptions = new ArrayList<>();
         foodNameOptions.add("Bread");
         foodNameOptions.add("Cake");
