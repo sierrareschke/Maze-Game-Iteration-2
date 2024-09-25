@@ -17,6 +17,7 @@ public class Character {
     private String name;
     private double health;
 
+
     /* *
     *  CONSTRUCTORS
     * */
@@ -76,7 +77,7 @@ public class Character {
         Room currentRoom = maze.getRoomInGrid(x, y);
 
         // Take one random step in either direction
-        // TODO: need to change so that it only moves one step at a time
+        // TODO: need to change so that it only moves one step at a time (Nolan)
         int moveX = (int) (Math.random() * 3) - 1;
         int moveY = (int) (Math.random() * 3) - 1;
 
@@ -88,6 +89,9 @@ public class Character {
         // Move the character to the new room
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
+
+        // Each move decrements health by 0.25
+        this.health -= 0.25;
 
     }
 

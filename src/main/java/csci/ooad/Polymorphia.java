@@ -18,9 +18,6 @@ public class Polymorphia {
 
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
-    // TODO - Do we include creatures & adventurers if rooms has them? Do we need a global variable for them?
-    private ArrayList<Creature> creatures;
-    private ArrayList<Adventurer> adventurers;
     private Dice dice;
     private Maze maze;
 
@@ -52,14 +49,12 @@ public class Polymorphia {
      */
     public void playGame() {
 
-        // TODO - RANDOMLY DISTRIBUTE ADVENTURERS, CREATURES, & FOOD
-
         // Print the initial state of the game
         printMaze();
 
         // While both adventurers and creatures alive in Maze, take turns
-        int numAdventurersAlive = adventurers.size();
-        int numCreaturesAlive = creatures.size();
+        int numAdventurersAlive = maze.getAdventurers().size(); // TODO - REPLACE (SIERRA)
+        int numCreaturesAlive = maze.getCreatures().size(); // TODO - REPLACE (SIERRA)
 
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();
@@ -100,17 +95,16 @@ public class Polymorphia {
         printMaze();  // Print current state of the maze
 
         // get states of room using maze class
-        Room[] rooms = new Room[0]; // TODO - TEMP VAR NEED MAZE
+        ArrayList<Room> rooms = maze.getRooms();
 
 
-        // TODO - If Characters are killed, they need to be removed from both room & list of adventurers/creatures
 
         ArrayList<Adventurer> adventurersToMove = new ArrayList<>();
 
         for (Room room : rooms) {
 
             // Check #1: Are there any adventures present?
-            List<Adventurer> adventurersPresent = room.getAdventurers(); // TODO - MAKE SURE RETURNS IN SORTED ORDER
+            List<Adventurer> adventurersPresent = room.getAdventurers(); // TODO - MAKE SURE RETURNS IN SORTED ORDER (SIERRA in RoomTest)
             int numAdventurersPresent = adventurersPresent.size();
 
             // NO -> No action needed, move on to next room
@@ -124,9 +118,6 @@ public class Polymorphia {
             List<Creature> creaturesPresent = room.getCreatures(); // TODO - MAKE SURE RETURNS IN SORTED ORDER
             int numCreaturesPresent = creaturesPresent.size();
 
-            // TODO - MAYBE ONLY HAVE getHealthiestCreature
-            // If creature present, returns Creature
-            // If no creatures, return null
 
             // YES -> A fight will take place between the healthiest adventurer and creature, plus other adventurer moves
             if (numCreaturesPresent > 0) {
@@ -199,21 +190,8 @@ public class Polymorphia {
     }
 
 
-    /**
-     * moveAdventurer: moves the adventurer to a random neighboring room
-     * neighboring room = roomIndex +- 1
-     * ensure index is in range of rooms array
-     */
-    public void moveAdventurer(Adventurer adventurer) {
 
-        // TODO - UPDATE TO REFLECT MAZE STRUCTURE
 
-        // decrement adventurer's health by 0.25
-        adventurer.subtractFromHealth(0.25);
-
-    }
-
-    // TODO -  IF CREATURE OR ADVENTURER DIES, NEED TO TAKE THEM OUT OF ROOM AND LIST OF CHARACTERS
 
     /**
      * fight: calls Character.rollDie() for Creature and Adventurer. Character with lower roll takes damage
@@ -232,7 +210,7 @@ public class Polymorphia {
         } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
             int damage = adventurerRoll - creatureRoll;
             creature.subtractFromHealth(damage);  // take damage
-            if(creature.getHealth() < 0) {// TODO - ISALIVE METHOD ???
+            if(creature.getHealth() < 0) {// TODO - ISALIVE METHOD ??? (DO THIS LAST)
                 kill(creature);
             }
             logger.info("Adventurer wins the round. Creature takes " + damage + " damage.");
@@ -250,14 +228,12 @@ public class Polymorphia {
 
     public void kill (Character characterToDie) {
         // Remove them from maze
-        //maze.removeCharacter(characterToDie); // TODO - IMPLEMENT IN MAZE & UNCOMMENT
+        //maze.removeCharacter(characterToDie); // TODO - IMPLEMENT IN MAZE & UNCOMMENT (COME BACK)
 
         // Remove from Polymorphia field
         if(characterToDie instanceof Adventurer) {
-            adventurers.remove(characterToDie);
             logger.info("Adventurer " + characterToDie.toString() + " was killed.");
         }else if(characterToDie instanceof Creature) {
-            creatures.remove(characterToDie);
             logger.info("Creature " + characterToDie.toString() + " was killed.");
         } else {
             throw new IllegalStateException("Should be no instance of Character, cannot kill.");

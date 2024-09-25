@@ -89,9 +89,9 @@ public class Room {
 
     /* COMPLEX METHODS */
 
-    // TODO - getHealthiestAdventurer
+    // TODO - getHealthiestAdventurer (SIERRA)
 
-    // TODO - getHealthiestCreature
+    // TODO - getHealthiestCreature (SIERRA)
 
 
     public Boolean isFoodPresent () {
