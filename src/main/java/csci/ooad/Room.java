@@ -138,7 +138,7 @@ public class Room {
     public boolean hasCharacter(Character character) {
         boolean characterFound = false;
         for (Character occupant : occupants) {
-            if (Objects.equals(occupant.getName(), character.getName())) {
+            if (occupant.getName() == character.getName()) {
                 characterFound = true;
                 break;
             }

@@ -1,6 +1,7 @@
 package csci.ooad;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Maze {
     private int numberOfRooms = 0;
@@ -55,16 +56,16 @@ public class Maze {
     }
 
 
-    public void updateGrid(Maze maze, Room room ){
-        Room[][] grid = maze.getGrid();
-
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                Room currentRoom = grid[i][j];
-                if (currentRoom.equals(room)) {
-                    grid[i][j] = room;
-                }
-            }
-        }
-    }
+//    public void updateGrid(Maze maze, Room room ){
+//        Room[][] grid = maze.getGrid();
+//
+//        for (int i = 0; i < grid.length; i++) {
+//            for (int j = 0; j < grid[i].length; j++) {
+//                Room currentRoom = grid[i][j];
+//                if (Objects.equals(currentRoom.getName(), room.getName())){
+//                    grid[i][j] = room;
+//                }
+//            }
+//        }
+//    }
 }

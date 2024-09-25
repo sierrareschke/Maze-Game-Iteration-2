@@ -80,10 +80,10 @@ public class Character {
         // Generate a random number between 0 and 2 (inclusive)
         int randomX = random.nextInt(3);
         int randomY = random.nextInt(3);
+        System.out.println(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
         room.addOccupant(this);
-        maze.updateGrid(maze, room);
         System.out.println(room);
     }
 
