@@ -14,6 +14,7 @@ public class Room {
     private String name;
     private List<Character> occupants;
     private List<Food> foods;
+    private int index = 0;
 
 
     /* *
@@ -35,6 +36,12 @@ public class Room {
      */
     public Room(String name){
         this.name = name;
+        this.occupants = new ArrayList<>(); // Initializes with an empty a
+    }
+
+    public Room(String name, int index){
+        this.name = name;
+        this.index = index;
         this.occupants = new ArrayList<>(); // Initializes with an empty a
     }
 
