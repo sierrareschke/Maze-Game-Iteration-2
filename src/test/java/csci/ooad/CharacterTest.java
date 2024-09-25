@@ -122,13 +122,27 @@ public class CharacterTest {
 
         // Find Characters current room
         HashMap<String, Integer> currentRoomCoordinates  = character.currentRoomCoordinates(this.maze);
+        int currentX = currentRoomCoordinates.get("x");
+        int currentY = currentRoomCoordinates.get("y");
+
+        assertTrue(currentX >= 0 && currentX <= 2, "currentX should be between 0 and 2.");
+        assertTrue(currentY >= 0 && currentY <= 2, "currentY should be between 0 and 2.");
 
         // Move the character
         character.move(maze, currentRoomCoordinates);
 
+        HashMap<String, Integer> newRoomCoordinates = character.currentRoomCoordinates(this.maze);
+        int newX = newRoomCoordinates.get("x");
+        int newY = newRoomCoordinates.get("y");
+        assertTrue(newX >= 0 && newX <= 2, "NewX should be between 0 and 2.");
+        assertTrue(newY >= 0 && newY <= 2, "newY should be between 0 and 2.");
+
         // Make sure the move was correct here
-        // TODO: assert that initial position is correct
         // TODO: assert that the move was carried out correctly
+        int sumCurrent = currentY + currentX;
+        int sumNew = newY + newX;
+        int moveDifference = Math.abs(sumCurrent - sumNew);
+        assertTrue(moveDifference <= 1, "Sum current should be equal to Sum new");
 
     }
 
