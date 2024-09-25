@@ -1,6 +1,7 @@
 package csci.ooad;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -106,5 +107,20 @@ public class Maze {
      * 		Creatures:
      * 		Food: Steak
      */
+
+    // Getters
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+    public boolean isSquareMatrix() {
+        return isSquareMatrix;
+    }
+    public Room[][] getGrid() {
+        return grid;
+    }
+    
+    public Room getRoomInGrid(int x, int y){
+        return grid[x][y];
+    }
 
 }
