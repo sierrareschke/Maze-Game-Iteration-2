@@ -66,8 +66,9 @@ public class Character {
         }
     }
 
-    public void move(Maze maze, HashMap<String, Integer> coords) {
+    public void move(Maze maze) {
         Random rand = new Random();
+        HashMap<String, Integer> coords = this.currentRoomCoordinates(maze);
 
         // Grid coordinates of the current room
         int x = coords.get("x");

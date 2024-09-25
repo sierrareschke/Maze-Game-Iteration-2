@@ -106,7 +106,7 @@ public class CharacterTest {
         assertTrue(currentY >= 0 && currentY <= 2, "currentY should be between 0 and 2.");
 
         // Move the character
-        character.move(maze, currentRoomCoordinates);
+        character.move(maze);
 
         HashMap<String, Integer> newRoomCoordinates = character.currentRoomCoordinates(this.maze);
         int newX = newRoomCoordinates.get("x");

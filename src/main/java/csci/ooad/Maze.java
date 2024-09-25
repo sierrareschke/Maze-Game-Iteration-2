@@ -55,6 +55,7 @@ public class Maze {
                 // writes the rooms to the grid in order
                 matrix[i/mazeDimensions][i%mazeDimensions] = listOfRooms.get(i);
             }
+            this.grid = matrix;
             return matrix;
         } else {
             logger.error("Number of rooms must be a square matrix.");
