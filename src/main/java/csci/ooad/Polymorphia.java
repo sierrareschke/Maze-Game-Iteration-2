@@ -19,11 +19,10 @@ public class Polymorphia {
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
     // TODO - Do we include creatures & adventurers if rooms has them? Do we need a global variable for them?
-    private Creature[] creatures;
-    private Adventurer[] adventurers;
+    private ArrayList<Creature> creatures;
+    private ArrayList<Adventurer> adventurers;
     private Dice dice;
     private Maze maze;
-    private Character winner;
 
     /* *
      *  CONSTRUCTORS
@@ -32,7 +31,6 @@ public class Polymorphia {
     public Polymorphia() {
         this.turnCount = 0;
         dice = new Dice();
-        winner = null;
     }
 
 
@@ -59,27 +57,26 @@ public class Polymorphia {
         printMaze();
 
         // While both adventurers and creatures alive in Maze, take turns
-        int numAdventurersAlive = adventurers.length;
-        int numCreaturesAlive = creatures.length;
+        int numAdventurersAlive = adventurers.size();
+        int numCreaturesAlive = creatures.size();
 
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();
         }
 
-        // TODO - FINISH IMPLEMENTING WINNER DETERMINATION
         // The game has ended and a winner is determined by Characters left
 
         // RESULT #1 : All Adventures & Creatures have died, no winner
         if(numAdventurersAlive <= 0 && numCreaturesAlive <= 0) {
-            winner = null;
+            logger.info("All adventurers & creatures have died, no winner!");
         }
         // RESULT #2 : Adventurers have killed all of the Creatures
         else if (numAdventurersAlive > 0) {
-            //winner = healthiestAdventurer?
+            logger.info("Yay, the Adventurers won!");
         }
         // RESULT #3 : Creatures have killed all of the Adventurers
         else if (numCreaturesAlive > 0) {
-            // winner = healthiesCreature?
+            logger.info("Boo, the Creatures won!");
         } else {
             throw new IllegalStateException("Unexpected state: unable to determine a winner");
         }
@@ -101,19 +98,18 @@ public class Polymorphia {
         turnCount++; // increment turn count
         printMaze();  // Print current state of the maze
 
-        // TODO - Are the rooms getting evaluated in their original state or are the states changing during for loop?
         // get states of room using maze class
-        Room[] rooms = new Room[0]; // TODO - TEMP VAR
+        Room[] rooms = new Room[0]; // TODO - TEMP VAR NEED MAZE
 
 
         // TODO - If Characters are killed, they need to be removed from both room & list of adventurers/creatures
 
-
+        ArrayList<Adventurer> adventurersToMove = new ArrayList<>();
 
         for (Room room : rooms) {
 
             // Check #1: Are there any adventures present?
-            List<Adventurer> adventurersPresent = room.getAdventurers();
+            List<Adventurer> adventurersPresent = room.getAdventurers(); // TODO - MAKE SURE RETURNS IN SORTED ORDER
             int numAdventurersPresent = adventurersPresent.size();
 
             // NO -> No action needed, move on to next room
@@ -124,7 +120,7 @@ public class Polymorphia {
             // YES -> Action needed, continue to eval state of room
 
             // Check #2: Are there any creatures present?
-            List<Creature> creaturesPresent = room.getCreatures();
+            List<Creature> creaturesPresent = room.getCreatures(); // TODO - MAKE SURE RETURNS IN SORTED ORDER
             int numCreaturesPresent = creaturesPresent.size();
 
             // TODO - MAYBE ONLY HAVE getHealthiestCreature
@@ -143,7 +139,7 @@ public class Polymorphia {
                 // if there is a second adventurer, move it
                 if (numAdventurersPresent == 2) {
                     Adventurer weakerAdventurer = adventurersPresent.get(0);
-                    moveAdventurer(weakerAdventurer);
+                    adventurersToMove.add(weakerAdventurer);
                 }
                 continue;
             }
@@ -169,15 +165,21 @@ public class Polymorphia {
                         logger.info(adventurer.getName() + " has no food to eat.");
                     }
                 }
-                continue; // TODO -  Note: adventures stay in room after eating in this scenario
+                continue; // Note: adventures stay in room after eating in this scenario
             }
 
             // NO -> All adventurers must move to a neighboring room
 
             // Move adventurers while there are still adventurers to move
-            for(Adventurer adventurer : adventurersPresent) {
+            adventurersToMove.addAll(adventurersPresent);
+        }
+
+        // After iterating through Rooms in Maze, move Adventurers to neighbors
+        if(adventurersToMove != null) {
+            for(Adventurer adventurer : adventurersToMove){
                 moveAdventurer(adventurer);
             }
+            adventurersToMove.clear();
         }
     }
 
@@ -210,6 +212,8 @@ public class Polymorphia {
 
     }
 
+    // TODO -  IF CREATURE OR ADVENTURER DIES, NEED TO TAKE THEM OUT OF ROOM AND LIST OF CHARACTERS
+
     /**
      * fight: calls Character.rollDie() for Creature and Adventurer. Character with lower roll takes damage
      * equal to the difference in the rolls.
@@ -227,12 +231,37 @@ public class Polymorphia {
         } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
             int damage = adventurerRoll - creatureRoll;
             creature.subtractFromHealth(damage);  // take damage
+            if(creature.getHealth() < 0) {// TODO - ISALIVE METHOD ???
+                kill(creature);
+            }
             logger.info("Adventurer wins the round. Creature takes " + damage + " damage.");
         } else { // creature wins, subtract the difference from the adventurer's health
             int damage = creatureRoll - adventurerRoll;
             adventurer.subtractFromHealth(damage);  // take damage
+            if(adventurer.getHealth() < 0) {
+                kill(adventurer);
+            }
             logger.info("Creature wins the round. Adventurer takes " + damage + " damage.");
         }
+    }
+
+
+
+    public void kill (Character characterToDie) {
+        // Remove them from maze
+        //maze.removeCharacter(characterToDie); // TODO - IMPLEMENT IN MAZE & UNCOMMENT
+
+        // Remove from Polymorphia field
+        if(characterToDie instanceof Adventurer) {
+            adventurers.remove(characterToDie);
+            logger.info("Adventurer " + characterToDie.toString() + " was killed.");
+        }else if(characterToDie instanceof Creature) {
+            creatures.remove(characterToDie);
+            logger.info("Creature " + characterToDie.toString() + " was killed.");
+        } else {
+            throw new IllegalStateException("Should be no instance of Character, cannot kill.");
+        }
+
     }
 
 
