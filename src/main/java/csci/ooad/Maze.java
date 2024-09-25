@@ -2,21 +2,65 @@ package csci.ooad;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Maze {
+
+    /* *
+     *  FIELDS
+     * */
+    private static final Logger logger = LoggerFactory.getLogger(Character.class);
+
     private int numberOfRooms = 0;
-    private boolean isSquareMatrix = false;
     private Room[][] grid = null;
 
-    // Constructor for the maze
-    Maze(int numberOfRooms, List<Room> listOfRooms) {
-        this.isSquareMatrix = canFormSquareMatrix(numberOfRooms);
-        this.numberOfRooms = numberOfRooms;
-        this.grid = initializeRooms(listOfRooms);
+    /* *
+     *  CONSTRUCTORS
+     * */
 
+
+    // TODO - SHOULD THERE BE AN ERROR THROWN IN CONSTRUCTOR IF NOT SQUARE MATRIX
+
+    Maze(List<Room> listOfRooms) {
+        int numRooms = listOfRooms.size();
+
+        if(numRooms <= 0) {
+            throw new IllegalArgumentException("Number of rooms must be greater than 0.");
+        } else if (canFormSquareMatrix(numRooms)) {
+            this.numberOfRooms = numRooms;
+            this.grid = initializeRooms(listOfRooms);
+        } else{
+            throw new IllegalArgumentException("The number of rooms must be a square.");
+        }
     }
 
+    /* *
+     *  METHODS
+     * */
+
+
+    /* GETTERS & SETTERS */
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+
+    public Room[][] getGrid() {
+        return grid;
+    }
+
+
+
+    /* COMPLEX METHODS */
+
+    /**
+     * Takes list of rooms and initializes them into a 2D grid
+     * @param listOfRooms - an array of already instantiated Rooms
+     * @return - a 2D array of Rooms
+     */
     private Room[][] initializeRooms(List<Room> listOfRooms){
-        if (isSquareMatrix){
+        if (canFormSquareMatrix(numberOfRooms)) {
             // Find the square root to determine matrix size
             int mazeDimensions = (int) Math.sqrt(this.numberOfRooms);
             // initialize the 2D array
@@ -26,7 +70,10 @@ public class Maze {
                 matrix[i/mazeDimensions][i%mazeDimensions] = listOfRooms.get(i);
             }
             return matrix;
-        } else return null;
+        } else {
+            logger.error("Number of rooms must be a square matrix.");
+            return null;
+        }
 
     }
 
@@ -39,14 +86,25 @@ public class Maze {
         return sqrt == Math.floor(sqrt);
     }
 
-    // Getters
-    public int getNumberOfRooms() {
-        return numberOfRooms;
-    }
-    public boolean isSquareMatrix() {
-        return isSquareMatrix;
-    }
-    public Room[][] getGrid() {
-        return grid;
-    }
+
+    // TODO - OVERRIDE TO STRING FOR PRINT MAZE
+    /**
+     * Northwest:
+     *      Adventurers:
+     * 		Creatures:
+     * 		Food:
+     * Northeast:
+     *      Adventurers: Adventurer Sheri(health: 6.0)
+     * 		Creatures: Creature Balrog(health: 3.0)
+     * 		Food:
+     * Southwest:
+     *      Adventurers:
+     * 		Creatures:
+     * 		Food:
+     * Southeast:
+     *      Adventurers:
+     * 		Creatures:
+     * 		Food: Steak
+     */
+
 }

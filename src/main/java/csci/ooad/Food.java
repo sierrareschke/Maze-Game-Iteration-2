@@ -6,12 +6,20 @@ import java.util.Random;
 
 
 public class Food {
+
+    /* *
+     *  FIELDS
+     * */
+
     private String name;
     private int healthGranted;
 
+    /* *
+     *  CONSTRUCTORS
+     * */
 
     public Food() {
-        // Generate random food nameddfdfdd
+        // Generate random food named
         List<String> foodNameOptions = new ArrayList<>();
         foodNameOptions.add("Bread");
         foodNameOptions.add("Cake");
@@ -33,6 +41,10 @@ public class Food {
         this.healthGranted = 1;
     }
 
+    /* *
+     *  METHODS
+     * */
+
     public String getName() {
         return this.name;
     }
@@ -40,4 +52,5 @@ public class Food {
     public int getHealthGranted() {
         return this.healthGranted;
     }
+
 }

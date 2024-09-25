@@ -2,20 +2,26 @@ package csci.ooad;
 
 
 public class Adventurer extends Character {
-    /**
-     * Constructor for Adventurer objects, calls constructor of Creature superclass
-     * @param adventurerName - name of adventurer
-     */
+
+    /* *
+     *  CONSTRUCTORS
+     * */
+
     public Adventurer(String name) {
         super(name);
     }
 
-    // Method to increase health
-    public void eat(Food foodItem) {
-        int healAmount = foodItem.getHealthGranted();
-        double characterHealth = this.getHealth();
-        characterHealth += healAmount;
-        this.setHealth(characterHealth);
+    /* *
+     *  METHODS
+     * */
+
+    /**
+     *  Increments the Adventurer's health by what's gained from food item
+     * @param food - food item being eaten by the Adventurer
+     */
+    public void eatFood(Food food) {
+        double healthGained = food.getHealthGranted();
+        this.addToHealth(healthGained);
     }
 
 }

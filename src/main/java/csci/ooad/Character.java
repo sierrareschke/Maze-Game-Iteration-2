@@ -1,49 +1,65 @@
 package csci.ooad;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Character {
+
+    /* *
+     *  FIELDS
+     * */
+
+    private static final Logger logger = LoggerFactory.getLogger(Character.class);
 
     private String name;
     private double health;
 
-    /**
-     * Constructor for Character objects. Sets name and initial health (5.0)
-     * @param name - name of Character
-     */
+    /* *
+    *  CONSTRUCTORS
+    * */
+
     Character(String name) {
         this.name = name;
         this.health = 5.0; // initial health set to 5.0
     }
 
-    /**
-     * returns the name of the Character
-     * @return - name
-     */
+    /* *
+     *  METHODS
+     * */
+
+    /* GETTERS & SETTERS */
+
     public String getName() {return name;}
 
-    /**
-     * Method to get current health
-     * @return health - the Character's current health
-     */
     public double getHealth() {
         return this.health;
     }
 
-    // Setters
-    public void setHealth(double health){
-        this.health = health;
+
+
+    /* COMPLEX METHODS */
+
+    /**
+     * Decrements the Character's health by value passed
+     * @param numToSubtract - character's health substracts by number passed
+     */
+    public void subtractFromHealth(double numToSubtract) {
+        if (numToSubtract > 0) {
+            this.health -= numToSubtract;
+        } else {
+            logger.error("Value to subtract from health must be positive");
+        }
     }
 
     /**
-     * Decrements the Character's health by adding a negative number
-     * @param numToSubtract - a negative value passed to decrease the character's health by
+     * Increments the Character's health by value passed
+     * @param numToAdd - character's health increased by number passed
      */
-    public void subtractFromHealth(double numToSubtract) {
-        // check that numToSubtract is negative
-        if (numToSubtract < 0) {
-            this.health += numToSubtract; // adding negative number subtracts health
+    public void addToHealth(double numToAdd) {
+        if(numToAdd > 0) {
+            this.health += numToAdd;
         } else {
-            System.out.println("Value must be negative to subtract from health.");
+            logger.error("Value to add to health must be positive");
         }
     }
 

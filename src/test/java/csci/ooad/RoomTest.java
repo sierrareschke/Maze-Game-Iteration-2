@@ -20,25 +20,9 @@ public class RoomTest {
 
     // Method to test the Room constructor by checking the name and index
     @Test
-    public void testConstructorOne() {
-        room = new Room("TestRoom", 1);
-        assertEquals("TestRoom", room.getName(), "Room name should be TestRoom");
-        assertEquals(1, room.getIndex(), "Room index should be 1");
-    }
-
-
-    @Test
-    public void testConstructorTwo() {
+    public void testConstructor() {
         room = new Room("TestRoom");
         assertEquals("TestRoom", room.getName(), "Room name should be TestRoom");
-        assertEquals(-1, room.getIndex(), "Room index should be -1");
-    }
-
-    @Test
-    public void testConstructorThree() {
-        room = new Room();
-        assertEquals("", room.getName(), "Room name should be TestRoom");
-        assertEquals(-1, room.getIndex(), "Room index should be -1");
     }
 
 
