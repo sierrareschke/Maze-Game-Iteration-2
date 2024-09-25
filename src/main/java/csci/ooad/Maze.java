@@ -15,6 +15,7 @@ public class Maze {
 
     private int numberOfRooms = 0;
     private Room[][] grid = null;
+    private boolean isSquareMatrix;
 
     /* *
      *  CONSTRUCTORS
@@ -35,22 +36,6 @@ public class Maze {
             throw new IllegalArgumentException("The number of rooms must be a square.");
         }
     }
-
-    /* *
-     *  METHODS
-     * */
-
-
-    /* GETTERS & SETTERS */
-    public int getNumberOfRooms() {
-        return numberOfRooms;
-    }
-
-
-    public Room[][] getGrid() {
-        return grid;
-    }
-
 
 
     /* COMPLEX METHODS */
@@ -113,12 +98,11 @@ public class Maze {
         return numberOfRooms;
     }
     public boolean isSquareMatrix() {
-        return isSquareMatrix;
+        return this.isSquareMatrix;
     }
     public Room[][] getGrid() {
         return grid;
     }
-    
     public Room getRoomInGrid(int x, int y){
         return grid[x][y];
     }

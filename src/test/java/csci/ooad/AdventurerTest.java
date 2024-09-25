@@ -33,7 +33,7 @@ public class AdventurerTest {
         Adventurer adventurer = new Adventurer("John");
         double adventurerHealth = adventurer.getHealth();
         Food food = new Food();
-        adventurer.eat(food);
+        adventurer.eatFood(food);
         double adventurerNewHealth = adventurer.getHealth();
         assertEquals(adventurerNewHealth, adventurerHealth + 1);
     }

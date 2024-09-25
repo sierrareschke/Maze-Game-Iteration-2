@@ -29,7 +29,7 @@ public class CharacterTest {
             roomIndex++;
         }
 
-        this.maze = new Maze(listOfRooms.size(), listOfRooms);
+        this.maze = new Maze(listOfRooms);
     }
 
     // Test the initial health of the character
