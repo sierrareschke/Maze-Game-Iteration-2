@@ -22,9 +22,15 @@ public class Character {
     *  CONSTRUCTORS
     * */
 
-    Character(String name) {
+    // TODO - delete
+//    Character(String name) {
+//        this.name = name;
+//        this.health = 5.0; // initial health set to 5.0 for adventurers
+//    }
+
+    Character(String name, double health) {
         this.name = name;
-        this.health = 5.0; // initial health set to 5.0
+        this.health = health; // initial health set to 5.0 for adventurers and 3.0 for creatures
     }
 
     /* *
