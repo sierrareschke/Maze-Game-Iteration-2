@@ -88,8 +88,17 @@ public class Character {
         int moveY = (int) (Math.random() * 3) - 1;
 
         // Adjust the coordinates to move to a neighboring room
-        int newX = Math.max(0, Math.min(2, x + moveX));
-        int newY = Math.max(0, Math.min(2, y + moveY));
+        boolean moveAlongX = rand.nextBoolean();
+        int newX;
+        int newY;
+        if (moveAlongX) {
+            newX = Math.max(0, Math.min(2, x + moveX));
+            newY = y;
+        } else {
+            newX = x;
+            newY = Math.max(0, Math.min(2, y + moveY));
+        }
+
         Room newRoom = maze.getRoomInGrid(newX, newY);
 
         // Move the character to the new room
