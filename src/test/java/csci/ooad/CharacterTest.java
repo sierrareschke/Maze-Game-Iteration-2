@@ -73,38 +73,15 @@ public class CharacterTest {
     }
 
     @Test
-    public void testCharacterSpawn() {
-        boolean characterFound = false;
-
-        // Assign the character to room
-        character.spawn(this.maze);
-
-        Room[][] grid = maze.getGrid();
-        System.out.println(Arrays.deepToString(grid));
-
-        Room currentRoom = null;
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                currentRoom = grid[i][j];
-                if (currentRoom.hasCharacter(character)) {
-                    characterFound = true;
-                }
-            }
-
-            assertTrue(characterFound, "Character should be in the Maze");
-        }
-    }
-
-    @Test
     public void testAdventureSpawn() {
         boolean adventurerFound = false;
 
         // Assign the character to room
         adventurer.spawn(maze);
 
-         HashMap<String, Integer>coords = adventurer.currentRoomCoordinates(maze);
-         int x = coords.get("x");
-         int y = coords.get("y");
+        HashMap<String, Integer>coords = adventurer.currentRoomCoordinates(maze);
+        int x = coords.get("x");
+        int y = coords.get("y");
 
         Room[][] grid = maze.getGrid();
 
