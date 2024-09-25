@@ -28,7 +28,8 @@ public class Polymorphia {
      *  CONSTRUCTORS
      * */
 
-    public Polymorphia() {
+    public Polymorphia(Maze maze) {
+        this.maze = maze;
         this.turnCount = 0;
         dice = new Dice();
     }
@@ -177,7 +178,7 @@ public class Polymorphia {
         // After iterating through Rooms in Maze, move Adventurers to neighbors
         if(adventurersToMove != null) {
             for(Adventurer adventurer : adventurersToMove){
-                moveAdventurer(adventurer);
+                adventurer.move(maze);
             }
             adventurersToMove.clear();
         }

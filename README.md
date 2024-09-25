@@ -10,7 +10,7 @@ a team in a Test-Driven manner.
 
 Put all team members' names here:
 
-    Name: Sierra Reschke, Grace Ohlsen and Nolan Brady (:
+    Name: Sierra Reschke, Grace Ohlsen and Nolan Brady
 
 For all code submissions, the following will be required:
 
