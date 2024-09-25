@@ -2,57 +2,98 @@ package csci.ooad;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Room {
 
+    /* *
+     *  FIELDS
+     * */
+
     private String name;
     private List<Character> occupants;
-    private int index = 0;
-    // TODO: Need to implement these for easy maze state searchinng.
     private List<Food> foods;
 
 
+    /* *
+     *  CONSTRUCTORS
+     * */
+
     /**
-     * Default constructor, initializes name, occupants, and index to default values
+     * Default constructor, initializes name & occupants to default values
      */
     public Room() {
         this.name = "";
         this.occupants = new ArrayList<>(); // Initializes with an empty array
-        this.index = -1;//
     }
 
 
     /**
-     * Room constructor with a room name. Initializes the room name to name and
-     * occupants and room index to default values
+     * Room constructor with a room name. Initializes the room name to name & occupants to default values
      * @param name - name of Room
      */
     public Room(String name){
         this.name = name;
         this.occupants = new ArrayList<>(); // Initializes with an empty a
-        this.index = -1;
     }
 
-    /**
-     * Room constructor with name and index to initialize, also initializes an empty array for occupants
-     * @param name - name of Room
-     * @param index - index of Room
-     */
-    public Room(String name, int index) {
-        this.name = name;
-        this.occupants = new ArrayList<>(); // Initialize with an empty array
-        this.index = index;
+
+    /* *
+     *  METHODS
+     * */
+
+    /* GETTERS & SETTERS (w/ some other basic methods) */
+
+        // Name & Index
+
+    public String getName() { return this.name; }
+
+
+        // Occupants
+
+    public List<Character>getOccupants(){
+        return this.occupants;
     }
 
-    // ------------------ METHODS ------------------
+    public void addOccupant(Character occupant) { occupants.add(occupant); }
 
+    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
 
-    public String getName() {
-        return name;
+    public void emptyRoom() {
+        occupants.clear();
     }
 
-    public int getIndex() {return index;}
+        // Foods
+
+    public List<Food> getFood() {
+        return foods;
+    }
+
+    public void addFood(Food food) {
+        foods.add(food);
+    }
+
+    public void removeFood(Food food) {
+        foods.remove(food);
+    }
+
+
+
+    /* COMPLEX METHODS */
+
+    // TODO - getHealthiestAdventurer
+
+    // TODO - getHealthiestCreature
+
+
+    public Boolean isFoodPresent () {
+        if(foods == null) {
+            return false;
+        }else{
+            return true;
+        }
+    }
 
     public Boolean isAdventurerPresent () {
         boolean isPresent = false;
@@ -94,18 +135,6 @@ public class Room {
 
 
 
-    /**
-     * Method to add a Character to a room as an occupant
-     * @param occupant - Character object to add to the room
-     */
-    public void addOccupant(Character occupant) {
-        occupants.add(occupant);
-    }
-
-    // Get all occupants
-    public List<Character>getOccupants(){
-        return this.occupants;
-    }
 
 
     /**
@@ -113,7 +142,7 @@ public class Room {
      * @param occupant - Adventurer to remove from Room
      * @return the Adventurer that was removed
      */
-    public Adventurer removeAdventurer(Adventurer occupant) {
+    public Character removeCharacter(Character occupant) {
         // Check if the occupant is in the room
         boolean found = false;
         for (Character character : occupants) {
@@ -134,30 +163,23 @@ public class Room {
         return occupant;
     }
 
-
-    public void emptyRoom() {
-        occupants.clear();
-    }
-
-    public Boolean isFoodPresent () {
-        if(foods == null) {
-            return false;
-        }else{
-            return true;
+    public boolean hasCharacter(Character character) {
+        boolean characterFound = false;
+        for (Character occupant : occupants) {
+            if (occupant.getName() == character.getName()) {
+                characterFound = true;
+                break;
+            }
         }
+        return characterFound;
     }
 
-    public List<Food> getFood() {
-        return foods;
-    }
 
-    public void addFood(Food food) {
-        foods.add(food);
-    }
 
-    public void removeFood(Food food) {
-        foods.remove(food);
-    }
+
+
+
+
 
     /**
      * toString method of the Room to print out its occupants

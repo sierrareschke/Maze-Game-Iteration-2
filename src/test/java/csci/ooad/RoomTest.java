@@ -20,25 +20,9 @@ public class RoomTest {
 
     // Method to test the Room constructor by checking the name and index
     @Test
-    public void testConstructorOne() {
-        room = new Room("TestRoom", 1);
-        assertEquals("TestRoom", room.getName(), "Room name should be TestRoom");
-        assertEquals(1, room.getIndex(), "Room index should be 1");
-    }
-
-
-    @Test
-    public void testConstructorTwo() {
+    public void testConstructor() {
         room = new Room("TestRoom");
         assertEquals("TestRoom", room.getName(), "Room name should be TestRoom");
-        assertEquals(-1, room.getIndex(), "Room index should be -1");
-    }
-
-    @Test
-    public void testConstructorThree() {
-        room = new Room();
-        assertEquals("", room.getName(), "Room name should be TestRoom");
-        assertEquals(-1, room.getIndex(), "Room index should be -1");
     }
 
 
@@ -63,12 +47,12 @@ public class RoomTest {
         room.addOccupant(creature);
 
         // Remove the adventurer
-        Adventurer removedAdventurer = room.removeAdventurer(adventurer);
-        assertNotNull(removedAdventurer, "Removed adventurer should not be null.");
+        Character removedCharacter = room.removeCharacter(adventurer);
+        assertNotNull(removedCharacter, "Removed adventurer should not be null.");
         assertEquals(1, room.getOccupants().size(), "Room should have 1 occupant after removing the adventurer.");
 
         // Attempt to remove the same adventurer again, should return null
-        Adventurer removedAgain = room.removeAdventurer(adventurer);
+        Character removedAgain = room.removeCharacter(adventurer);
         assertNull(removedAgain, "Removing the same adventurer again should return null.");
     }
 

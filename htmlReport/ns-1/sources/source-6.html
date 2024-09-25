@@ -1,0 +1,243 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Room</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">csci.ooad</a>
+</div>
+
+<h1>Coverage Summary for Class: Room (csci.ooad)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Room</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (32/32)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package csci.ooad;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class Room {
+&nbsp;
+&nbsp;    private String name;
+&nbsp;    private List&lt;Character&gt; occupants;
+&nbsp;    private int index;
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Default constructor, initializes name, occupants, and index to default values
+&nbsp;     */
+<b class="fc">&nbsp;    public Room() {</b>
+<b class="fc">&nbsp;        this.name = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.occupants = new ArrayList&lt;&gt;(); // Initializes with an empty array</b>
+<b class="fc">&nbsp;        this.index = -1;//</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Room constructor with a room name. Initializes the room name to name and
+&nbsp;     * occupants and room index to default values
+&nbsp;     * @param name - name of Room
+&nbsp;     */
+<b class="fc">&nbsp;    public Room(String name){</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.occupants = new ArrayList&lt;&gt;(); // Initializes with an empty a</b>
+<b class="fc">&nbsp;        this.index = -1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Room constructor with name and index to initialize, also initializes an empty array for occupants
+&nbsp;     * @param name - name of Room
+&nbsp;     * @param index - index of Room
+&nbsp;     */
+<b class="fc">&nbsp;    public Room(String name,int index) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.occupants = new ArrayList&lt;&gt;(); // Initialize with an empty array</b>
+<b class="fc">&nbsp;        this.index = index;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // ------------------ METHODS ------------------
+&nbsp;
+&nbsp;
+&nbsp;    public String getName() {
+<b class="fc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public int getIndex() {return index;}</b>
+&nbsp;
+&nbsp;    public List&lt;Character&gt; getOccupants() {
+<b class="fc">&nbsp;        return occupants;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to add a Character to a room as an occupant
+&nbsp;     * @param occupant - Character object to add to the room
+&nbsp;     */
+&nbsp;    public void addOccupant(Character occupant) {
+<b class="fc">&nbsp;        occupants.add(occupant);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to remove an Adventurer occupant from a Room
+&nbsp;     * @param occupant - Adventurer to remove from Room
+&nbsp;     * @return the Adventurer that was removed
+&nbsp;     */
+&nbsp;    public Adventurer removeAdventurer(Adventurer occupant) {
+&nbsp;        // Check if the occupant is in the room
+<b class="fc">&nbsp;        boolean found = false;</b>
+<b class="fc">&nbsp;        for (Character character : occupants) {</b>
+<b class="pc">&nbsp;            if (character instanceof Adventurer &amp;&amp; character.equals(occupant)) {</b>
+<b class="fc">&nbsp;                found = true;</b>
+&nbsp;                break;
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        if (!found) {</b>
+<b class="fc">&nbsp;            return null; // Adventurer not found</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Remove the adventurer from the list of occupants
+<b class="fc">&nbsp;        occupants.remove(occupant);</b>
+&nbsp;
+&nbsp;        // Return the removed adventurer
+<b class="fc">&nbsp;        return occupant;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public void emptyRoom() {
+<b class="fc">&nbsp;        occupants.clear();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * toString method of the Room to print out its occupants
+&nbsp;     * @return String version of the room
+&nbsp;     *
+&nbsp;     * Ex. &quot;Northwest: No occupants are here.&quot;
+&nbsp;     * Ex. &quot;Southeast: Adventurer testAdventurer is here.&quot;
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="fc">&nbsp;        String result = name + &quot;:\n&quot;;</b>
+&nbsp;
+&nbsp;        // If the room is empty
+<b class="fc">&nbsp;        if (occupants.isEmpty()) {</b>
+<b class="fc">&nbsp;            result += &quot;No occupants are here.&quot;;</b>
+&nbsp;        } else {
+&nbsp;            // Add information about each occupant
+<b class="fc">&nbsp;            for (Character occupant : occupants) {</b>
+<b class="fc">&nbsp;                String occupantType = (occupant instanceof Adventurer) ? &quot;Adventurer&quot; : &quot;Creature&quot;;</b>
+<b class="fc">&nbsp;                result += occupantType + &quot; &quot; + occupant + &quot; is here. &quot;;</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-15 18:50</div>
+</div>
+</body>
+</html>

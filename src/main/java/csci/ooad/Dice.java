@@ -3,13 +3,24 @@ import java.util.Random;
 
 public class Dice {
 
+    /* *
+     *  FIELDS
+     * */
+
     private Random random;
+
+    /* *
+     *  CONSTRUCTORS
+     * */
 
     // Constructor to initialize Random object
     public Dice() {
         random = new Random();
     }
 
+    /* *
+     *  METHODS
+     * */
 
     /**
      * Method to roll the dice (return a number between 1 and 6)

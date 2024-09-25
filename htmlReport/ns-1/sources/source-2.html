@@ -1,0 +1,172 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Character</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">csci.ooad</a>
+</div>
+
+<h1>Coverage Summary for Class: Character (csci.ooad)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Character</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package csci.ooad;
+&nbsp;
+&nbsp;
+&nbsp;public class Character {
+&nbsp;
+&nbsp;    private String name;
+&nbsp;    private double health;
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for Character objects. Sets name and initial health (5.0)
+&nbsp;     * @param name - name of Character
+&nbsp;     */
+<b class="fc">&nbsp;    Character(String name) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.health = 5.0; // initial health set to 5.0</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * returns the name of the Character
+&nbsp;     * @return - name
+&nbsp;     */
+<b class="fc">&nbsp;    public String getName() {return name;}</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to get current health
+&nbsp;     * @return health - the Character&#39;s current health
+&nbsp;     */
+&nbsp;    public double getHealth() {
+<b class="fc">&nbsp;        return this.health;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Decrements the Character&#39;s health by adding a negative number
+&nbsp;     * @param numToSubtract - a negative value passed to decrease the character&#39;s health by
+&nbsp;     */
+&nbsp;    public void subtractFromHealth(double numToSubtract) {
+&nbsp;        // check that numToSubtract is negative
+<b class="fc">&nbsp;        if (numToSubtract &lt; 0) {</b>
+<b class="fc">&nbsp;            this.health += numToSubtract; // adding negative number subtracts health</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            System.out.println(&quot;Value must be negative to subtract from health.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * toString method to return Character&#39;s name(health: health)
+&nbsp;     * @return string of Character&#39;s name and health
+&nbsp;     * Ex. testAdventurer(health: 5.0)
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="fc">&nbsp;        return name + &quot;(health: &quot; + health + &quot;)&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-15 18:50</div>
+</div>
+</body>
+</html>
