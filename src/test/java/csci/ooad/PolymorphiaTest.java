@@ -234,24 +234,24 @@ public class PolymorphiaTest {
 
             // Iterate through all rooms to count occurrences of each scenario
             for (Room room : maze.getRooms()) {
-                int adventurersPresent = room.getNumAdventurers();
-                int creaturesPresent = room.getNumCreatures();
-                int foodPresent = room.getNumFood();
+                boolean adventurersPresent = room.isAdventurerPresent();
+                boolean creaturesPresent = room.isCreaturePresent();
+                boolean foodPresent = room.isFoodPresent();
 
                 // Scenario 1: No adventurers present
-                if (adventurersPresent == 0) {
+                if (!adventurersPresent) {
                     noAdventurersCount++;
                 }
                 // Scenario 2: Fight (adventurers and creatures present)
-                else if (adventurersPresent > 0 && creaturesPresent > 0) {
+                else if (adventurersPresent && creaturesPresent) {
                     fightsCount++;
                 }
                 // Scenario 3: Adventurers present but no food
-                else if (adventurersPresent > 0 && foodPresent == 0) {
+                else if (adventurersPresent && !foodPresent) {
                     adventurersNoFoodCount++;
                 }
                 // Scenario 4: Adventurers present with food available
-                else if (adventurersPresent > 0 && foodPresent > 0) {
+                else if (adventurersPresent && foodPresent) {
                     adventurersEatFoodCount++;
                 }
             }

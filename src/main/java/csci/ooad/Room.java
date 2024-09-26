@@ -93,11 +93,9 @@ public class Room {
 
     // TODO - getHealthiestCreature (SIERRA)
 
-    // TODO - getNumAdventurers (SIERRA)
 
-    // TODO - getNumCreatures (SIERRA)
 
-    // TODO - getNumFood (SIERRA)
+
 
     public Boolean isEmpty() {
         return this.occupants.isEmpty();
