@@ -7,8 +7,8 @@ public class Creature extends Character {
     /* *
      *  CONSTRUCTORS
      * */
-    public Creature(String creatureType) {
-        super(creatureType, CREATURE_INITIAL_HEALTH);
+    Creature(String name) {
+        super(name, CREATURE_INITIAL_HEALTH);
     }
 
 }

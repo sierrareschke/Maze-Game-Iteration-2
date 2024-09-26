@@ -2,6 +2,7 @@ package csci.ooad;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -135,4 +136,11 @@ public class Maze {
         return rooms;
     }
 
+    public Collection<Object> getAdventurers() {
+        return null;
+    }
+
+    public Collection<Object> getCreatures() {
+        return null;
+    }
 }
