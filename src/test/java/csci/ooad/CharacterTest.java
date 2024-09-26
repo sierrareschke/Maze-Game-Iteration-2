@@ -16,8 +16,17 @@ public class CharacterTest {
     // This method will run before each test to initialize the character object
     @BeforeEach
     public void setUp() {
-        character = new Character("TestCharacter");
-        adventurer  = new Adventurer("TestAdventurer");
+        Creature creature = new Creature("TestCreature");
+        Adventurer adventurer  = new Adventurer("TestAdventurer");
+
+        ArrayList<Adventurer> adventurers = new ArrayList<>();
+        adventurers.add(adventurer);
+
+        ArrayList<Creature> creatures = new ArrayList<>();
+        creatures.add(creature);
+
+        ArrayList<Food> foodItems = new ArrayList<>();
+
         List<Room> listOfRooms = new ArrayList<>();
         // TODO: Probably could move this maze creation code to the BeforeEach statement
 //        Character testCharacter = new Character("TestCharacter");
@@ -29,7 +38,8 @@ public class CharacterTest {
             roomIndex++;
         }
 
-        this.maze = new Maze(listOfRooms);
+
+        this.maze = new Maze(listOfRooms, adventurers, creatures, foodItems);
     }
 
     // Test the initial health of the character

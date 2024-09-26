@@ -48,8 +48,16 @@ public class Maze {
     // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
     // TODO - areAdventurersAlive (Nolan)
 
-    // TODO - getCreatures (Nolan)
-    // TODO - getAdventurers (Nolan)
+    // TODO - getCreatures (Nolan) return a list of creatures
+    public List<Creature> getCreatures() {
+        return new ArrayList<>(); // TODO - placeholder, needs to be implemented
+    }
+
+    // TODO - getAdventurers (Nolan) return a list of adventurers
+    public List<Adventurer> getAdventurers() {
+        return new ArrayList<>(); // TODO - placeholder, needs to be implemented
+    }
+
 
     // TODO - RANDOMLY DISTRIBUTE CHARACTERS AND FOOD (Nolan)
 

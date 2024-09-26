@@ -53,8 +53,8 @@ public class Polymorphia {
         printMaze();
 
         // While both adventurers and creatures alive in Maze, take turns
-        int numAdventurersAlive = maze.getAdventurers().size(); // TODO - REPLACE (SIERRA)
-        int numCreaturesAlive = maze.getCreatures().size(); // TODO - REPLACE (SIERRA)
+        int numAdventurersAlive = maze.getAdventurers().size(); // TODO - updated this line but method needs to be implemented in maze
+        int numCreaturesAlive = maze.getCreatures().size(); // TODO - updated this line but method needs to be implemented in maze
 
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();

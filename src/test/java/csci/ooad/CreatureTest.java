@@ -18,7 +18,7 @@ public class CreatureTest {
     // Test the initial health of the creature
     @Test
     public void testInitialHealth() {
-        assertEquals(5.0, creature.getHealth(), "Initial creature health should be 5.0");
+        assertEquals(3.0, creature.getHealth(), "Initial creature health should be 3.0");
     }
 
     // Test the name access method for creature

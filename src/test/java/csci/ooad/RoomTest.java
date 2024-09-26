@@ -88,7 +88,7 @@ public class RoomTest {
         room.addOccupant(adventurer);
         room.addOccupant(creature);
 
-        String expectedOutput = "East:\nAdventurer Test Adventurer(health: 5.0) is here. Creature Test Creature(health: 5.0) is here. ";
+        String expectedOutput = "East:\nAdventurer Test Adventurer(health: 5.0) is here. Creature Test Creature(health: 3.0) is here. ";
         assertEquals(expectedOutput, room.toString(), "Room description with multiple occupants should match.");
     }
 
@@ -108,7 +108,6 @@ public class RoomTest {
         assertTrue(room.getOccupants().isEmpty());
     }
 
-    // TODO check method (sierra)
     // Test that the occupants (adventurers and creatures) are returned in sorted order by health
     @Test
     public void testOccupantsSortedByHealth() {
@@ -126,22 +125,21 @@ public class RoomTest {
         creature2.addToHealth(2.0);           // Dragon's health is now 5.0
 
         // Add occupants in a random order
-        room.addOccupant(adventurer1);
-        room.addOccupant(creature1);
         room.addOccupant(adventurer2);
         room.addOccupant(creature2);
+        room.addOccupant(adventurer1);
+        room.addOccupant(creature1);
 
         // Retrieve occupants sorted by health
         List<Adventurer> adventurers = room.getAdventurers(); // should be sorted by health
         List<Creature> creatures = room.getCreatures(); // should be sorted by health
 
-
         // Check if adventurers are sorted by health in ascending order
         assertEquals("Bill", adventurers.get(0).getName(), "First occupant should be Bill (health: 3.0).");
         assertEquals("Tim", adventurers.get(1).getName(), "Second occupant should be Tim (health: 4.0).");
 
-        assertEquals("Goblin", creatures.get(2).getName(), "Third occupant should be Goblin (health: 4.0).");
-        assertEquals("Dragon", creatures.get(3).getName(), "Fourth occupant should be Dragon (health: 5.0).");
+        assertEquals("Goblin", creatures.get(0).getName(), "Third occupant should be Goblin (health: 4.0).");
+        assertEquals("Dragon", creatures.get(1).getName(), "Fourth occupant should be Dragon (health: 5.0).");
     }
 
 
