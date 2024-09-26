@@ -49,14 +49,19 @@ public class Maze {
     // TODO - areAdventurersAlive (Nolan)
 
     // TODO - getCreatures (Nolan) return a list of creatures
-    public List<Creature> getCreatures() {
-        return new ArrayList<>(); // TODO - placeholder, needs to be implemented
+    public int getNumCreatures() {
+        return 0; // TODO - placeholder, needs to be implemented
     }
 
     // TODO - getAdventurers (Nolan) return a list of adventurers
-    public List<Adventurer> getAdventurers() {
-        return new ArrayList<>(); // TODO - placeholder, needs to be implemented
+    public int getNumAdventurers() {
+        return 0; // TODO - placeholder, needs to be implemented
     }
+
+    // TODO - getFood (Nolan)
+    public int getNumFoods() {
+        return 0;
+    } // for testing
 
 
     // TODO - RANDOMLY DISTRIBUTE CHARACTERS AND FOOD (Nolan)
@@ -141,6 +146,19 @@ public class Maze {
             rooms.addAll(Arrays.asList(grid[i]).subList(0, mazeDimensions));
         }
         return rooms;
+    }
+
+
+    public boolean containsCharacter(Character character) {
+        boolean found = false;
+        ArrayList<Room> rooms = getRooms();
+        for(Room room : rooms){
+            if(room.hasCharacter(character)){
+                found = true;
+                break;
+            }
+        }
+        return found;
     }
 
 }

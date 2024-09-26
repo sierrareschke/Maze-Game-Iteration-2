@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +16,8 @@ public class Polymorphia {
      *  FIELDS
      * */
 
-    private static final Logger logger = LoggerFactory.getLogger(Character.class);
+    private static final Logger logger = LoggerFactory.getLogger(Polymorphia.class);
 
-    private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
     private int turnCount;
     private Dice dice;
     private Maze maze;
@@ -53,31 +54,40 @@ public class Polymorphia {
         printMaze();
 
         // While both adventurers and creatures alive in Maze, take turns
-        int numAdventurersAlive = maze.getAdventurers().size(); // TODO - updated this line but method needs to be implemented in maze
-        int numCreaturesAlive = maze.getCreatures().size(); // TODO - updated this line but method needs to be implemented in maze
+        int numAdventurersAlive = maze.getNumAdventurers(); // TODO - updated this line but method needs to be implemented in maze
+        int numCreaturesAlive = maze.getNumCreatures(); // TODO - updated this line but method needs to be implemented in maze
 
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();
         }
 
         // The game has ended and a winner is determined by Characters left
+        determineWinner(numCreaturesAlive, numAdventurersAlive);
 
+
+
+    }
+
+
+
+    public int determineWinner(int numCreaturesAlive, int numAdventurersAlive) {
         // RESULT #1 : All Adventures & Creatures have died, no winner
-        if(numAdventurersAlive <= 0 && numCreaturesAlive <= 0) {
+        if(numAdventurersAlive == 0 && numCreaturesAlive == 0) {
             logger.info("All adventurers & creatures have died, no winner!");
+            return 0;
         }
         // RESULT #2 : Adventurers have killed all of the Creatures
         else if (numAdventurersAlive > 0) {
             logger.info("Yay, the Adventurers won!");
+            return 1;
         }
         // RESULT #3 : Creatures have killed all of the Adventurers
         else if (numCreaturesAlive > 0) {
             logger.info("Boo, the Creatures won!");
+            return 2;
         } else {
             throw new IllegalStateException("Unexpected state: unable to determine a winner");
         }
-
-
     }
 
 
