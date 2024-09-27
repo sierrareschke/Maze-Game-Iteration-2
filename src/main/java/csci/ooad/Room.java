@@ -7,6 +7,14 @@ import java.util.stream.Collectors;
 
 public class Room {
 
+    /**
+     * ------------- EXAMPLE OF DEPENDENCY INJECTION -------------
+     *  The occupants and foods lists are dependencies of the Room class.
+     *  Instead of the Room class creating instances of Character or Food internally,
+     *  these dependencies are injected into the Room instance through methods like
+     *  addOccupant(Character occupant) and addFood(Food food).
+     */
+
     /* *
      *  FIELDS
      * */

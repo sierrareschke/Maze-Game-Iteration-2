@@ -20,6 +20,14 @@ We also added the following:
 
 Our main challenge was identifying the best way to encapsulate while also maintaining functionality of the game.
 
+## EXAMPLES OF OOP PRINCIPLES
+* Cohesion - see Polymorphism
+* Encapsulation / Information Hiding - see Polymorphism
+* Polymorphism - see Polymorphism
+* Inheritance - see Polymorphism
+* Dependency Injection - see Room
+
+
 ## Game Output
 
 ### Output #1
