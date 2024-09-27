@@ -74,26 +74,26 @@ public class PolymorphiaTest2x2 {
 
     @Test
     void test2x2Init() {
-        ArrayList<Room> myRooms = new ArrayList<>();
-        Room roomOne = new Room("Room One");
-        Room roomTwo = new Room("Room Two");
-        Room roomThree = new Room("Room Three");
-        Room roomFour = new Room("Room Four");
-
-        myRooms.add(roomOne);
-        myRooms.add(roomTwo);
-        myRooms.add(roomThree);
-        myRooms.add(roomFour);
-
-        ArrayList<Adventurer> myAdventurers = new ArrayList<>();
-        myAdventurers.add(adventurers.get(0));
-
-        ArrayList<Creature> myCreatures = new ArrayList<>();
-        myCreatures.add(creatures.get(0));
-
-        maze = new Maze(myRooms,myAdventurers,myCreatures,foods);
-
-        polymorphia = new Polymorphia(maze);
+//        ArrayList<Room> myRooms = new ArrayList<>();
+//        Room roomOne = new Room("Room One");
+//        Room roomTwo = new Room("Room Two");
+//        Room roomThree = new Room("Room Three");
+//        Room roomFour = new Room("Room Four");
+//
+//        myRooms.add(roomOne);
+//        myRooms.add(roomTwo);
+//        myRooms.add(roomThree);
+//        myRooms.add(roomFour);
+//
+//        ArrayList<Adventurer> myAdventurers = new ArrayList<>();
+//        myAdventurers.add(adventurers.get(0));
+//
+//        ArrayList<Creature> myCreatures = new ArrayList<>();
+//        myCreatures.add(creatures.get(0));
+//
+//        maze = new Maze(myRooms,myAdventurers,myCreatures,foods);
+//
+//        polymorphia = new Polymorphia(maze);
 
         // Assertions to check the initialization
         // Check that there are 4 rooms
@@ -138,27 +138,27 @@ public class PolymorphiaTest2x2 {
 
     @Test
     void test2x2TakeTurn() {
-
-        ArrayList<Room> myRooms = new ArrayList<>();
-        Room roomOne = new Room("Room One");
-        Room roomTwo = new Room("Room Two");
-        Room roomThree = new Room("Room Three");
-        Room roomFour = new Room("Room Four");
-
-        myRooms.add(roomOne);
-        myRooms.add(roomTwo);
-        myRooms.add(roomThree);
-        myRooms.add(roomFour);
-
-        ArrayList<Adventurer> myAdventurers = new ArrayList<>();
-        myAdventurers.add(adventurers.get(0));
-
-        ArrayList<Creature> myCreatures = new ArrayList<>();
-        myCreatures.add(creatures.get(0));
-
-        maze = new Maze(myRooms,myAdventurers,myCreatures,foods);
-
-        polymorphia = new Polymorphia(maze);
+//
+//        ArrayList<Room> myRooms = new ArrayList<>();
+//        Room roomOne = new Room("Room One");
+//        Room roomTwo = new Room("Room Two");
+//        Room roomThree = new Room("Room Three");
+//        Room roomFour = new Room("Room Four");
+//
+//        myRooms.add(roomOne);
+//        myRooms.add(roomTwo);
+//        myRooms.add(roomThree);
+//        myRooms.add(roomFour);
+//
+//        ArrayList<Adventurer> myAdventurers = new ArrayList<>();
+//        myAdventurers.add(adventurers.get(0));
+//
+//        ArrayList<Creature> myCreatures = new ArrayList<>();
+//        myCreatures.add(creatures.get(0));
+//
+//        maze = new Maze(myRooms,myAdventurers,myCreatures,foods);
+//
+//        polymorphia = new Polymorphia(maze);
 
         int totalTurns = 10; // We will simulate 10 turns
         int noAdventurersCount = 0;
@@ -211,7 +211,7 @@ public class PolymorphiaTest2x2 {
     // TODO
     @Test
     void test2x2PrintMaze() {
-
+        assertTrue(false, "need to implement test2x2PrintMaze");
     }
 
 }

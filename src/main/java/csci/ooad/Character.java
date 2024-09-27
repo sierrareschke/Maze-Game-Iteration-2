@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 
     /* *
      *  FIELDS
@@ -15,18 +15,12 @@ public class Character {
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
 
     private String name;
-    private double health;
+    protected double health;
 
 
     /* *
     *  CONSTRUCTORS
     * */
-
-    // TODO - delete
-//    Character(String name) {
-//        this.name = name;
-//        this.health = 5.0; // initial health set to 5.0 for adventurers
-//    }
 
     Character(String name, double health) {
         this.name = name;

@@ -123,19 +123,6 @@ public class PolymorphiaTest {
         assertFalse(maze.containsCharacter(creature), "Creature should be removed from the maze after being killed.");
     }
 
-    @Test
-    void testKillInvalidCharacter() {
-        // Create a new object that's not an instance of Adventurer or Creature
-        Character invalidCharacter = new Character("Invalid Character",0.0);
-
-        // Expect an IllegalStateException when trying to kill an invalid character
-        Exception exception = assertThrows(IllegalStateException.class, () -> {
-            polymorphia.kill(invalidCharacter);
-        });
-
-        // Check the exception message
-        assertEquals("Should be no instance of Character, cannot kill.", exception.getMessage());
-    }
 
     @Test
     void testDetermineWinner() {
@@ -272,7 +259,7 @@ public class PolymorphiaTest {
     // TODO
     @Test
     void test3x3PrintMaze() {
-
+        assertTrue(false, "need to implement test2x2PrintMaze");
     }
 
 }

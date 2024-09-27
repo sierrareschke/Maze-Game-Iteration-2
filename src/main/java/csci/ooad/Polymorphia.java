@@ -57,6 +57,9 @@ public class Polymorphia {
         int numAdventurersAlive = maze.getNumAdventurers();
         int numCreaturesAlive = maze.getNumCreatures();
 
+        logger.info("numAdventurersAlive" + numAdventurersAlive);
+
+
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();
         }
@@ -193,8 +196,9 @@ public class Polymorphia {
     public void printMaze() {
 
         logger.info("Polymorphia Maze: turn " + turnCount);
-        logger.info(maze.toString());
-
+        logger.info(maze.toString()); // TODO this is just printing the maze object reference ?? and rooms seem to be printing randomly ??
+        // TODO - when are the rooms called to print if maze.toString() isn't implemented ??
+        // TODO - grace were you working on the toStrings?
     }
 
 
