@@ -22,6 +22,15 @@ public class Polymorphia {
     private Dice dice;
     private Maze maze;
 
+    /**
+     * ------------- EXAMPLE OF ENCAPSULATION -------------
+     *  The polymorphism class uses a Dice without being able to alter its state.
+     *  For example, polymorphism can't set the die value to be 4. It has
+     *  to roll the dice in order to get a value. That is encapsulation and its
+     *  important to have since we don't want to allow essentially "cheating" or
+     *  manipulation of the dice.
+     */
+
     /* *
      *  CONSTRUCTORS
      * */
@@ -91,6 +100,12 @@ public class Polymorphia {
     }
 
 
+    /**
+     * ------------- EXAMPLE OF COHESION -------------
+     *  takeTurn is an example of cohesion because it is responsible for all functionallities
+     *  related to one turn of the game. It is separate for other concerns of game play and
+     *  handles logic in an organized way.
+     */
 
     /**
      * takeTurn: Prints maze and turn number. Analyzes the room locations of the creatures and adventurers
@@ -235,6 +250,20 @@ public class Polymorphia {
     }
 
 
+
+    /**
+     * ------------- EXAMPLE OF POLYMORPHISM -------------
+     *  kill() is an example of polymorphism because it treats both Adventurer and
+     *  Creature as an instance of Character since they both are subclasses.
+     */
+
+    /**
+     * ------------- EXAMPLE OF INHERITANCE -------------
+     *  kill is also an example of inheritance because neither Adventurer nor
+     *  Creature have toString defined in their class. toString is defined in
+     *  Character, but it's able to be used in kill because they inherit the
+     *  method from their superclass.
+     */
 
     public void kill (Character characterToDie) {
         // Remove them from maze
