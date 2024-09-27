@@ -41,7 +41,6 @@ public class Maze {
     /* COMPLEX METHODS */
 
 
-    // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
     public boolean areCreaturesAlive(){
         ArrayList<Creature> allAlive = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -56,7 +55,6 @@ public class Maze {
         return !allAlive.isEmpty();
     }
 
-    // TODO - areAdventurersAlive (Nolan)
     public boolean areAdventuresAlive(){
         ArrayList<Adventurer> allAlive = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -184,9 +182,7 @@ public class Maze {
     public int getNumberOfRooms() {
         return numberOfRooms;
     }
-    public boolean isSquareMatrix() {
-        return this.isSquareMatrix;
-    }
+
     public Room[][] getGrid() {
         return grid;
     }
@@ -205,10 +201,6 @@ public class Maze {
             }
         }
         return rooms;
-    }
-
-    public Collection<Object> getAdventurers() {
-        return null;
     }
 
 

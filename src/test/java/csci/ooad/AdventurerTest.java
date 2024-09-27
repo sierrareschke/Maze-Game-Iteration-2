@@ -96,6 +96,14 @@ public class AdventurerTest {
         assertEquals(adventurerNewHealth, adventurerHealth + 1);
     }
 
+
+    @Test
+    public void testAdventurerIsAlive() {
+        assertEquals(true, adventurer.isAlive(), "Adventurer should initially be alive");
+        adventurer.subtractFromHealth(5.0);
+        assertEquals(false, adventurer.isAlive(), "Adventurer should be dead after subtracting 1.0");
+    }
+
     // Test subtractFromHealth with a positive (valid) value
     @Test
     public void testSubtractFromHealthValid() {

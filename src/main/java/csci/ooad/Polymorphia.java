@@ -60,7 +60,7 @@ public class Polymorphia {
         logger.info("numAdventurersAlive" + numAdventurersAlive);
 
 
-        while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
+        while (maze.areAdventuresAlive() && maze.areCreaturesAlive()) {
             takeTurn();
         }
 
@@ -115,7 +115,7 @@ public class Polymorphia {
         for (Room room : rooms) {
 
             // Check #1: Are there any adventures present?
-            List<Adventurer> adventurersPresent = room.getAdventurers(); // TODO - MAKE SURE RETURNS IN SORTED ORDER (SIERRA in RoomTest)
+            List<Adventurer> adventurersPresent = room.getAdventurers();
             int numAdventurersPresent = adventurersPresent.size();
 
             // NO -> No action needed, move on to next room
@@ -126,7 +126,7 @@ public class Polymorphia {
             // YES -> Action needed, continue to eval state of room
 
             // Check #2: Are there any creatures present?
-            List<Creature> creaturesPresent = room.getCreatures(); // TODO - MAKE SURE RETURNS IN SORTED ORDER
+            List<Creature> creaturesPresent = room.getCreatures();
             int numCreaturesPresent = creaturesPresent.size();
 
 
@@ -222,14 +222,14 @@ public class Polymorphia {
         } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
             int damage = adventurerRoll - creatureRoll;
             creature.subtractFromHealth(damage);  // take damage
-            if(creature.getHealth() < 0) {// TODO - ISALIVE METHOD ??? (DO THIS LAST)
+            if(creature.isAlive()) {
                 kill(creature);
             }
             logger.info("Adventurer wins the round. Creature takes " + damage + " damage.");
         } else { // creature wins, subtract the difference from the adventurer's health
             int damage = creatureRoll - adventurerRoll;
             adventurer.subtractFromHealth(damage);  // take damage
-            if(adventurer.getHealth() < 0) {
+            if(adventurer.isAlive()) {
                 kill(adventurer);
             }
             logger.info("Creature wins the round. Adventurer takes " + damage + " damage.");

@@ -24,6 +24,7 @@ public class Adventurer extends Character {
     public void eatFood(Food food) {
         double healthGained = food.getHealthGranted();
         this.addToHealth(healthGained);
+        // TODO - REMOVE FOOD (currently a constant amount of food??)
     }
 
 }
