@@ -91,4 +91,9 @@ public class MazeTest {
 
         assertEquals(originalRoomNames, fetchedRoomNames);
     }
+
+    @Test
+    public void testGetNumFoods(){
+        assertEquals(10, maze.getNumFoods());
+    }
 }
