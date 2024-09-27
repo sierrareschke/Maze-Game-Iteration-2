@@ -113,11 +113,6 @@ public class Maze {
         return this.getAllFoods().size();
     }
 
-    // TODO - removeCharacter(characterToDie) (Nolan)
-    public void removeCharacter(Character character){
-
-    }
-
     private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         for(Adventurer adventurer : adventurers) {
             adventurer.spawn(this);
@@ -229,16 +224,11 @@ public class Maze {
         return found;
     }
 
-    public void purge(Character character){
+    public void purge(Character character) {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
                 Room currentRoom = grid[i][j];
-                List<Character> currentOccupants = currentRoom.getOccupants();
-                for(Character occupant : currentOccupants){
-                    if (Objects.equals(occupant.getName(), character.getName())){
-                        currentRoom.removeOccupant(occupant);
-                    }
-                }
+                currentRoom.removeCharacter(character);
             }
         }
     }

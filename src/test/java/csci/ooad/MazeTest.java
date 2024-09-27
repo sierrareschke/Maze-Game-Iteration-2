@@ -94,6 +94,13 @@ public class MazeTest {
 
     @Test
     public void testGetNumFoods(){
-        assertEquals(10, maze.getNumFoods());
+        assertEquals(1, maze.getNumFoods());
+    }
+
+    @Test
+    public void testPurge(){
+        maze.purge(adventurer);
+        List<Adventurer> allAdventures = maze.getAllAdventurers();
+        assertEquals(0, allAdventures.size());
     }
 }

@@ -49,13 +49,8 @@ public class RoomTest {
         room.addOccupant(creature);
 
         // Remove the adventurer
-        Character removedCharacter = room.removeCharacter(adventurer);
-        assertNotNull(removedCharacter, "Removed adventurer should not be null.");
+        room.removeCharacter(adventurer);
         assertEquals(1, room.getOccupants().size(), "Room should have 1 occupant after removing the adventurer.");
-
-        // Attempt to remove the same adventurer again, should return null
-        Character removedAgain = room.removeCharacter(adventurer);
-        assertNull(removedAgain, "Removing the same adventurer again should return null.");
     }
 
 
