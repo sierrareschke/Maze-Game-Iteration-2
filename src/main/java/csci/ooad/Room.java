@@ -208,28 +208,56 @@ public class Room {
 
 
     /**
-     * toString method of the Room to print out its occupants
+     * toString method of the Room to print out its occupants in the desired format.
      * @return String version of the room
      *
-     * Ex. "Northwest: No occupants are here."
-     * Ex. "Southeast: Adventurer testAdventurer is here."
+     * Desired Output:
+     * Northwest:
+     *      Adventurers:
+     *      Creatures: Creature Ogre(health: 3.0)
+     *      Food: Fries
      */
     @Override
     public String toString() {
-        String result = name + ":\n";
+        StringBuilder result = new StringBuilder(name + ":\n");
 
-        // If the room is empty
-        if (occupants.isEmpty()) {
-            result += "No occupants are here.";
+        // Get adventurers in the room
+        List<Adventurer> adventurers = getAdventurers();
+        result.append("\tAdventurers: ");
+        if (adventurers.isEmpty()) {
+            result.append("\n");
         } else {
-            // Add information about each occupant
-            for (Character occupant : occupants) {
-                String occupantType = (occupant instanceof Adventurer) ? "Adventurer" : "Creature";
-                result += occupantType + " " + occupant + " is here. ";
+            for (Adventurer adventurer : adventurers) {
+                result.append(adventurer);
             }
+            result.append("\n");
         }
 
-        return result;
+        // Get creatures in the room
+        List<Creature> creatures = getCreatures();
+        result.append("\tCreatures: ");
+        if (creatures.isEmpty()) {
+            result.append("\n");
+        } else {
+            for (Creature creature : creatures) {
+                result.append(creature);
+            }
+            result.append("\n");
+        }
+
+        // List all the food items in the room
+        result.append("\tFood: ");
+        if (foods.isEmpty()) {
+            result.append("\n");
+        } else {
+            for (Food food : foods) {
+                result.append(food);
+            }
+            result.append("\n");
+        }
+
+        return result.toString();
     }
+
 
 }

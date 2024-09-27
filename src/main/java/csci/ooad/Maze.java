@@ -10,7 +10,7 @@ public class Maze {
     /* *
      *  FIELDS
      * */
-    private static final Logger logger = LoggerFactory.getLogger(Character.class);
+    private static final Logger logger = LoggerFactory.getLogger(Maze.class);
 
     private int numberOfRooms = 0;
     private Room[][] grid = null;

@@ -106,8 +106,9 @@ public class Character {
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
 
-        // Each move decrements health by 0.25
-        this.health -= 0.25;
+        //Adventurer Bill(health: 6.0) moved from Northeast to North
+        logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName());
+
 
     }
 
