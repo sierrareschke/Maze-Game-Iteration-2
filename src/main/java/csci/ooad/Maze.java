@@ -1,8 +1,6 @@
 package csci.ooad;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +31,7 @@ public class Maze {
         } else if (canFormSquareMatrix(numRooms)) {
             this.numberOfRooms = numRooms;
             this.grid = initializeRooms(listOfRooms);
-            // TODO - RANDOMLY DISTRIBUTE ADVENTURERS, CREATURES, FOOD
+            generateGameState(adventurers, creatures, foods);
         } else{
             throw new IllegalArgumentException("The number of rooms must be a square.");
         }
@@ -43,30 +41,74 @@ public class Maze {
     /* COMPLEX METHODS */
 
 
-
-
     // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
+    public boolean areCreaturesAlive(){
+        ArrayList<Creature> allAlive = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Creature> occupants = room.getCreatures();
+            for(Creature creature: occupants){
+                if(creature.isAlive()){
+                    allAlive.add(creature);
+                }
+            }
+        }
+        return !allAlive.isEmpty();
+    }
+
     // TODO - areAdventurersAlive (Nolan)
-
-    // TODO - getCreatures (Nolan) return a list of creatures
-    public int getNumCreatures() {
-        return 0; // TODO - placeholder, needs to be implemented
+    public boolean areAdventuresAlive(){
+        ArrayList<Adventurer> allAlive = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Adventurer> occupants = room.getAdventurers();
+            for(Adventurer creature: occupants){
+                if(creature.isAlive()){
+                    allAlive.add(creature);
+                }
+            }
+        }
+        return !allAlive.isEmpty();
     }
 
-    // TODO - getAdventurers (Nolan) return a list of adventurers
-    public int getNumAdventurers() {
-        return 0; // TODO - placeholder, needs to be implemented
+    // TODO - getCreatures (Nolan)
+    public ArrayList<Creature> getAllCreatures(){
+        ArrayList<Creature> allCreatures = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Creature> occupants = room.getCreatures();
+            allCreatures.addAll(occupants);
+        }
+        return allCreatures;
     }
 
-    // TODO - getFood (Nolan)
-    public int getNumFoods() {
-        return 0;
-    } // for testing
-
-
-    // TODO - RANDOMLY DISTRIBUTE CHARACTERS AND FOOD (Nolan)
+    // TODO - getAdventurers (Nolan)
+    public ArrayList<Adventurer> getAllAdventurers(){
+        ArrayList<Adventurer> allAdventurers = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Adventurer> occupants = room.getAdventurers();
+            allAdventurers.addAll(occupants);
+        }
+        return allAdventurers;
+    }
 
     // TODO - removeCharacter(characterToDie) (Nolan)
+    public void removeCharacter(Character character){
+
+    }
+
+    private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
+        for(Adventurer adventurer : adventurers) {
+            adventurer.spawn(this);
+        }
+        for(Character character : creatures) {
+            character.spawn(this);
+        }
+        for(Food food : foods) {
+            food.distribute(this);
+        }
+    }
 
     /**
      * Takes list of rooms and initializes them into a 2D grid
@@ -137,15 +179,21 @@ public class Maze {
         return grid[x][y];
     }
 
-    // TODO - TEST FOR ACCURACY (Nolan)
     public ArrayList<Room> getRooms() {
         ArrayList<Room> rooms = new ArrayList<>();
-        int mazeDimensions = (int) Math.sqrt(this.numberOfRooms);
+        grid = this.getGrid();
 
-        for (int i = 0; i < mazeDimensions; i++) {
-            rooms.addAll(Arrays.asList(grid[i]).subList(0, mazeDimensions));
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                rooms.add(currentRoom);
+            }
         }
         return rooms;
+    }
+
+    public Collection<Object> getAdventurers() {
+        return null;
     }
 
 

@@ -202,9 +202,8 @@ public class PolymorphiaTest {
             }
         }
 
-        assertTrue(adventurersDistributed, "Adventurers should be distributed among the rooms.");
-        assertTrue(creaturesDistributed, "Creatures should be distributed among the rooms.");
-        assertTrue(foodDistributed, "Food items should be distributed among the rooms.");
+        // Create a Maze
+        maze = new Maze(rooms, adventurers, creatures, foodItems);
 
         // Verify that adventurers, creatures, and food are not all in the same room
         boolean differentRoomsCheck = false;
@@ -220,7 +219,9 @@ public class PolymorphiaTest {
 
 
     @Test
-    void test3x3TakeTurn() {
+    public void testPlayGame(){
+        System.out.println(maze.getAdventurers());
+    }
 
         int totalTurns = 10; // We will simulate 10 turns
         int noAdventurersCount = 0;

@@ -12,22 +12,19 @@ public class CharacterTest {
     private Maze maze;
     private Character character;
     private Adventurer adventurer;
+    private Food food;
 
     // This method will run before each test to initialize the character object
     @BeforeEach
     public void setUp() {
-        Creature creature = new Creature("TestCreature");
-        Adventurer adventurer  = new Adventurer("TestAdventurer");
-
-        ArrayList<Adventurer> adventurers = new ArrayList<>();
-        adventurers.add(adventurer);
-
-        ArrayList<Creature> creatures = new ArrayList<>();
-        creatures.add(creature);
-
-        ArrayList<Food> foodItems = new ArrayList<>();
-
+        character = new Creature("TestCreature");
+        adventurer  = new Adventurer("TestAdventurer");
+        food = new Food("Hotdog");
+        List<Creature> listOfCreatures = List.of((Creature) character);
+        List<Adventurer> listOfAdventurers = List.of(adventurer);
+        List<Food> listOfFoods = List.of(food);
         List<Room> listOfRooms = new ArrayList<>();
+
         // TODO: Probably could move this maze creation code to the BeforeEach statement
 //        Character testCharacter = new Character("TestCharacter");
         // Create the maze
@@ -38,8 +35,7 @@ public class CharacterTest {
             roomIndex++;
         }
 
-
-        this.maze = new Maze(listOfRooms, adventurers, creatures, foodItems);
+        this.maze = new Maze(listOfRooms, listOfAdventurers, listOfCreatures, listOfFoods);
     }
 
     // Test the initial health of the character
@@ -129,8 +125,14 @@ public class CharacterTest {
         int sumCurrent = currentY + currentX;
         int sumNew = newY + newX;
         int moveDifference = Math.abs(sumCurrent - sumNew);
-        assertTrue(moveDifference <= 1, "Sum current should be equal to Sum new");
 
+        if (currentX != newX){
+            System.out.println("X Changed: " + currentY + " " + newY);
+            assertEquals(currentY, newY);
+        } else {
+            System.out.println("Y Changed: " + currentX + " " + newX);
+            assertEquals(currentX, newX);
+        }
     }
 
 }

@@ -27,6 +27,7 @@ public class Room {
     public Room() {
         this.name = "";
         this.occupants = new ArrayList<>(); // Initializes with an empty array
+        this.foods = new ArrayList<>();
     }
 
 
@@ -36,13 +37,15 @@ public class Room {
      */
     public Room(String name){
         this.name = name;
-        this.occupants = new ArrayList<>(); // Initializes with an empty a
+        this.occupants = new ArrayList<>();
+        this.foods = new ArrayList<>();
     }
 
     public Room(String name, int index){
         this.name = name;
         this.index = index;
         this.occupants = new ArrayList<>(); // Initializes with an empty a
+        this.foods = new ArrayList<>();
     }
 
 

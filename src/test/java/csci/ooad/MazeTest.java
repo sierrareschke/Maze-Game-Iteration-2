@@ -13,55 +13,56 @@ import org.slf4j.LoggerFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MazeTest {
+    private Maze maze;
+    private Character character;
+    private Adventurer adventurer;
+    private Food food;
 
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
-    List<Room> listOfRooms = new ArrayList<>();
-    ArrayList<Adventurer> adventurers = new ArrayList<>();
-    ArrayList<Creature> creatures = new ArrayList<>();
-    ArrayList<Food> foodItems = new ArrayList<>();
+    private List<Room> listOfRooms = new ArrayList<>();
 
-
-    // create adventurer, creature, and food arrays to allow for creation of maze
     @BeforeEach
-    void setUp() {
-        // Create 2 adventurers
-        Adventurer adventurerOne = new Adventurer("Bill");
-        Adventurer adventurerTwo = new Adventurer("Ted");
+    public void setUp() {
+        character = new Creature("TestCreature");
+        adventurer  = new Adventurer("TestAdventurer");
+        food = new Food("Hotdog");
+        List<Creature> listOfCreatures = List.of((Creature) character);
+        List<Adventurer> listOfAdventurers = List.of(adventurer);
+        List<Food> listOfFoods = List.of(food);
 
-        adventurers.add(adventurerOne);
-        adventurers.add(adventurerTwo);
-
-        // Create 5 creatures
-        creatures.add(new Creature("Goblin"));
-        creatures.add(new Creature("Orc"));
-        creatures.add(new Creature("Troll"));
-        creatures.add(new Creature("Dragon"));
-        creatures.add(new Creature("Imp"));
-
-        // Create 10 food items
-        foodItems.add(new Food("Apple"));
-        foodItems.add(new Food("Bread"));
-        foodItems.add(new Food("Meat"));
-        foodItems.add(new Food("Cheese"));
-        foodItems.add(new Food("Berry"));
-        foodItems.add(new Food("Fish"));
-        foodItems.add(new Food("Chicken"));
-        foodItems.add(new Food("Porridge"));
-        foodItems.add(new Food("Honey"));
-        foodItems.add(new Food("Soup"));
-    }
-
-    @Test
-    public void testNewMazeCreation() {
+        //        Character testCharacter = new Character("TestCharacter");
+        // Create the maze
         String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
-
         int roomIndex = 0;
-        for (String name : roomNames) {
-            listOfRooms.add(new Room(name));
+        for (String name: roomNames){
+            listOfRooms.add(new Room(name, roomIndex));
             roomIndex++;
         }
 
-        Maze maze = new Maze(listOfRooms, adventurers, creatures, foodItems);
+        this.maze = new Maze(listOfRooms, listOfAdventurers, listOfCreatures, listOfFoods);
+    }
+
+    @Test
+    public void testNewMazeCreation(){
+        character = new Creature("TestCreature");
+        adventurer  = new Adventurer("TestAdventurer");
+        food = new Food("Hotdog");
+        List<Creature> listOfCreatures = List.of((Creature) character);
+        List<Adventurer> listOfAdventurers = List.of(adventurer);
+        List<Food> listOfFoods = List.of(food);
+        List<Room> listOfRooms = new ArrayList<>();
+
+        // TODO: Probably could move this maze creation code to the BeforeEach statement
+//        Character testCharacter = new Character("TestCharacter");
+        // Create the maze
+        String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
+        int roomIndex = 0;
+        for (String name: roomNames){
+            listOfRooms.add(new Room(name, roomIndex));
+            roomIndex++;
+        }
+
+        this.maze = new Maze(listOfRooms, listOfAdventurers, listOfCreatures, listOfFoods);
 
         assertNotEquals(0, maze.getNumberOfRooms());
         assertEquals(3, maze.getGrid().length, "Matrix should have 3 rows");
@@ -72,11 +73,22 @@ public class MazeTest {
 
     // TODO
     @Test
-    public void testInitializeRooms() {
+    public void testGetRooms(){
+        List<String> originalRoomNames = new ArrayList<String>();
+        List<String> fetchedRoomNames = new ArrayList<String>();
 
-        // Create the maze grid
-        Maze maze = new Maze(listOfRooms, adventurers, creatures, foodItems);
+        ArrayList<Room> allFetchedRooms = maze.getRooms();
+        System.out.println(allFetchedRooms);
 
+        for (Room room: allFetchedRooms){
+            fetchedRoomNames.add(room.getName());
+        }
 
+        for (Room room: this.listOfRooms){
+            System.out.println(room.getName());
+            originalRoomNames.add(room.getName());
+        }
+
+        assertEquals(originalRoomNames, fetchedRoomNames);
     }
 }
