@@ -70,7 +70,7 @@ public class Maze {
         }
         return !allAlive.isEmpty();
     }
-    
+
     // TODO - getCreatures (Nolan)
     public ArrayList<Creature> getAllCreatures(){
         ArrayList<Creature> allCreatures = new ArrayList<>();
@@ -94,6 +94,9 @@ public class Maze {
     }
 
     // TODO - removeCharacter(characterToDie) (Nolan)
+    public void removeCharacter(Character character){
+
+    }
 
     private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         for(Adventurer adventurer : adventurers) {
