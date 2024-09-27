@@ -215,4 +215,12 @@ public class Maze {
         return found;
     }
 
+    public int getNumAdventurers() {
+        return this.getAllAdventurers().size();
+    }
+
+    public int getNumCreatures() {
+        return this.getAllCreatures().size();
+    }
+
 }
