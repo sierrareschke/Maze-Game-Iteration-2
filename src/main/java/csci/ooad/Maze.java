@@ -228,4 +228,18 @@ public class Maze {
         }
         return found;
     }
+
+    public void purge(Character character){
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                List<Character> currentOccupants = currentRoom.getOccupants();
+                for(Character occupant : currentOccupants){
+                    if (Objects.equals(occupant.getName(), character.getName())){
+                        currentRoom.removeOccupant(occupant);
+                    }
+                }
+            }
+        }
+    }
 }

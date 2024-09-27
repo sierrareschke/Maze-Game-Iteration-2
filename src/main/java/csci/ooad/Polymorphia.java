@@ -236,7 +236,7 @@ public class Polymorphia {
 
     public void kill (Character characterToDie) {
         // Remove them from maze
-        //maze.removeCharacter(characterToDie); // TODO - IMPLEMENT IN MAZE & UNCOMMENT (COME BACK)
+        maze.purge(characterToDie);
 
         // Remove from Polymorphia field
         if(characterToDie instanceof Adventurer) {
