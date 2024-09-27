@@ -91,12 +91,26 @@ public class Maze {
         return allAdventurers;
     }
 
+    public ArrayList<Food> getAllFoods(){
+        ArrayList<Food> allFoods = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Food> food = room.getFood();
+            allFoods.addAll(food);
+        }
+        return allFoods;
+    }
+
     public int getNumAdventurers() {
         return getAllAdventurers().size();
     }
 
     public int getNumCreatures() {
         return getAllCreatures().size();
+    }
+
+    public int getNumFoods() {
+        return this.getAllFoods().size();
     }
 
     // TODO - removeCharacter(characterToDie) (Nolan)
@@ -214,5 +228,4 @@ public class Maze {
         }
         return found;
     }
-
 }
