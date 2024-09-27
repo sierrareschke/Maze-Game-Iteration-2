@@ -1,9 +1,6 @@
 package csci.ooad;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,12 +43,8 @@ public class Maze {
 
     // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
     // TODO - areAdventurersAlive (Nolan)
-
     // TODO - getCreatures (Nolan)
     // TODO - getAdventurers (Nolan)
-
-    // TODO - RANDOMLY DISTRIBUTE CHARACTERS AND FOOD (Nolan)
-
     // TODO - removeCharacter(characterToDie) (Nolan)
 
     private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
@@ -135,13 +128,15 @@ public class Maze {
         return grid[x][y];
     }
 
-    // TODO - TEST FOR ACCURACY (Nolan)
     public ArrayList<Room> getRooms() {
         ArrayList<Room> rooms = new ArrayList<>();
-        int mazeDimensions = (int) Math.sqrt(this.numberOfRooms);
+        grid = this.getGrid();
 
-        for (int i = 0; i < mazeDimensions; i++) {
-            rooms.addAll(Arrays.asList(grid[i]).subList(0, mazeDimensions));
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                rooms.add(currentRoom);
+            }
         }
         return rooms;
     }

@@ -19,7 +19,7 @@ public class MazeTest {
     private Food food;
 
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
-    List<Room> listOfRooms = new ArrayList<>();
+    private List<Room> listOfRooms = new ArrayList<>();
 
     @BeforeEach
     public void setUp() {
@@ -29,10 +29,8 @@ public class MazeTest {
         List<Creature> listOfCreatures = List.of((Creature) character);
         List<Adventurer> listOfAdventurers = List.of(adventurer);
         List<Food> listOfFoods = List.of(food);
-        List<Room> listOfRooms = new ArrayList<>();
 
-        // TODO: Probably could move this maze creation code to the BeforeEach statement
-//        Character testCharacter = new Character("TestCharacter");
+        //        Character testCharacter = new Character("TestCharacter");
         // Create the maze
         String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
         int roomIndex = 0;
@@ -71,5 +69,25 @@ public class MazeTest {
 
         //TODO: Remove this later...leaving it in for testing
         logger.info(Arrays.deepToString(maze.getGrid()));
+    }
+
+    @Test
+    public void testGetRooms(){
+        List<String> originalRoomNames = new ArrayList<String>();
+        List<String> fetchedRoomNames = new ArrayList<String>();
+
+        ArrayList<Room> allFetchedRooms = maze.getRooms();
+        System.out.println(allFetchedRooms);
+
+        for (Room room: allFetchedRooms){
+            fetchedRoomNames.add(room.getName());
+        }
+
+        for (Room room: this.listOfRooms){
+            System.out.println(room.getName());
+            originalRoomNames.add(room.getName());
+        }
+
+        assertEquals(originalRoomNames, fetchedRoomNames);
     }
 }
