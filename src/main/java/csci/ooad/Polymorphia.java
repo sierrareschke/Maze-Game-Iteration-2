@@ -54,8 +54,8 @@ public class Polymorphia {
         printMaze();
 
         // While both adventurers and creatures alive in Maze, take turns
-        int numAdventurersAlive = maze.getNumAdventurers(); // TODO - updated this line but method needs to be implemented in maze
-        int numCreaturesAlive = maze.getNumCreatures(); // TODO - updated this line but method needs to be implemented in maze
+        int numAdventurersAlive = maze.getNumAdventurers();
+        int numCreaturesAlive = maze.getNumCreatures();
 
         while (numAdventurersAlive > 0 && numCreaturesAlive > 0) {
             takeTurn();
@@ -63,8 +63,6 @@ public class Polymorphia {
 
         // The game has ended and a winner is determined by Characters left
         determineWinner(numCreaturesAlive, numAdventurersAlive);
-
-
 
     }
 

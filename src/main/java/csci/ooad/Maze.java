@@ -71,7 +71,6 @@ public class Maze {
         return !allAlive.isEmpty();
     }
 
-    // TODO - getCreatures (Nolan)
     public ArrayList<Creature> getAllCreatures(){
         ArrayList<Creature> allCreatures = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -82,7 +81,6 @@ public class Maze {
         return allCreatures;
     }
 
-    // TODO - getAdventurers (Nolan)
     public ArrayList<Adventurer> getAllAdventurers(){
         ArrayList<Adventurer> allAdventurers = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -91,6 +89,14 @@ public class Maze {
             allAdventurers.addAll(occupants);
         }
         return allAdventurers;
+    }
+
+    public int getNumAdventurers() {
+        return getAllAdventurers().size();
+    }
+
+    public int getNumCreatures() {
+        return getAllCreatures().size();
     }
 
     // TODO - removeCharacter(characterToDie) (Nolan)
@@ -207,6 +213,14 @@ public class Maze {
             }
         }
         return found;
+    }
+
+    public int getNumAdventurers() {
+        return this.getAllAdventurers().size();
+    }
+
+    public int getNumCreatures() {
+        return this.getAllCreatures().size();
     }
 
 }
