@@ -52,7 +52,7 @@ public class PolymorphiaTest {
         }
 
         // Create a Maze
-        maze = new Maze(rooms,adventurers,creatures,foodItems);
+        maze = new Maze(rooms, adventurers, creatures, foodItems);
 
         // Initialize Polymorphia game
         Polymorphia polymorphiaGame = new Polymorphia(maze);
@@ -60,6 +60,10 @@ public class PolymorphiaTest {
 
     // TODO - REST OF POLYMORPHIA (GRACE)
 
+    @Test
+    public void testPlayGame(){
+        System.out.println(maze.getAdventurers());
+    }
 
 
 

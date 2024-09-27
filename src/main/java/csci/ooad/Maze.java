@@ -35,6 +35,7 @@ public class Maze {
             this.numberOfRooms = numRooms;
             this.grid = initializeRooms(listOfRooms);
             // TODO - RANDOMLY DISTRIBUTE ADVENTURERS, CREATURES, FOOD
+            distributeCharacters(adventurers, creatures);
         } else{
             throw new IllegalArgumentException("The number of rooms must be a square.");
         }
@@ -42,8 +43,6 @@ public class Maze {
 
 
     /* COMPLEX METHODS */
-
-
 
 
     // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
@@ -55,6 +54,15 @@ public class Maze {
     // TODO - RANDOMLY DISTRIBUTE CHARACTERS AND FOOD (Nolan)
 
     // TODO - removeCharacter(characterToDie) (Nolan)
+
+    private void distributeCharacters(List<Adventurer> adventurers, List<Creature> creatures) {
+        for(Adventurer adventurer : adventurers) {
+            adventurer.spawn(this);
+        }
+        for(Character character : creatures) {
+            character.spawn(this);
+        }
+    }
 
     /**
      * Takes list of rooms and initializes them into a 2D grid
