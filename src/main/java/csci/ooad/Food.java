@@ -56,10 +56,11 @@ public class Food {
     public void distribute(Maze maze){
 
         Random random = new Random();
+        int mazeDimensions = (int) Math.sqrt(maze.getNumberOfRooms());
 
         // Generate a random number between 0 and 2 (inclusive)
-        int randomX = random.nextInt(3);
-        int randomY = random.nextInt(3);
+        int randomX = random.nextInt(mazeDimensions);
+        int randomY = random.nextInt(mazeDimensions);
         System.out.println(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);

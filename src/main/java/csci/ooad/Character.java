@@ -82,8 +82,7 @@ public class Character {
         int y = coords.get("y");
         Room currentRoom = maze.getRoomInGrid(x, y);
 
-        // Take one random step in either direction
-        // TODO: need to change so that it only moves one step at a time (Nolan)
+        // Take one random step in either direction (up/down or left/right)
         int moveX = (int) (Math.random() * 3) - 1;
         int moveY = (int) (Math.random() * 3) - 1;
 
@@ -114,10 +113,11 @@ public class Character {
 
     public void spawn(Maze maze){
         Random random = new Random();
+        int mazeDimensions = (int) Math.sqrt(maze.getNumberOfRooms());
 
         // Generate a random number between 0 and 2 (inclusive)
-        int randomX = random.nextInt(3);
-        int randomY = random.nextInt(3);
+        int randomX = random.nextInt(mazeDimensions);
+        int randomY = random.nextInt(mazeDimensions);
         System.out.println(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
