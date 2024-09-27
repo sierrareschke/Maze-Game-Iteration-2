@@ -217,12 +217,8 @@ public class PolymorphiaTest {
 
     }
 
-
     @Test
-    public void testPlayGame(){
-        System.out.println(maze.getAdventurers());
-    }
-
+    public void test3x3TakeTurn() {
         int totalTurns = 10; // We will simulate 10 turns
         int noAdventurersCount = 0;
         int fightsCount = 0;
@@ -276,6 +272,7 @@ public class PolymorphiaTest {
 
 
 
+    // TODO
     @Test
     void test3x3PrintMaze() {
 
@@ -420,8 +417,10 @@ public class PolymorphiaTest {
         assertTrue(fightsCount > 0, "Scenario 2: There should be at least one turn with a fight.");
     }
 
+    // TODO
     @Test
     void test2x2PrintMaze() {
+
     }
 
 }
