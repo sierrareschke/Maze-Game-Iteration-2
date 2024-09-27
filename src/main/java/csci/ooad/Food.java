@@ -53,4 +53,18 @@ public class Food {
         return this.healthGranted;
     }
 
+    public void distribute(Maze maze){
+
+        Random random = new Random();
+
+        // Generate a random number between 0 and 2 (inclusive)
+        int randomX = random.nextInt(3);
+        int randomY = random.nextInt(3);
+        System.out.println(randomX + " " + randomY);
+
+        Room room  = maze.getRoomInGrid(randomX,randomY);
+        room.addFood(this);
+        System.out.println(room);
+    }
+
 }

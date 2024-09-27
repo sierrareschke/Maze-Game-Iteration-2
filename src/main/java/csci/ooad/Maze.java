@@ -34,8 +34,7 @@ public class Maze {
         } else if (canFormSquareMatrix(numRooms)) {
             this.numberOfRooms = numRooms;
             this.grid = initializeRooms(listOfRooms);
-            // TODO - RANDOMLY DISTRIBUTE ADVENTURERS, CREATURES, FOOD
-            distributeCharacters(adventurers, creatures);
+            generateGameState(adventurers, creatures, foods);
         } else{
             throw new IllegalArgumentException("The number of rooms must be a square.");
         }
@@ -55,12 +54,15 @@ public class Maze {
 
     // TODO - removeCharacter(characterToDie) (Nolan)
 
-    private void distributeCharacters(List<Adventurer> adventurers, List<Creature> creatures) {
+    private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         for(Adventurer adventurer : adventurers) {
             adventurer.spawn(this);
         }
         for(Character character : creatures) {
             character.spawn(this);
+        }
+        for(Food food : foods) {
+            food.distribute(this);
         }
     }
 
