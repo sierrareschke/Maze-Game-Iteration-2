@@ -42,9 +42,57 @@ public class Maze {
 
 
     // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
+    public boolean areCreaturesAlive(){
+        ArrayList<Creature> allAlive = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Creature> occupants = room.getCreatures();
+            for(Creature creature: occupants){
+                if(creature.isAlive()){
+                    allAlive.add(creature);
+                }
+            }
+        }
+        return !allAlive.isEmpty();
+    }
+
     // TODO - areAdventurersAlive (Nolan)
+    public boolean areAdventuresAlive(){
+        ArrayList<Adventurer> allAlive = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Adventurer> occupants = room.getAdventurers();
+            for(Adventurer creature: occupants){
+                if(creature.isAlive()){
+                    allAlive.add(creature);
+                }
+            }
+        }
+        return !allAlive.isEmpty();
+    }
+    
     // TODO - getCreatures (Nolan)
+    public ArrayList<Creature> getAllCreatures(){
+        ArrayList<Creature> allCreatures = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Creature> occupants = room.getCreatures();
+            allCreatures.addAll(occupants);
+        }
+        return allCreatures;
+    }
+
     // TODO - getAdventurers (Nolan)
+    public ArrayList<Adventurer> getAllAdventurers(){
+        ArrayList<Adventurer> allAdventurers = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Adventurer> occupants = room.getAdventurers();
+            allAdventurers.addAll(occupants);
+        }
+        return allAdventurers;
+    }
+
     // TODO - removeCharacter(characterToDie) (Nolan)
 
     private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
@@ -145,7 +193,4 @@ public class Maze {
         return null;
     }
 
-    public Collection<Object> getCreatures() {
-        return null;
-    }
 }

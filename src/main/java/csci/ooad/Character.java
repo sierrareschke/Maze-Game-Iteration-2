@@ -144,6 +144,10 @@ public class Character {
 
     }
 
+    public boolean isAlive(){
+        return this.health > 0;
+    }
+
     /**
      * toString method to return Character's name(health: health)
      * @return string of Character's name and health
