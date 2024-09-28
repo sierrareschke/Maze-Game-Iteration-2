@@ -84,4 +84,7 @@ public class FoodTest {
                     "Food name '" + foodName + "' is outside the expected distribution range");
         }
     }
+
+    // TODO - testFoodRemoved
+
 }

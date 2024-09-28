@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 
     /* *
      *  FIELDS
@@ -15,18 +15,12 @@ public class Character {
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
 
     private String name;
-    private double health;
+    protected double health;
 
 
     /* *
     *  CONSTRUCTORS
     * */
-
-    // TODO - delete
-//    Character(String name) {
-//        this.name = name;
-//        this.health = 5.0; // initial health set to 5.0 for adventurers
-//    }
 
     Character(String name, double health) {
         this.name = name;
@@ -142,7 +136,20 @@ public class Character {
             }
         }
         return null;
+    }
 
+    public Room getRoom(Maze maze){
+        Room[][] grid = maze.getGrid();
+        // Use 'this' to search for the current character instance in the grid
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                if (currentRoom.hasCharacter(this)) {
+                    return currentRoom;
+                }
+            }
+        }
+        return null;
     }
 
     public boolean isAlive(){

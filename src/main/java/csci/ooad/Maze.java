@@ -41,7 +41,6 @@ public class Maze {
     /* COMPLEX METHODS */
 
 
-    // TODO -  bool areCreaturesAlive (Nolan) - checking for winner
     public boolean areCreaturesAlive(){
         ArrayList<Creature> allAlive = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -56,7 +55,6 @@ public class Maze {
         return !allAlive.isEmpty();
     }
 
-    // TODO - areAdventurersAlive (Nolan)
     public boolean areAdventuresAlive(){
         ArrayList<Adventurer> allAlive = new ArrayList<>();
         List<Room> allRooms = this.getRooms();
@@ -91,6 +89,16 @@ public class Maze {
         return allAdventurers;
     }
 
+    public ArrayList<Food> getAllFoods(){
+        ArrayList<Food> allFoods = new ArrayList<>();
+        List<Room> allRooms = this.getRooms();
+        for(Room room: allRooms){
+            List<Food> food = room.getFood();
+            allFoods.addAll(food);
+        }
+        return allFoods;
+    }
+
     public int getNumAdventurers() {
         return getAllAdventurers().size();
     }
@@ -99,12 +107,11 @@ public class Maze {
         return getAllCreatures().size();
     }
 
-    // TODO - removeCharacter(characterToDie) (Nolan)
-    public void removeCharacter(Character character){
-
+    public int getNumFoods() {
+        return this.getAllFoods().size();
     }
 
-    private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
+    public void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         for(Adventurer adventurer : adventurers) {
             adventurer.spawn(this);
         }
@@ -175,9 +182,7 @@ public class Maze {
     public int getNumberOfRooms() {
         return numberOfRooms;
     }
-    public boolean isSquareMatrix() {
-        return this.isSquareMatrix;
-    }
+
     public Room[][] getGrid() {
         return grid;
     }
@@ -198,10 +203,6 @@ public class Maze {
         return rooms;
     }
 
-    public Collection<Object> getAdventurers() {
-        return null;
-    }
-
 
     public boolean containsCharacter(Character character) {
         boolean found = false;
@@ -215,12 +216,13 @@ public class Maze {
         return found;
     }
 
-    public int getNumAdventurers() {
-        return this.getAllAdventurers().size();
-    }
-
-    public int getNumCreatures() {
-        return this.getAllCreatures().size();
+    public void purge(Character character) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                currentRoom.removeCharacter(character);
+            }
+        }
     }
 
 }

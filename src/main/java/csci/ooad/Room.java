@@ -76,7 +76,7 @@ public class Room {
 
     public void addOccupant(Character occupant) { occupants.add(occupant); }
 
-    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
+//    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
 
     public void emptyRoom() {
         occupants.clear();
@@ -92,6 +92,7 @@ public class Room {
         foods.add(food);
     }
 
+    // TODO: Need to add this back in, it's not getting called any where
     public void removeFood(Food food) {
         foods.remove(food);
     }
@@ -99,14 +100,6 @@ public class Room {
 
 
     /* COMPLEX METHODS */
-
-    // TODO - getHealthiestAdventurer (SIERRA)
-
-    // TODO - getHealthiestCreature (SIERRA)
-
-
-
-
 
     public Boolean isEmpty() {
         return this.occupants.isEmpty();
@@ -160,33 +153,13 @@ public class Room {
     }
 
 
-
-
-
     /**
      * Method to remove an Adventurer occupant from a Room
      * @param occupant - Adventurer to remove from Room
      * @return the Adventurer that was removed
      */
-    public Character removeCharacter(Character occupant) {
-        // Check if the occupant is in the room
-        boolean found = false;
-        for (Character character : occupants) {
-            if (character instanceof Adventurer && character.equals(occupant)) {
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            return null; // Adventurer not found
-        }
-
-        // Remove the adventurer from the list of occupants
-        occupants.remove(occupant);
-
-        // Return the removed adventurer
-        return occupant;
+    public void removeCharacter(Character occupant) {
+        occupants.removeIf(character -> character.getName().equals(occupant.getName()));
     }
 
     public boolean hasCharacter(Character character) {
@@ -199,11 +172,6 @@ public class Room {
         }
         return characterFound;
     }
-
-
-
-
-
 
 
 
