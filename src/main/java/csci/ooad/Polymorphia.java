@@ -1,10 +1,6 @@
 package csci.ooad;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
-
+import java.util.*;
 
 
 import org.slf4j.Logger;
@@ -69,12 +65,16 @@ public class Polymorphia {
         logger.info("numAdventurersAlive" + numAdventurersAlive);
 
 
-        while (maze.getNumAdventurers()>0 && maze.getNumCreatures()>0) {
+        while (maze.getNumAdventurers() > 0 && maze.getNumCreatures() > 0) {
             takeTurn();
         }
 
+        // Get updated counts after the game ends
+        int finalAdventurersAlive = maze.getNumAdventurers();
+        int finalCreaturesAlive = maze.getNumCreatures();
+
         // The game has ended and a winner is determined by Characters left
-        determineWinner(numCreaturesAlive, numAdventurersAlive);
+        determineWinner(finalCreaturesAlive, finalAdventurersAlive);
 
     }
 
@@ -150,7 +150,7 @@ public class Polymorphia {
 
                 fight(healthiestAdventurer, healthiestCreature);
                 logger.info("Adventurer " + healthiestAdventurer.getName() + "(health: " + healthiestAdventurer.getHealth() + ") " +
-                        "fought Creature" + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")");
+                        "fought Creature" + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")" + "\n");
 
                 // if there is a second adventurer, move it
                 if (numAdventurersPresent == 2) {
@@ -192,8 +192,10 @@ public class Polymorphia {
 
         // After iterating through Rooms in Maze, move Adventurers to neighbors
         if(adventurersToMove != null) {
-            for(Adventurer adventurer : adventurersToMove){
+            List<Adventurer> allAdventures = maze.getAllAdventurers();
+            for(Adventurer adventurer : allAdventures){
                 adventurer.move(maze);
+                adventurer.subtractFromHealth(0.25);
             }
             adventurersToMove.clear();
         }
@@ -208,10 +210,8 @@ public class Polymorphia {
      */
     public void printMaze() {
 
-        logger.info("Polymorphia Maze: turn " + turnCount);
-        logger.info(maze.toString()); // TODO this is just printing the maze object reference ?? and rooms seem to be printing randomly ??
-        // TODO - when are the rooms called to print if maze.toString() isn't implemented ??
-        // TODO - grace were you working on the toStrings?
+        logger.info("Polymorphia Maze: turn " + turnCount + "\n");
+        logger.info(maze.toString()); // TODO
     }
 
 
@@ -231,21 +231,21 @@ public class Polymorphia {
         // compare the rolls, character with lower roll will take damage equal to the difference between the rolls
         // if both rolls are the same, neither character takes damage
         if (adventurerRoll == creatureRoll) { // if both rolls are the same, nothing happens
-            logger.info("Fight is a tie!");
+            logger.info("Fight is a tie! ");
         } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
             int damage = adventurerRoll - creatureRoll;
             creature.subtractFromHealth(damage);  // take damage
             if(!creature.isAlive()) {
                 kill(creature);
             }
-            logger.info("Adventurer wins the round. Creature takes " + damage + " damage.");
+            logger.info("Adventurer wins the round. Creature takes " + damage + " damage. ");
         } else { // creature wins, subtract the difference from the adventurer's health
             int damage = creatureRoll - adventurerRoll;
             adventurer.subtractFromHealth(damage);  // take damage
             if(!adventurer.isAlive()) {
                 kill(adventurer);
             }
-            logger.info("Creature wins the round. Adventurer takes " + damage + " damage.");
+            logger.info("Creature wins the round. Adventurer takes " + damage + " damage. ");
         }
     }
 

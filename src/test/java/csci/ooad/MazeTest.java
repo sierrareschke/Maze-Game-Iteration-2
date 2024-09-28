@@ -79,14 +79,12 @@ public class MazeTest {
         List<String> fetchedRoomNames = new ArrayList<String>();
 
         ArrayList<Room> allFetchedRooms = maze.getRooms();
-        System.out.println(allFetchedRooms);
 
         for (Room room: allFetchedRooms){
             fetchedRoomNames.add(room.getName());
         }
 
         for (Room room: this.listOfRooms){
-            System.out.println(room.getName());
             originalRoomNames.add(room.getName());
         }
 

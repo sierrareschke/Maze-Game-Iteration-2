@@ -169,13 +169,11 @@ public class AdventurerTest {
         int moveDifference = Math.abs(sumCurrent - sumNew);
 
         if (currentX != newX){
-            System.out.println("X Changed: " + currentY + " " + newY);
+            assertTrue(Math.abs(currentX - newX) == 1);
             assertEquals(currentY, newY);
         } else {
-            System.out.println("Y Changed: " + currentX + " " + newX);
+            assertTrue(Math.abs(currentY - newY) == 1);
             assertEquals(currentX, newX);
         }
     }
-
-
 }

@@ -92,11 +92,6 @@ public class Room {
         foods.add(food);
     }
 
-    // TODO: Need to add this back in, it's not getting called any where
-    public void removeFood(Food food) {
-        foods.remove(food);
-    }
-
 
 
     /* COMPLEX METHODS */
@@ -196,7 +191,7 @@ public class Room {
             result.append("\n");
         } else {
             for (Adventurer adventurer : adventurers) {
-                result.append(adventurer);
+                result.append(adventurer + ". ");
             }
             result.append("\n");
         }
@@ -208,7 +203,7 @@ public class Room {
             result.append("\n");
         } else {
             for (Creature creature : creatures) {
-                result.append(creature);
+                result.append(creature + ". ");
             }
             result.append("\n");
         }
@@ -219,8 +214,9 @@ public class Room {
             result.append("\n");
         } else {
             for (Food food : foods) {
-                result.append(food);
+                result.append(food + ", ");
             }
+            result.deleteCharAt(result.length()-2);
             result.append("\n");
         }
 

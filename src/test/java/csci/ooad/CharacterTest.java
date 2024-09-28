@@ -127,10 +127,8 @@
 ////        int moveDifference = Math.abs(sumCurrent - sumNew);
 ////
 ////        if (currentX != newX){
-////            System.out.println("X Changed: " + currentY + " " + newY);
 ////            assertEquals(currentY, newY);
 ////        } else {
-////            System.out.println("Y Changed: " + currentX + " " + newX);
 ////            assertEquals(currentX, newX);
 ////        }
 ////    }
