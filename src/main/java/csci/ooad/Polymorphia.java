@@ -177,7 +177,8 @@ public class Polymorphia {
 
         // After iterating through Rooms in Maze, move Adventurers to neighbors
         if(adventurersToMove != null) {
-            for(Adventurer adventurer : adventurersToMove){
+            List<Adventurer> allAdventures = maze.getAllAdventurers();
+            for(Adventurer adventurer : allAdventures){
                 adventurer.move(maze);
                 adventurer.subtractFromHealth(0.25);
             }
