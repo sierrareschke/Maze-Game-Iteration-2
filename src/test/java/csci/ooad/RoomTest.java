@@ -88,6 +88,19 @@ public class RoomTest {
     }
 
 
+    @Test
+    public void testOccupantsEmpty(){
+        Room room = new Room("NotEmpty");
+        boolean emptyOrNot = room.isEmpty();
+        assertTrue(emptyOrNot);
+    }
+
+    @Test
+    public void testIsFoodPresent(){
+        Room room = new Room();
+        room.addFood(new Food("Hot Dog"));
+        assertTrue(room.isFoodPresent());
+    }
 
     @Test
     public void testEmptyRoom() {
