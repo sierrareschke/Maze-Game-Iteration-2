@@ -180,12 +180,8 @@ public class Maze {
 
     @Override
     public String toString() {
-        String returnString = "";
-        ArrayList<Room> allRooms = this.getRooms();
-        for (Room room:allRooms){
-            returnString += room.toString();
-        }
-        return returnString;
+        //TODO
+        return "";
     }
 
 
