@@ -100,8 +100,10 @@ public abstract class Character {
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
 
+
         //Adventurer Bill(health: 6.0) moved from Northeast to North
         logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName());
+
 
 
     }

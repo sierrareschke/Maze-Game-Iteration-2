@@ -15,10 +15,10 @@ public class AdventurerTest {
     private Adventurer adventurer;
     private Polymorphia polymorphia;
     private Maze maze;
-    private ArrayList<Adventurer> adventurers;
-    private ArrayList<Creature> creatures;
-    private ArrayList<Food> foods;
-    List<Room> rooms;
+    private ArrayList<Adventurer> adventurers = new ArrayList<>();
+    private ArrayList<Creature> creatures = new ArrayList<>();
+    private ArrayList<Food> foods = new ArrayList<>();
+    List<Room> rooms = new ArrayList<>();
 
     // This method will run before each test to initialize the adventurer object
 
@@ -28,7 +28,6 @@ public class AdventurerTest {
 
         adventurers.add(new Adventurer("Bill"));
         adventurers.add(new Adventurer("Ted"));
-
 
         creatures.add(new Creature("Ogre"));
         creatures.add(new Creature("Troll"));
