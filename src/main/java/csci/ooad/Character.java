@@ -70,6 +70,12 @@ public abstract class Character {
     public void move(Maze maze) {
         Random rand = new Random();
         HashMap<String, Integer> coords = this.currentRoomCoordinates(maze);
+
+        // Check if the character still exists in the game play
+        // Since we remove players and then move them it can request a move
+        // for a player that has already been removed
+        if (coords == null) return;
+
         int mazeWidth = maze.getGrid().length;
 
         // Grid coordinates of the current room
