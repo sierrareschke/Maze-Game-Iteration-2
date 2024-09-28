@@ -60,9 +60,9 @@ public class Maze {
         List<Room> allRooms = this.getRooms();
         for(Room room: allRooms){
             List<Adventurer> occupants = room.getAdventurers();
-            for(Adventurer creature: occupants){
-                if(creature.isAlive()){
-                    allAlive.add(creature);
+            for(Adventurer adventurer: occupants){
+                if(adventurer.isAlive()){
+                    allAlive.add(adventurer);
                 }
             }
         }

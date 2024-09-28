@@ -56,12 +56,16 @@ public class Polymorphia {
         logger.info("numAdventurersAlive" + numAdventurersAlive);
 
 
-        while (maze.getNumAdventurers()>0 && maze.getNumCreatures()>0) {
+        while (maze.getNumAdventurers() > 0 && maze.getNumCreatures() > 0) {
             takeTurn();
         }
 
+        // Get updated counts after the game ends
+        int finalAdventurersAlive = maze.getNumAdventurers();
+        int finalCreaturesAlive = maze.getNumCreatures();
+
         // The game has ended and a winner is determined by Characters left
-        determineWinner(numCreaturesAlive, numAdventurersAlive);
+        determineWinner(finalCreaturesAlive, finalAdventurersAlive);
 
     }
 
@@ -175,6 +179,7 @@ public class Polymorphia {
         if(adventurersToMove != null) {
             for(Adventurer adventurer : adventurersToMove){
                 adventurer.move(maze);
+                adventurer.subtractFromHealth(0.25);
             }
             adventurersToMove.clear();
         }
