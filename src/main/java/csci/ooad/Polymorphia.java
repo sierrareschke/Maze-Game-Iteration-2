@@ -160,7 +160,7 @@ public class Polymorphia {
                 for (Adventurer adventurer : adventurersPresent) {
                     if (!foodPresent.isEmpty()) {
                         Food food = foodPresent.remove(0); // Get the first available food
-                        adventurer.eatFood(food);
+                        adventurer.eatFood(food, maze);
                     } else {
                         logger.info(adventurer.getName() + " has no food to eat.");
                     }
