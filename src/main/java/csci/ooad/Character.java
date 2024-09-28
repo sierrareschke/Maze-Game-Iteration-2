@@ -124,11 +124,9 @@ public abstract class Character {
         // Generate a random number between 0 and 2 (inclusive)
         int randomX = random.nextInt(mazeDimensions);
         int randomY = random.nextInt(mazeDimensions);
-        System.out.println(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
         room.addOccupant(this);
-        System.out.println(room);
     }
 
     public HashMap<String, Integer> currentRoomCoordinates(Maze maze) {
