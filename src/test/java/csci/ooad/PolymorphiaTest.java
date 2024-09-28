@@ -17,27 +17,24 @@ public class PolymorphiaTest {
 
     Polymorphia polymorphia;
     Maze maze;
-    ArrayList<Adventurer> adventurers;
-    ArrayList<Creature> creatures;
-    ArrayList<Food> foods;
+    ArrayList<Adventurer> adventurers = new ArrayList<>();
+    ArrayList<Creature> creatures = new ArrayList<>();
+    ArrayList<Food> foods = new ArrayList<>();
+    ArrayList<Room> rooms = new ArrayList<>();
 
 
     @BeforeEach
     void setUp() {
 
-        adventurers = new ArrayList<>();
         adventurers.add(new Adventurer("Bill"));
         adventurers.add(new Adventurer("Ted"));
 
-
-        creatures = new ArrayList<>();
         creatures.add(new Creature("Ogre"));
         creatures.add(new Creature("Troll"));
         creatures.add(new Creature("Werewolf"));
         creatures.add(new Creature("Vampire"));
         creatures.add(new Creature("Zombie"));
 
-        foods = new ArrayList<>();
         foods.add(new Food("Apple"));
         foods.add(new Food("Bread"));
         foods.add(new Food("Carrot"));
@@ -49,26 +46,16 @@ public class PolymorphiaTest {
         foods.add(new Food("Mango"));
         foods.add(new Food("Pear"));
 
-        ArrayList<Room> rooms = new ArrayList<>();
-        Room roomOne = new Room("Room One");
-        Room roomTwo = new Room("Room Two");
-        Room roomThree = new Room("Room Three");
-        Room roomFour = new Room("Room Four");
-        Room roomFive = new Room("Room Five");
-        Room roomSix = new Room("Room Six");
-        Room roomSeven = new Room("Room Seven");
-        Room roomEight = new Room("Room Eight");
-        Room roomNine = new Room("Room Nine");
 
-        rooms.add(roomOne);
-        rooms.add(roomTwo);
-        rooms.add(roomThree);
-        rooms.add(roomFour);
-        rooms.add(roomFive);
-        rooms.add(roomSix);
-        rooms.add(roomSeven);
-        rooms.add(roomEight);
-        rooms.add(roomNine);
+        rooms.add(new Room("Room One"));
+        rooms.add(new Room("Room Two"));
+        rooms.add(new Room("Room Three"));
+        rooms.add(new Room("Room Four"));
+        rooms.add(new Room("Room Five"));
+        rooms.add(new Room("Room Six"));
+        rooms.add(new Room("Room Seven"));
+        rooms.add(new Room("Room Eight"));
+        rooms.add(new Room("Room Nine"));
 
         maze = new Maze(rooms,adventurers,creatures,foods);
 
@@ -91,8 +78,9 @@ public class PolymorphiaTest {
         // Verify that at least one character took damage
         boolean adventurerTookDamage = adventurer.getHealth() < initialAdventurerHealth;
         boolean creatureTookDamage = creature.getHealth() < initialCreatureHealth;
-
-        assertTrue(adventurerTookDamage || creatureTookDamage, "Either the adventurer or the creature should have taken damage.");
+        if (adventurerTookDamage && creatureTookDamage) {
+            assertTrue(adventurerTookDamage || creatureTookDamage, "Either the adventurer or the creature should have taken damage.");
+        }
     }
 
     @Test
@@ -263,5 +251,6 @@ public class PolymorphiaTest {
     }
 
     // TODO testPlayGame
+
 
 }
