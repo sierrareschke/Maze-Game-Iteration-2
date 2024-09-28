@@ -60,7 +60,7 @@ public class Polymorphia {
         logger.info("numAdventurersAlive" + numAdventurersAlive);
 
 
-        while (maze.areAdventuresAlive() && maze.areCreaturesAlive()) {
+        while (maze.getNumAdventurers()>0 && maze.getNumCreatures()>0) {
             takeTurn();
         }
 
@@ -70,7 +70,6 @@ public class Polymorphia {
     }
 
 
-
     public int determineWinner(int numCreaturesAlive, int numAdventurersAlive) {
         // RESULT #1 : All Adventures & Creatures have died, no winner
         if(numAdventurersAlive == 0 && numCreaturesAlive == 0) {
@@ -78,12 +77,12 @@ public class Polymorphia {
             return 0;
         }
         // RESULT #2 : Adventurers have killed all of the Creatures
-        else if (numAdventurersAlive > 0) {
+        else if (numAdventurersAlive > 0 && numCreaturesAlive <= 0) {
             logger.info("Yay, the Adventurers won!");
             return 1;
         }
         // RESULT #3 : Creatures have killed all of the Adventurers
-        else if (numCreaturesAlive > 0) {
+        else if (numCreaturesAlive > 0 && numAdventurersAlive <= 0) {
             logger.info("Boo, the Creatures won!");
             return 2;
         } else {
