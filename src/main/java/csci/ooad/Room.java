@@ -7,6 +7,14 @@ import java.util.stream.Collectors;
 
 public class Room {
 
+    /**
+     * ------------- EXAMPLE OF DEPENDENCY INJECTION -------------
+     *  The occupants and foods lists are dependencies of the Room class.
+     *  Instead of the Room class creating instances of Character or Food internally,
+     *  these dependencies are injected into the Room instance through methods like
+     *  addOccupant(Character occupant) and addFood(Food food).
+     */
+
     /* *
      *  FIELDS
      * */
@@ -27,6 +35,7 @@ public class Room {
     public Room() {
         this.name = "";
         this.occupants = new ArrayList<>(); // Initializes with an empty array
+        this.foods = new ArrayList<>();
     }
 
 
@@ -36,13 +45,15 @@ public class Room {
      */
     public Room(String name){
         this.name = name;
-        this.occupants = new ArrayList<>(); // Initializes with an empty a
+        this.occupants = new ArrayList<>();
+        this.foods = new ArrayList<>();
     }
 
     public Room(String name, int index){
         this.name = name;
         this.index = index;
         this.occupants = new ArrayList<>(); // Initializes with an empty a
+        this.foods = new ArrayList<>();
     }
 
 
@@ -65,7 +76,7 @@ public class Room {
 
     public void addOccupant(Character occupant) { occupants.add(occupant); }
 
-    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
+//    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
 
     public void emptyRoom() {
         occupants.clear();
@@ -81,6 +92,7 @@ public class Room {
         foods.add(food);
     }
 
+    // TODO: Need to add this back in, it's not getting called any where
     public void removeFood(Food food) {
         foods.remove(food);
     }
@@ -88,16 +100,6 @@ public class Room {
 
 
     /* COMPLEX METHODS */
-
-    // TODO - getHealthiestAdventurer (SIERRA)
-
-    // TODO - getHealthiestCreature (SIERRA)
-
-    // TODO - getNumAdventurers (SIERRA)
-
-    // TODO - getNumCreatures (SIERRA)
-
-    // TODO - getNumFood (SIERRA)
 
     public Boolean isEmpty() {
         return this.occupants.isEmpty();
@@ -151,33 +153,13 @@ public class Room {
     }
 
 
-
-
-
     /**
      * Method to remove an Adventurer occupant from a Room
      * @param occupant - Adventurer to remove from Room
      * @return the Adventurer that was removed
      */
-    public Character removeCharacter(Character occupant) {
-        // Check if the occupant is in the room
-        boolean found = false;
-        for (Character character : occupants) {
-            if (character instanceof Adventurer && character.equals(occupant)) {
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            return null; // Adventurer not found
-        }
-
-        // Remove the adventurer from the list of occupants
-        occupants.remove(occupant);
-
-        // Return the removed adventurer
-        return occupant;
+    public void removeCharacter(Character occupant) {
+        occupants.removeIf(character -> character.getName().equals(occupant.getName()));
     }
 
     public boolean hasCharacter(Character character) {
@@ -193,34 +175,57 @@ public class Room {
 
 
 
-
-
-
-
-
     /**
-     * toString method of the Room to print out its occupants
+     * toString method of the Room to print out its occupants in the desired format.
      * @return String version of the room
      *
-     * Ex. "Northwest: No occupants are here."
-     * Ex. "Southeast: Adventurer testAdventurer is here."
+     * Desired Output:
+     * Northwest:
+     *      Adventurers:
+     *      Creatures: Creature Ogre(health: 3.0)
+     *      Food: Fries
      */
     @Override
     public String toString() {
-        String result = name + ":\n";
+        StringBuilder result = new StringBuilder(name + ":\n");
 
-        // If the room is empty
-        if (occupants.isEmpty()) {
-            result += "No occupants are here.";
+        // Get adventurers in the room
+        List<Adventurer> adventurers = getAdventurers();
+        result.append("\tAdventurers: ");
+        if (adventurers.isEmpty()) {
+            result.append("\n");
         } else {
-            // Add information about each occupant
-            for (Character occupant : occupants) {
-                String occupantType = (occupant instanceof Adventurer) ? "Adventurer" : "Creature";
-                result += occupantType + " " + occupant + " is here. ";
+            for (Adventurer adventurer : adventurers) {
+                result.append(adventurer);
             }
+            result.append("\n");
         }
 
-        return result;
+        // Get creatures in the room
+        List<Creature> creatures = getCreatures();
+        result.append("\tCreatures: ");
+        if (creatures.isEmpty()) {
+            result.append("\n");
+        } else {
+            for (Creature creature : creatures) {
+                result.append(creature);
+            }
+            result.append("\n");
+        }
+
+        // List all the food items in the room
+        result.append("\tFood: ");
+        if (foods.isEmpty()) {
+            result.append("\n");
+        } else {
+            for (Food food : foods) {
+                result.append(food);
+            }
+            result.append("\n");
+        }
+
+        return result.toString();
     }
+
 
 }

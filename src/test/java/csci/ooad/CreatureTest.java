@@ -17,13 +17,13 @@ public class CreatureTest {
 
     // Test the initial health of the creature
     @Test
-    public void testInitialHealth() {
+    public void testInitialCreatureHealth() {
         assertEquals(3.0, creature.getHealth(), "Initial creature health should be 3.0");
     }
 
     // Test the name access method for creature
     @Test
-    public void testGetName() {
+    public void testGetCreatureName() {
         assertEquals("TestCreature", creature.getName(), "Creature name should be TestCreature");
     }
 }

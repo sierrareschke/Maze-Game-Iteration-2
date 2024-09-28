@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class Food {
 
     /* *
      *  FIELDS
      * */
-
+    private static final Logger logger = LoggerFactory.getLogger(Food.class);
     private String name;
     private int healthGranted;
 
@@ -51,6 +54,25 @@ public class Food {
 
     public int getHealthGranted() {
         return this.healthGranted;
+    }
+
+    public void distribute(Maze maze){
+
+        Random random = new Random();
+        int mazeDimensions = (int) Math.sqrt(maze.getNumberOfRooms());
+
+        // Generate a random number between 0 and 2 (inclusive)
+        int randomX = random.nextInt(mazeDimensions);
+        int randomY = random.nextInt(mazeDimensions);
+        logger.info(randomX + " " + randomY);
+
+        Room room  = maze.getRoomInGrid(randomX,randomY);
+        room.addFood(this);
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
 }

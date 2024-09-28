@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 
     /* *
      *  FIELDS
@@ -15,18 +15,12 @@ public class Character {
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
 
     private String name;
-    private double health;
+    protected double health;
 
 
     /* *
     *  CONSTRUCTORS
     * */
-
-    // TODO - delete
-//    Character(String name) {
-//        this.name = name;
-//        this.health = 5.0; // initial health set to 5.0 for adventurers
-//    }
 
     Character(String name, double health) {
         this.name = name;
@@ -82,31 +76,45 @@ public class Character {
         int y = coords.get("y");
         Room currentRoom = maze.getRoomInGrid(x, y);
 
-        // Take one random step in either direction
-        // TODO: need to change so that it only moves one step at a time (Nolan)
+        // Take one random step in either direction (up/down or left/right)
         int moveX = (int) (Math.random() * 3) - 1;
         int moveY = (int) (Math.random() * 3) - 1;
 
         // Adjust the coordinates to move to a neighboring room
-        int newX = Math.max(0, Math.min(2, x + moveX));
-        int newY = Math.max(0, Math.min(2, y + moveY));
+        int newX = x;
+        int newY = y;
+        while (newX != x && newY != y) {
+            boolean moveAlongX = rand.nextBoolean();
+            if (moveAlongX) {
+                newX = Math.max(0, Math.min(2, x + moveX));
+                newY = y;
+            } else {
+                newX = x;
+                newY = Math.max(0, Math.min(2, y + moveY));
+            }
+        }
+
         Room newRoom = maze.getRoomInGrid(newX, newY);
 
         // Move the character to the new room
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
 
-        // Each move decrements health by 0.25
-        this.health -= 0.25;
+
+        //Adventurer Bill(health: 6.0) moved from Northeast to North
+        logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName());
+
+
 
     }
 
     public void spawn(Maze maze){
         Random random = new Random();
+        int mazeDimensions = (int) Math.sqrt(maze.getNumberOfRooms());
 
         // Generate a random number between 0 and 2 (inclusive)
-        int randomX = random.nextInt(3);
-        int randomY = random.nextInt(3);
+        int randomX = random.nextInt(mazeDimensions);
+        int randomY = random.nextInt(mazeDimensions);
         System.out.println(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
@@ -130,7 +138,24 @@ public class Character {
             }
         }
         return null;
+    }
 
+    public Room getRoom(Maze maze){
+        Room[][] grid = maze.getGrid();
+        // Use 'this' to search for the current character instance in the grid
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                Room currentRoom = grid[i][j];
+                if (currentRoom.hasCharacter(this)) {
+                    return currentRoom;
+                }
+            }
+        }
+        return null;
+    }
+
+    public boolean isAlive(){
+        return this.health > 0;
     }
 
     /**
