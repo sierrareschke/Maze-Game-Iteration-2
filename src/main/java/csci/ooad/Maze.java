@@ -178,7 +178,18 @@ public class Maze {
      * 		Food: Steak
      */
 
-    // Getters
+    @Override
+    public String toString() {
+        String returnString = "";
+        ArrayList<Room> allRooms = this.getRooms();
+        for (Room room:allRooms){
+            returnString += room.toString();
+        }
+        return returnString;
+    }
+
+
+        // Getters
     public int getNumberOfRooms() {
         return numberOfRooms;
     }
