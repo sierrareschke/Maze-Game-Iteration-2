@@ -178,7 +178,14 @@ public class Maze {
      * 		Food: Steak
      */
 
-    // Getters
+    @Override
+    public String toString() {
+        //TODO
+        return "";
+    }
+
+
+        // Getters
     public int getNumberOfRooms() {
         return numberOfRooms;
     }
