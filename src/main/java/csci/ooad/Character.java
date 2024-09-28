@@ -114,7 +114,7 @@ public abstract class Character {
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
 
-        logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName());
+        logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName() + "\n");
     }
 
     public void spawn(Maze maze){

@@ -64,7 +64,7 @@ public class Food {
         // Generate a random number between 0 and 2 (inclusive)
         int randomX = random.nextInt(mazeDimensions);
         int randomY = random.nextInt(mazeDimensions);
-        logger.info(randomX + " " + randomY);
+//        logger.info(randomX + " " + randomY);
 
         Room room  = maze.getRoomInGrid(randomX,randomY);
         room.addFood(this);

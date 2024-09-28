@@ -85,11 +85,12 @@ public class PolymorphiaTest2x2 {
 
         // Verify that the winner was determined correctly
         int expectedWinner;
-        logger.info("numAdventurersAlive: " + numAdventurersAlive);
-        logger.info("numCreaturesAlive: " + numCreaturesAlive);
-
-        logger.info("areAdventuresAlive: " + maze.areAdventuresAlive());
-        logger.info("areCreaturesAlive: " + maze.areCreaturesAlive());
+        // Don't think we want this in the game play logs
+//        logger.info("numAdventurersAlive: " + numAdventurersAlive);
+//        logger.info("numCreaturesAlive: " + numCreaturesAlive);
+//
+//        logger.info("areAdventuresAlive: " + maze.areAdventuresAlive());
+//        logger.info("areCreaturesAlive: " + maze.areCreaturesAlive());
         if (numAdventurersAlive == 0 && numCreaturesAlive == 0) {
             expectedWinner = 0; // No one wins
         } else if (numAdventurersAlive > 0 && numCreaturesAlive == 0) {
