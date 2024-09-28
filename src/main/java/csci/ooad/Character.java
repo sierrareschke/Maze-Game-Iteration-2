@@ -70,27 +70,35 @@ public abstract class Character {
     public void move(Maze maze) {
         Random rand = new Random();
         HashMap<String, Integer> coords = this.currentRoomCoordinates(maze);
+        int mazeWidth = maze.getGrid().length;
 
         // Grid coordinates of the current room
         int x = coords.get("x");
         int y = coords.get("y");
         Room currentRoom = maze.getRoomInGrid(x, y);
 
-        // Take one random step in either direction (up/down or left/right)
-        int moveX = (int) (Math.random() * 3) - 1;
-        int moveY = (int) (Math.random() * 3) - 1;
-
-        // Adjust the coordinates to move to a neighboring room
         int newX = x;
         int newY = y;
-        while (newX != x && newY != y) {
+
+        // Continue trying until a valid move is made
+        while (newX == x && newY == y) {
             boolean moveAlongX = rand.nextBoolean();
             if (moveAlongX) {
-                newX = Math.max(0, Math.min(2, x + moveX));
+                int deltaX = rand.nextBoolean() ? 1 : -1;
+                newX = x + deltaX;
+                // Ensure newX is within bounds
+                if (newX < 0 || newX >= mazeWidth) {
+                    newX = x; // Invalid move, stay in current position
+                }
                 newY = y;
             } else {
+                int deltaY = rand.nextBoolean() ? 1 : -1;
+                newY = y + deltaY;
+                // Ensure newY is within bounds
+                if (newY < 0 || newY >= mazeWidth) {
+                    newY = y; // Invalid move, stay in current position
+                }
                 newX = x;
-                newY = Math.max(0, Math.min(2, y + moveY));
             }
         }
 
@@ -100,12 +108,7 @@ public abstract class Character {
         currentRoom.removeCharacter(this);
         newRoom.addOccupant(this);
 
-
-        //Adventurer Bill(health: 6.0) moved from Northeast to North
         logger.info(this + " moved from " + currentRoom.getName() + " to " + newRoom.getName());
-
-
-
     }
 
     public void spawn(Maze maze){
