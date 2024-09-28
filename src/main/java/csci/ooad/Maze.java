@@ -177,7 +177,6 @@ public class Maze {
      * 		Creatures:
      * 		Food: Steak
      */
-
     @Override
     public String toString() {
         //TODO

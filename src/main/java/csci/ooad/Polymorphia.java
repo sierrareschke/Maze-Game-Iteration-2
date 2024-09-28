@@ -108,7 +108,6 @@ public class Polymorphia {
         ArrayList<Room> rooms = maze.getRooms();
 
 
-
         ArrayList<Adventurer> adventurersToMove = new ArrayList<>();
 
         for (Room room : rooms) {
@@ -221,14 +220,14 @@ public class Polymorphia {
         } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
             int damage = adventurerRoll - creatureRoll;
             creature.subtractFromHealth(damage);  // take damage
-            if(creature.isAlive()) {
+            if(!creature.isAlive()) {
                 kill(creature);
             }
             logger.info("Adventurer wins the round. Creature takes " + damage + " damage.");
         } else { // creature wins, subtract the difference from the adventurer's health
             int damage = creatureRoll - adventurerRoll;
             adventurer.subtractFromHealth(damage);  // take damage
-            if(adventurer.isAlive()) {
+            if(!adventurer.isAlive()) {
                 kill(adventurer);
             }
             logger.info("Creature wins the round. Adventurer takes " + damage + " damage.");

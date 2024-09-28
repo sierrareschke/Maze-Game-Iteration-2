@@ -101,7 +101,7 @@ public abstract class Character {
         newRoom.addOccupant(this);
 
         // Each move decrements health by 0.25
-        this.health -= 0.25;
+        // this.health -= 0.25; // TODO
 
     }
 
