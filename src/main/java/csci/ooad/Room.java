@@ -76,7 +76,7 @@ public class Room {
 
     public void addOccupant(Character occupant) { occupants.add(occupant); }
 
-    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
+//    public void removeOccupant(Character occupant) { occupants.remove(occupant); }
 
     public void emptyRoom() {
         occupants.clear();
@@ -92,6 +92,7 @@ public class Room {
         foods.add(food);
     }
 
+    // TODO: Need to add this back in, it's not getting called any where
     public void removeFood(Food food) {
         foods.remove(food);
     }
