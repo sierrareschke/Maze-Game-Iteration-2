@@ -149,19 +149,20 @@ public abstract class Character {
         return null;
     }
 
-    public Room getRoom(Maze maze){
-        Room[][] grid = maze.getGrid();
-        // Use 'this' to search for the current character instance in the grid
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                Room currentRoom = grid[i][j];
-                if (currentRoom.hasCharacter(this)) {
-                    return currentRoom;
-                }
-            }
-        }
-        return null;
-    }
+    //TODO: Implement when needed
+//    public Room getRoom(Maze maze){
+//        Room[][] grid = maze.getGrid();
+//        // Use 'this' to search for the current character instance in the grid
+//        for (int i = 0; i < grid.length; i++) {
+//            for (int j = 0; j < grid[i].length; j++) {
+//                Room currentRoom = grid[i][j];
+//                if (currentRoom.hasCharacter(this)) {
+//                    return currentRoom;
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     public boolean isAlive(){
         return this.health > 0;

@@ -92,11 +92,6 @@ public class Room {
         foods.add(food);
     }
 
-    // TODO: Need to add this back in, it's not getting called any where
-    public void removeFood(Food food) {
-        foods.remove(food);
-    }
-
 
 
     /* COMPLEX METHODS */
