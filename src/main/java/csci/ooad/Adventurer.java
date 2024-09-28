@@ -30,6 +30,7 @@ public class Adventurer extends Character {
         HashMap<String, Integer> adventurerRoom = super.currentRoomCoordinates(maze);
 
         this.addToHealth(healthGained);
+        // TODO - REMOVE FOOD (currently a constant amount of food??)
     }
 
 }

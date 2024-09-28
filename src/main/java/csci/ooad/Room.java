@@ -101,14 +101,6 @@ public class Room {
 
     /* COMPLEX METHODS */
 
-    // TODO - getHealthiestAdventurer (SIERRA)
-
-    // TODO - getHealthiestCreature (SIERRA)
-
-
-
-
-
     public Boolean isEmpty() {
         return this.occupants.isEmpty();
     }

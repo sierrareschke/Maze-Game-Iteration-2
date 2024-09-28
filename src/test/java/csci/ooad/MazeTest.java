@@ -17,6 +17,8 @@ public class MazeTest {
     private Character character;
     private Adventurer adventurer;
     private Food food;
+    Polymorphia polymorphia;
+
 
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
     private List<Room> listOfRooms = new ArrayList<>();
@@ -40,6 +42,9 @@ public class MazeTest {
         }
 
         this.maze = new Maze(listOfRooms, listOfAdventurers, listOfCreatures, listOfFoods);
+
+        polymorphia = new Polymorphia(maze);
+
     }
 
     @Test
@@ -52,9 +57,6 @@ public class MazeTest {
         List<Food> listOfFoods = List.of(food);
         List<Room> listOfRooms = new ArrayList<>();
 
-        // TODO: Probably could move this maze creation code to the BeforeEach statement
-//        Character testCharacter = new Character("TestCharacter");
-        // Create the maze
         String[] roomNames = {"Room NW", "Room N", "Room NE", "Room W", "Room C", "Room E", "Room SW", "Room S", "Room SE"};
         int roomIndex = 0;
         for (String name: roomNames){
@@ -71,7 +73,6 @@ public class MazeTest {
         logger.info(Arrays.deepToString(maze.getGrid()));
     }
 
-    // TODO
     @Test
     public void testGetRooms(){
         List<String> originalRoomNames = new ArrayList<String>();
@@ -103,4 +104,35 @@ public class MazeTest {
         List<Adventurer> allAdventures = maze.getAllAdventurers();
         assertEquals(0, allAdventures.size());
     }
+
+    @Test
+    public void testAreAdventurersAlive() {
+        assertTrue(maze.areAdventuresAlive(), "There should be alive adventurers initially.");
+
+        // kill all characters
+        for (Room room : maze.getRooms()) {
+            for (Adventurer adventurer : room.getAdventurers()) {
+                polymorphia.kill(adventurer);
+            }
+        }
+
+        // there should be no alive adventurers now
+        assertFalse(maze.areAdventuresAlive(), "There should be no alive adventurers after they are all set to dead.");
+    }
+
+    @Test
+    public void testAreCreaturesAlive() {
+        assertTrue(maze.areCreaturesAlive(), "There should be alive creatures initially.");
+
+        // kill all characters
+        for (Room room : maze.getRooms()) {
+            for (Creature creature : room.getCreatures()) {
+                polymorphia.kill(creature);
+            }
+        }
+
+        // there should be no alive creatures now
+        assertFalse(maze.areCreaturesAlive(), "There should be no alive creatures after they are all set to dead.");
+    }
+
 }

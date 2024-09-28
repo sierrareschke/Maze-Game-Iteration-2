@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 
     /* *
      *  FIELDS
@@ -15,7 +15,7 @@ public class Character {
     private static final Logger logger = LoggerFactory.getLogger(Character.class);
 
     private String name;
-    private double health;
+    protected double health;
 
 
     /* *
