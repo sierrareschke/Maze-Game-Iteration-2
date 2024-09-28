@@ -1,6 +1,7 @@
 package csci.ooad;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,8 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 public class PolymorphiaTest {
 
@@ -70,7 +70,7 @@ public class PolymorphiaTest {
         rooms.add(roomEight);
         rooms.add(roomNine);
 
-        maze = new Maze(rooms,adventurers,creatures,foods);
+        maze = new Maze(rooms, adventurers, creatures, foods);
 
         polymorphia = new Polymorphia(maze);
 
@@ -128,15 +128,15 @@ public class PolymorphiaTest {
     void testDetermineWinner() {
         // Test scenario where both adventurers and creatures are dead
         int result = polymorphia.determineWinner(0, 0);
-        assertEquals(result ,0);
+        assertEquals(result, 0);
 
         // Test scenario where adventurers have killed all the creatures
         result = polymorphia.determineWinner(0, 1);
-        assertEquals(result ,1);
+        assertEquals(result, 1);
 
         // Test scenario where creatures have killed all the adventurers
         result = polymorphia.determineWinner(1, 0);
-        assertEquals(result ,2);
+        assertEquals(result, 2);
 
         // Test scenario with unexpected state (invalid input)
         Exception exception = assertThrows(IllegalStateException.class, () -> {
@@ -148,7 +148,6 @@ public class PolymorphiaTest {
 
 
     /* ----------- 3x3 TESTS -------------- */
-
 
 
     @Test
@@ -255,7 +254,6 @@ public class PolymorphiaTest {
     }
 
 
-
     // TODO
     @Test
     void test3x3PrintMaze() {
@@ -263,5 +261,44 @@ public class PolymorphiaTest {
     }
 
     // TODO testPlayGame
+    @Test
+    void testPlayGame() {
+        // Run the game simulation
+        polymorphia.playGame();
+
+        // Check if either adventurers or creatures are alive
+        int numAdventurersAlive = maze.getNumAdventurers();
+        int numCreaturesAlive = maze.getNumCreatures();
+
+
+        // Verify that the game has ended when no adventurers or creatures are alive
+        boolean gameHasEnded = !(maze.areAdventuresAlive() && maze.areCreaturesAlive());
+        assertTrue(gameHasEnded, "The game should end when no adventurers or creatures are alive.");
+
+        // Verify that the winner was determined correctly
+        int expectedWinner;
+        logger.info("numAdventurersAlive: " + numAdventurersAlive);
+        logger.info("numCreaturesAlive: " + numCreaturesAlive);
+
+        logger.info("areAdventuresAlive: " + maze.areAdventuresAlive());
+        logger.info("areCreaturesAlive: " + maze.areCreaturesAlive());
+        if (numAdventurersAlive == 0 && numCreaturesAlive == 0) {
+            expectedWinner = 0; // No one wins
+        } else if (numAdventurersAlive > 0 && numCreaturesAlive == 0) {
+            expectedWinner = 1; // Adventurers win
+        } else if (numCreaturesAlive > 0 && numAdventurersAlive == 0) {
+            expectedWinner = 2; // Creatures win
+        } else {
+            throw new IllegalStateException("Unexpected game state: both adventurers and creatures are alive. NumCreaturesAlive = "+ numCreaturesAlive + ". NumAdventurersAlive = " +numAdventurersAlive);
+        }
+
+        int actualWinner = polymorphia.determineWinner(numCreaturesAlive, numAdventurersAlive);
+        assertEquals(expectedWinner, actualWinner, "The winner of the game should be determined correctly.");
+
+        // Verify log statements by checking the game progression via logging (optional, depending on setup)
+        logger.info("Game has ended with winner: " + actualWinner);
+    }
+
+
 
 }

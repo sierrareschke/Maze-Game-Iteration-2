@@ -111,7 +111,7 @@ public class Maze {
         return this.getAllFoods().size();
     }
 
-    private void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
+    public void generateGameState(List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         for(Adventurer adventurer : adventurers) {
             adventurer.spawn(this);
         }
@@ -224,4 +224,5 @@ public class Maze {
             }
         }
     }
+
 }
