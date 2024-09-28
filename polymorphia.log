@@ -1,0 +1,142 @@
+All adventurers & creatures have died, no winner!Yay, the Adventurers won!Boo, the Creatures won!Creature Ogre(health: 3.0) was killed.Adventurer wins the round. Creature takes 1 damage. Polymorphia Maze: turn 1
+Room One:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Cake 
+
+Room Two:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: Apple, Pumpkin Pie, Pear 
+
+Room Three:
+	Adventurers: Ted(health: 5.0). 
+	Creatures: 
+	Food: Chicken 
+
+Room Four:
+	Adventurers: Bill(health: 5.0). 
+	Creatures: Werewolf(health: 3.0). 
+	Food: Pork, Steak 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Bread, Carrot, Mango 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: 
+
+Creature wins the round. Adventurer takes 2 damage. Adventurer Bill(health: 3.0) fought CreatureWerewolf (health: 3.0)
+Polymorphia Maze: turn 2
+Room One:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Cake 
+
+Room Two:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: Apple, Pumpkin Pie, Pear 
+
+Room Three:
+	Adventurers: Ted(health: 6.0). 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Bill(health: 3.0). 
+	Creatures: Werewolf(health: 3.0). 
+	Food: Pork, Steak 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Bread, Carrot, Mango 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: 
+
+Adventurer wins the round. Creature takes 1 damage. Adventurer Bill(health: 3.0) fought CreatureWerewolf (health: 2.0)
+Polymorphia Maze: turn 3
+Room One:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Cake 
+
+Room Two:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: Apple, Pumpkin Pie, Pear 
+
+Room Three:
+	Adventurers: Ted(health: 6.0). 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Bill(health: 3.0). 
+	Creatures: Werewolf(health: 2.0). 
+	Food: Pork, Steak 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Bread, Carrot, Mango 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: 
+
+Fight is a tie! Adventurer Bill(health: 3.0) fought CreatureWerewolf (health: 2.0)
+Adventurer Bill(health: 5.0) was killed.

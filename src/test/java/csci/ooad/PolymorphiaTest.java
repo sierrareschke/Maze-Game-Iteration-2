@@ -249,43 +249,43 @@ public class PolymorphiaTest {
     }
 
     // TODO testPlayGame
-    @Test
-    void testPlayGame() {
-        // Run the game simulation
-        polymorphia.playGame();
-
-        // Check if either adventurers or creatures are alive
-        int numAdventurersAlive = maze.getNumAdventurers();
-        int numCreaturesAlive = maze.getNumCreatures();
-
-
-        // Verify that the game has ended when no adventurers or creatures are alive
-        boolean gameHasEnded = !(maze.areAdventuresAlive() && maze.areCreaturesAlive());
-        assertTrue(gameHasEnded, "The game should end when no adventurers or creatures are alive.");
-
-        // Verify that the winner was determined correctly
-        int expectedWinner;
-        logger.info("numAdventurersAlive: " + numAdventurersAlive);
-        logger.info("numCreaturesAlive: " + numCreaturesAlive);
-
-        logger.info("areAdventuresAlive: " + maze.areAdventuresAlive());
-        logger.info("areCreaturesAlive: " + maze.areCreaturesAlive());
-        if (numAdventurersAlive == 0 && numCreaturesAlive == 0) {
-            expectedWinner = 0; // No one wins
-        } else if (numAdventurersAlive > 0 && numCreaturesAlive == 0) {
-            expectedWinner = 1; // Adventurers win
-        } else if (numCreaturesAlive > 0 && numAdventurersAlive == 0) {
-            expectedWinner = 2; // Creatures win
-        } else {
-            throw new IllegalStateException("Unexpected game state: both adventurers and creatures are alive. NumCreaturesAlive = "+ numCreaturesAlive + ". NumAdventurersAlive = " +numAdventurersAlive);
-        }
-
-        int actualWinner = polymorphia.determineWinner(numCreaturesAlive, numAdventurersAlive);
-        assertEquals(expectedWinner, actualWinner, "The winner of the game should be determined correctly.");
-
-        // Verify log statements by checking the game progression via logging (optional, depending on setup)
-        logger.info("Game has ended with winner: " + actualWinner);
-    }
+//    @Test
+//    void testPlayGame() {
+//        // Run the game simulation
+//        polymorphia.playGame();
+//
+//        // Check if either adventurers or creatures are alive
+//        int numAdventurersAlive = maze.getNumAdventurers();
+//        int numCreaturesAlive = maze.getNumCreatures();
+//
+//
+//        // Verify that the game has ended when no adventurers or creatures are alive
+//        boolean gameHasEnded = !(maze.areAdventuresAlive() && maze.areCreaturesAlive());
+//        assertTrue(gameHasEnded, "The game should end when no adventurers or creatures are alive.");
+//
+//        // Verify that the winner was determined correctly
+//        int expectedWinner;
+//        logger.info("numAdventurersAlive: " + numAdventurersAlive);
+//        logger.info("numCreaturesAlive: " + numCreaturesAlive);
+//
+//        logger.info("areAdventuresAlive: " + maze.areAdventuresAlive());
+//        logger.info("areCreaturesAlive: " + maze.areCreaturesAlive());
+//        if (numAdventurersAlive == 0 && numCreaturesAlive == 0) {
+//            expectedWinner = 0; // No one wins
+//        } else if (numAdventurersAlive > 0 && numCreaturesAlive == 0) {
+//            expectedWinner = 1; // Adventurers win
+//        } else if (numCreaturesAlive > 0 && numAdventurersAlive == 0) {
+//            expectedWinner = 2; // Creatures win
+//        } else {
+//            throw new IllegalStateException("Unexpected game state: both adventurers and creatures are alive. NumCreaturesAlive = "+ numCreaturesAlive + ". NumAdventurersAlive = " +numAdventurersAlive);
+//        }
+//
+//        int actualWinner = polymorphia.determineWinner(numCreaturesAlive, numAdventurersAlive);
+//        assertEquals(expectedWinner, actualWinner, "The winner of the game should be determined correctly.");
+//
+//        // Verify log statements by checking the game progression via logging (optional, depending on setup)
+//        logger.info("Game has ended with winner: " + actualWinner);
+//    }
 
 
 

@@ -54,14 +54,15 @@ public class RoomTest {
     }
 
 
-
-
     // Method to test the toString method for Room, ensuring correct output
     @Test
     public void testToString() {
         // Test empty room case
         Room emptyRoom = new Room("Northwest");
-        String expectedEmptyRoomOutput = "Northwest:\nNo occupants are here.";
+        String expectedEmptyRoomOutput = "Northwest:\n" +
+                "\tAdventurers: \n" +
+                "\tCreatures: \n" +
+                "\tFood: \n";
         assertEquals(expectedEmptyRoomOutput, emptyRoom.toString(), "Empty room description should match.");
     }
 
@@ -71,7 +72,10 @@ public class RoomTest {
         Adventurer adventurer = new Adventurer("Test Adventurer");
         occupiedRoom.addOccupant(adventurer);
 
-        String expectedOccupiedRoomOutput = "Southeast:\nAdventurer Test Adventurer(health: 5.0) is here. ";
+        String expectedOccupiedRoomOutput = "Southeast:\n" +
+                "\tAdventurers: Test Adventurer(health: 5.0). \n" +
+                "\tCreatures: \n" +
+                "\tFood: \n";
         assertEquals(expectedOccupiedRoomOutput, occupiedRoom.toString(), "Occupied room description should match.");
     }
 
@@ -83,7 +87,10 @@ public class RoomTest {
         room.addOccupant(adventurer);
         room.addOccupant(creature);
 
-        String expectedOutput = "East:\nAdventurer Test Adventurer(health: 5.0) is here. Creature Test Creature(health: 3.0) is here. ";
+        String expectedOutput = "East:\n" +
+                "\tAdventurers: Test Adventurer(health: 5.0). \n" +
+                "\tCreatures: Test Creature(health: 3.0). \n" +
+                "\tFood: \n";
         assertEquals(expectedOutput, room.toString(), "Room description with multiple occupants should match.");
     }
 
