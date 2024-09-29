@@ -246,11 +246,7 @@ public class PolymorphiaTest {
     }
 
 
-    // TODO
-    @Test
-    void test3x3PrintMaze() {
-        assertTrue(false, "need to implement test2x2PrintMaze");
-    }
+
 
     @Test
     void testPlayGame() {

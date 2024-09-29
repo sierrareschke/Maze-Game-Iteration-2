@@ -21,7 +21,7 @@ public class Maze {
      * */
 
 
-    // TODO - SHOULD THERE BE AN ERROR THROWN IN CONSTRUCTOR IF NOT SQUARE MATRIX
+
 
     Maze(List<Room> listOfRooms, List<Adventurer> adventurers, List<Creature> creatures, List<Food> foods) {
         int numRooms = listOfRooms.size();
@@ -158,7 +158,6 @@ public class Maze {
     }
 
 
-    // TODO - OVERRIDE TO STRING FOR PRINT MAZE
     /**
      * Northwest:
      *      Adventurers:

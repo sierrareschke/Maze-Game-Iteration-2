@@ -55,6 +55,8 @@ public class Polymorphia {
      */
     public void playGame() {
 
+        logger.info("Starting play...");
+
         // Print the initial state of the game
         printMaze();
 
@@ -150,7 +152,7 @@ public class Polymorphia {
 
                 fight(healthiestAdventurer, healthiestCreature);
                 logger.info("Adventurer " + healthiestAdventurer.getName() + "(health: " + healthiestAdventurer.getHealth() + ") " +
-                        "fought Creature" + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")" + "\n");
+                        "fought Creature " + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")" + "\n");
 
                 // if there is a second adventurer, move it
                 if (numAdventurersPresent == 2) {
@@ -195,7 +197,8 @@ public class Polymorphia {
             List<Adventurer> allAdventures = maze.getAllAdventurers();
             for(Adventurer adventurer : allAdventures){
                 adventurer.move(maze);
-                adventurer.subtractFromHealth(0.25);
+                // Note: Don't subtract .25 since homework example didn't do this
+                //adventurer.subtractFromHealth(0.25);
             }
             adventurersToMove.clear();
         }
