@@ -5,6 +5,13 @@
 
 Name: Sierra Reschke, Grace Ohlsen and Nolan Brady
 
+## Java Version
+
+openjdk 23 2024-09-17
+OpenJDK Runtime Environment (build 23+37-2369)
+OpenJDK 64-Bit Server VM (build 23+37-2369, mixed mode, sharing)
+
+
 ## Work Done
 
 For this assignment, the main work was done in adjusting what we previously had to match the Homework 3 requirements.
@@ -29,11 +36,8 @@ Our main challenge was identifying the best way to encapsulate while also mainta
 
 
 ## Game Output
-
-### Output #1
-
-### Output #2
-
-### Output #3
+Please see the files `polymorhia_3x3_run_1.log` and `polymorhia_3x3_run_1.log` for the 3x3 maze game play.
+Please see the files `polymorhia_2x2_run_1.log` and `polymorhia_2x2_run_1.log` for the 3x3 maze game play.
 
 ## Code Coverage
+![My Local Image](./testCoverage.png)

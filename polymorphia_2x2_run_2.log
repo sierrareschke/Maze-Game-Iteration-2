@@ -1,0 +1,278 @@
+Polymorphia Maze: turn 0
+Room One:
+	Adventurers: Bill(health: 5.0). 
+	Creatures: 
+	Food: Bread, Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: Chicken 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+numAdventurersAlive1Polymorphia Maze: turn 1
+Room One:
+	Adventurers: Bill(health: 5.0). 
+	Creatures: 
+	Food: Bread, Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: Chicken 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 2
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: Chicken 
+
+Room Three:
+	Adventurers: Bill(health: 5.75). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+Fight is a tie! Adventurer Bill(health: 5.75) fought CreatureOgre (health: 3.0)
+Polymorphia Maze: turn 3
+Room One:
+	Adventurers: Bill(health: 5.5). 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: Chicken 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 4
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Bill(health: 6.25). 
+	Creatures: 
+	Food: Chicken 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 5
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: Bill(health: 7.0). 
+	Creatures: 
+	Food: Apple, Carrot, Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 6
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: Bill(health: 7.75). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Carrot, Pumpkin Pie, Cake, Pear 
+
+Creature wins the round. Adventurer takes 2 damage. Adventurer Bill(health: 5.75) fought CreatureOgre (health: 3.0)
+Polymorphia Maze: turn 7
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: Bill(health: 5.5). 
+	Creatures: 
+	Food: Carrot, Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 8
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: Bill(health: 6.25). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Pumpkin Pie, Cake, Pear 
+
+Fight is a tie! Adventurer Bill(health: 6.25) fought CreatureOgre (health: 3.0)
+Polymorphia Maze: turn 9
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: Bill(health: 6.0). 
+	Creatures: 
+	Food: Pumpkin Pie, Cake, Pear 
+
+Polymorphia Maze: turn 10
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Bill(health: 6.75). 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Cake, Pear 
+
+Polymorphia Maze: turn 11
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: Bill(health: 6.5). 
+	Creatures: 
+	Food: Cake, Pear 
+
+Polymorphia Maze: turn 12
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: Bill(health: 7.25). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Mango 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Pear 
+
+Creature Ogre(health: -1.0) was killed.Adventurer wins the round. Creature takes 4 damage. Adventurer Bill(health: 7.25) fought CreatureOgre (health: -1.0)
+Yay, the Adventurers won!Yay, the Adventurers won!

@@ -1,0 +1,2408 @@
+Polymorphia Maze: turn 0
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: Ted(health: 5.0). 
+	Creatures: Werewolf(health: 3.0). 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Carrot 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: Apple 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: Bill(health: 5.0). 
+	Creatures: 
+	Food: Bread 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+numAdventurersAlive2Polymorphia Maze: turn 1
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: Ted(health: 5.0). 
+	Creatures: Werewolf(health: 3.0). 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Carrot 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: Apple 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: Bill(health: 5.0). 
+	Creatures: 
+	Food: Bread 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Adventurer wins the round. Creature takes 2 damage. Adventurer Ted(health: 5.0) fought CreatureWerewolf (health: 1.0)
+Polymorphia Maze: turn 2
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: Werewolf(health: 1.0). 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: Carrot 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: Ted(health: 4.75). 
+	Creatures: 
+	Food: Apple 
+
+Room Seven:
+	Adventurers: Bill(health: 5.75). 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature wins the round. Adventurer takes 3 damage. Adventurer Bill(health: 2.75) fought CreatureZombie (health: 3.0)
+Polymorphia Maze: turn 3
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: Werewolf(health: 1.0). 
+	Food: 
+
+Room Four:
+	Adventurers: Bill(health: 2.5). 
+	Creatures: 
+	Food: Carrot 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: Ted(health: 5.5). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature wins the round. Adventurer takes 1 damage. Adventurer Ted(health: 4.5) fought CreatureOgre (health: 3.0)
+Polymorphia Maze: turn 4
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: Werewolf(health: 1.0). 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: Bill(health: 3.25). 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 4.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Fight is a tie! Adventurer Bill(health: 3.25) fought CreatureVampire (health: 3.0)
+Polymorphia Maze: turn 5
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: Bill(health: 3.0). 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: Werewolf(health: 1.0). 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: Ted(health: 4.0). 
+	Creatures: Vampire(health: 3.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature wins the round. Adventurer takes 2 damage. Adventurer Bill(health: 1.0) fought CreatureTroll (health: 3.0)
+Adventurer wins the round. Creature takes 2 damage. Adventurer Ted(health: 4.0) fought CreatureVampire (health: 1.0)
+Polymorphia Maze: turn 6
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: Bill(health: 0.75). 
+	Creatures: Werewolf(health: 1.0). 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: 3.75). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature Werewolf(health: 0.0) was killed.Adventurer wins the round. Creature takes 1 damage. Adventurer Bill(health: 0.75) fought CreatureWerewolf (health: 0.0)
+Polymorphia Maze: turn 7
+Room One:
+	Adventurers: Ted(health: 3.5). 
+	Creatures: 
+	Food: Steak 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: Bill(health: 0.5). 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 8
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: 4.25). 
+	Creatures: Troll(health: 3.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: Bill(health: 0.25). 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Adventurer wins the round. Creature takes 2 damage. Adventurer Ted(health: 4.25) fought CreatureTroll (health: 1.0)
+Polymorphia Maze: turn 9
+Room One:
+	Adventurers: Ted(health: 4.0). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: Bill(health: 0.0). 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 10
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: Bill(health: -0.25). 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: 3.75). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 11
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Bill(health: -0.5). 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: 3.5). 
+	Creatures: Zombie(health: 3.0). 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Adventurer Bill(health: -1.5) was killed.Creature wins the round. Adventurer takes 1 damage. Adventurer Bill(health: -1.5) fought CreatureTroll (health: 1.0)
+Creature Zombie(health: 0.0) was killed.Adventurer wins the round. Creature takes 3 damage. Adventurer Ted(health: 3.5) fought CreatureZombie (health: 0.0)
+Polymorphia Maze: turn 12
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 3.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 13
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: 3.0). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 14
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: 2.75). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 15
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: 2.5). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 16
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 2.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 17
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: 2.0). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 18
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: 1.75). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 19
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: 1.5). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 20
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 1.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 21
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: Ted(health: 1.0). 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Fight is a tie! Adventurer Ted(health: 1.0) fought CreatureVampire (health: 1.0)
+Polymorphia Maze: turn 22
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 0.75). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 23
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: Ted(health: 0.5). 
+	Creatures: Ogre(health: 3.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Adventurer wins the round. Creature takes 1 damage. Adventurer Ted(health: 0.5) fought CreatureOgre (health: 2.0)
+Polymorphia Maze: turn 24
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: 0.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 25
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: Ted(health: 0.0). 
+	Creatures: Vampire(health: 1.0). 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature Vampire(health: -1.0) was killed.Adventurer wins the round. Creature takes 2 damage. Adventurer Ted(health: 0.0) fought CreatureVampire (health: -1.0)
+Polymorphia Maze: turn 26
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: -0.25). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 27
+Room One:
+	Adventurers: Ted(health: -0.5). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 28
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: -0.75). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 29
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: Ted(health: -1.0). 
+	Creatures: 
+	Food: Pear 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 30
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -0.25). 
+	Creatures: Troll(health: 1.0). 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature Troll(health: 0.0) was killed.Adventurer wins the round. Creature takes 1 damage. Adventurer Ted(health: -0.25) fought CreatureTroll (health: 0.0)
+Polymorphia Maze: turn 31
+Room One:
+	Adventurers: Ted(health: -0.5). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 32
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -0.75). 
+	Creatures: 
+	Food: Mango 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 33
+Room One:
+	Adventurers: Ted(health: 0.0). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 34
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: -0.25). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 35
+Room One:
+	Adventurers: Ted(health: -0.5). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 36
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -0.75). 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 37
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: Ted(health: -1.0). 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 38
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -1.25). 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 39
+Room One:
+	Adventurers: Ted(health: -1.5). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 40
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -1.75). 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 41
+Room One:
+	Adventurers: Ted(health: -2.0). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 42
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: -2.25). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 43
+Room One:
+	Adventurers: Ted(health: -2.5). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 44
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: Ted(health: -2.75). 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 45
+Room One:
+	Adventurers: Ted(health: -3.0). 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 46
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: Ted(health: -3.25). 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 47
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: -3.5). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 48
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: -3.75). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 49
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: Ted(health: -4.0). 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 50
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: Ted(health: -4.25). 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Polymorphia Maze: turn 51
+Room One:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Two:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Three:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Four:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Five:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Six:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Seven:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Eight:
+	Adventurers: 
+	Creatures: 
+	Food: 
+
+Room Nine:
+	Adventurers: Ted(health: -4.5). 
+	Creatures: Ogre(health: 2.0). 
+	Food: Pork, Chicken, Pumpkin Pie, Cake 
+
+Creature Ogre(health: -1.0) was killed.Adventurer wins the round. Creature takes 3 damage. Adventurer Ted(health: -4.5) fought CreatureOgre (health: -1.0)
+Yay, the Adventurers won!Yay, the Adventurers won!
