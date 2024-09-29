@@ -19,6 +19,7 @@ We made the following adjustments:
 * Got rid of any instantiation of non-trivial classes, including Character and Room
 * Made more methods to include better encapsulation
 * Altered the way that characters are moved to use room coordinates rather than looping through rooms
+* Changed Character to be an abstract class rather than a regular class since there was no reason for an instance of Character, only Adventurer or Creature
 
 We also added the following:
 * Created a Maze class to encapsulate the collection of Rooms

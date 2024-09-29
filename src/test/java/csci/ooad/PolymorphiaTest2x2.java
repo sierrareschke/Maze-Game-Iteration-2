@@ -70,6 +70,38 @@ public class PolymorphiaTest2x2 {
     }
 
     @Test
+    void testPrintMaze() {
+        // Define the expected elements to be present in the output
+        String[] expectedElements = {
+                "Room One:",
+                "\tAdventurers:",
+                "\tCreatures:",
+                "\tFood:",
+                "Room Two:",
+                "\tAdventurers:",
+                "\tCreatures:",
+                "\tFood:",
+                "Room Three:",
+                "\tAdventurers:",
+                "\tCreatures:",
+                "\tFood:",
+                "Room Four:",
+                "\tAdventurers:",
+                "\tCreatures:",
+                "\tFood:"
+        };
+
+        // Get the actual output from the maze's toString method
+        String actualOutput = maze.toString();
+        logger.info(actualOutput);
+
+        // Check that each expected element appears in the actual output
+        for (String element : expectedElements) {
+            assertTrue(actualOutput.contains(element), "The maze output did not contain expected element: " + element);
+        }
+    }
+
+    @Test
     void testPlayGame() {
         // Run the game simulation
         polymorphia.playGame();
@@ -209,11 +241,5 @@ public class PolymorphiaTest2x2 {
         assertTrue(adventurersEatFoodCount > 0, "Scenario 4: There should be at least one turn with adventurers eating food.");
     }
 
-    // TODO
-    @Test
-    void test2x2PrintMaze() {
-        this.maze.toString();
-        assertTrue(false, "need to implement test2x2PrintMaze");
-    }
 
 }

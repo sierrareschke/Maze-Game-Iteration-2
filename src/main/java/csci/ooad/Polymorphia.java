@@ -18,6 +18,15 @@ public class Polymorphia {
     private Dice dice;
     private Maze maze;
 
+    /**
+     * ------------- EXAMPLE OF ENCAPSULATION -------------
+     *  The polymorphism class uses a Dice without being able to alter its state.
+     *  For example, polymorphism can't set the die value to be 4. It has
+     *  to roll the dice in order to get a value. That is encapsulation and its
+     *  important to have since we don't want to allow essentially "cheating" or
+     *  manipulation of the dice.
+     */
+
     /* *
      *  CONSTRUCTORS
      * */
@@ -45,6 +54,8 @@ public class Polymorphia {
      * in one of the 4 rooms). Calls the takeTurn method until a player dies (health = 0)
      */
     public void playGame() {
+
+        logger.info("Starting play...");
 
         // Print the initial state of the game
         printMaze();
@@ -91,6 +102,12 @@ public class Polymorphia {
     }
 
 
+    /**
+     * ------------- EXAMPLE OF COHESION -------------
+     *  takeTurn is an example of cohesion because it is responsible for all functionallities
+     *  related to one turn of the game. It is separate for other concerns of game play and
+     *  handles logic in an organized way.
+     */
 
     /**
      * takeTurn: Prints maze and turn number. Analyzes the room locations of the creatures and adventurers
@@ -135,7 +152,7 @@ public class Polymorphia {
 
                 fight(healthiestAdventurer, healthiestCreature);
                 logger.info("Adventurer " + healthiestAdventurer.getName() + "(health: " + healthiestAdventurer.getHealth() + ") " +
-                        "fought Creature" + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")" + "\n");
+                        "fought Creature " + healthiestCreature.getName() + " (health: " + healthiestCreature.getHealth() + ")" + "\n");
 
                 // if there is a second adventurer, move it
                 if (numAdventurersPresent == 2) {
@@ -180,7 +197,8 @@ public class Polymorphia {
             List<Adventurer> allAdventures = maze.getAllAdventurers();
             for(Adventurer adventurer : allAdventures){
                 adventurer.move(maze);
-                adventurer.subtractFromHealth(0.25);
+                // Note: Don't subtract .25 since homework example didn't do this
+                //adventurer.subtractFromHealth(0.25);
             }
             adventurersToMove.clear();
         }
@@ -235,6 +253,20 @@ public class Polymorphia {
     }
 
 
+
+    /**
+     * ------------- EXAMPLE OF POLYMORPHISM -------------
+     *  kill() is an example of polymorphism because it treats both Adventurer and
+     *  Creature as an instance of Character since they both are subclasses.
+     */
+
+    /**
+     * ------------- EXAMPLE OF INHERITANCE -------------
+     *  kill is also an example of inheritance because neither Adventurer nor
+     *  Creature have toString defined in their class. toString is defined in
+     *  Character, but it's able to be used in kill because they inherit the
+     *  method from their superclass.
+     */
 
     public void kill (Character characterToDie) {
         // Remove them from maze
