@@ -1,6 +1,3 @@
-
-# CSCI 4448/5448 - Fall 2024 - Homework 3
-
 ## Team Members
 
 Name: Sierra Reschke, Grace Ohlsen and Nolan Brady
@@ -14,7 +11,7 @@ OpenJDK 64-Bit Server VM (build 23+37-2369, mixed mode, sharing)
 
 ## Work Done
 
-For this assignment, the main work was done in adjusting what we previously had to match the Homework 3 requirements.
+For this assignment, the main work was done in adjusting what we previously had to match the updated requirements.
 We made the following adjustments:
 * Got rid of any instantiation of non-trivial classes, including Character and Room
 * Made more methods to include better encapsulation
