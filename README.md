@@ -1,3 +1,5 @@
+## Expanding Polymorphia, adding Dependency Injection and Logging
+
 ## Team Members
 
 Name: Sierra Reschke, Grace Ohlsen and Nolan Brady
