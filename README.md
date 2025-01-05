@@ -4,9 +4,9 @@ Name: Sierra Reschke, Grace Ohlsen and Nolan Brady
 
 ## Java Version
 
-openjdk 23 2024-09-17
-OpenJDK Runtime Environment (build 23+37-2369)
-OpenJDK 64-Bit Server VM (build 23+37-2369, mixed mode, sharing)
+* openjdk 23 2024-09-17
+* OpenJDK Runtime Environment (build 23+37-2369)
+* OpenJDK 64-Bit Server VM (build 23+37-2369, mixed mode, sharing)
 
 
 ## Work Done
